@@ -319,5 +319,16 @@
 				</Permissions>
 			</Menu>
 
+			<Menu>
+				<ParentMenu>Housing Related</ParentMenu>
+				<Title>Manage Room</Title>
+				<Link>housing_room.php</Link>
+				<Permissions>
+					<Permission>HOUSING_ROOM_C</Permission>
+					<Permission>HOUSING_ROOM_U</Permission>
+					<Permission>HOUSING_ROOM_D</Permission>
+				</Permissions>
+			</Menu>
+
 
 </Menus>
