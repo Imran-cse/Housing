@@ -43,7 +43,7 @@ if(isset($_POST['update']))
 	$HousingType = new HousingType();
 
     $HousingType->setID ($_GET['edit']);
-    $HousingType->setName( $_POST['txtCat'] );
+    $HousingType->setName( $_POST['txtType'] );
 
 	$_HousingTypeBAO->updateHousingType($HousingType);
 

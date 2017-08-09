@@ -98,6 +98,35 @@ class Housing{
     }
 }
 
+//Class for room
+class Room{
+    private $_room_id;
+    private $_house_id;
+    private $_no_of_seat;
 
+    public function setRoomId($room_id){
+        $this->_room_id = $room_id;
+    }
+    public function getRoomId()
+    {
+        return $this->_room_id;
+    }
+    public function setHouseId($house_id)
+    {
+        $this->_house_id = $house_id;
+    }
+    public function getHouseId()
+    {
+        return $this->_house_id;
+    }
+    public function setNoOfSeat($no_of_seat)
+    {
+        $this->_no_of_seat = $no_of_seat;
+    }
+    public function getNoOfSeat()
+    {
+        return $this->_no_of_seat;
+    }
+}
 
  ?>

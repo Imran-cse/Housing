@@ -152,6 +152,31 @@
 		<category>HOUSING</category>
 	</permission>
 
+<!--Housing Room -->
+
+	<permission>
+		<id>HOUSING_ROOM_C</id>
+		<name>HOUSING_ROOM_C</name>
+		<category>HOUSING ROOM</category>
+	</permission>
+
+	<permission>
+		<id>HOUSING_ROOM_R</id>
+		<name>HOUSING_ROOM_R</name>
+		<category>HOUSING ROOM</category>
+	</permission>
+
+	<permission>
+		<id>HOUSING_ROOM_U</id>
+		<name>HOUSING_ROOM_U</name>
+		<category>HOUSING ROOM</category>
+	</permission>
+
+	<permission>
+		<id>HOUSING_ROOM_D</id>
+		<name>HOUSING_ROOM_D</name>
+		<category>HOUSING ROOM</category>
+	</permission>
 
 
 	<!-- PERMISSION Category -->
