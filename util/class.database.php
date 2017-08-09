@@ -1,5 +1,7 @@
 <?php
 
+
+
 class QueryToTable{
 
     var $_filename;

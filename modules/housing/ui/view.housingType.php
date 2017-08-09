@@ -18,8 +18,7 @@ include_once './common/class.housing.php';
                   	<label class="control-label col-sm-4" for="txtType">Type Name:</label>
                   	<div class="col-sm-6">
     					<input type="text" name="txtType" class="form-control"
-    					 placeholder="Type Name" value="<?php
-    					if(isset($_GET['edit'])) echo $getROW->getName();  ?>" />
+    					 placeholder="Type Name" value="<?php if(isset($_GET['edit'])) echo $getROW->getName();  ?>" />
     			  	</div>
     			</div>
 
