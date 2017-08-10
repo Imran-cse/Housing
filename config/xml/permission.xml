@@ -152,7 +152,7 @@
 		<category>HOUSING</category>
 	</permission>
 
-<!--Housing Room -->
+<!--Housing Room Category-->
 
 	<permission>
 		<id>HOUSING_ROOM_C</id>

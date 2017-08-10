@@ -2,7 +2,7 @@
 
 include_once 'blade/view.housingType.blade.php';
 include_once './common/class.common.php';
-include_once './common/class.housing.php';
+include_once './common/class.common.housing.php';
 
 ?>
 <div class="panel panel-default">

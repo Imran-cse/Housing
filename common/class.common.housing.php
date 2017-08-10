@@ -47,6 +47,14 @@ class Housing{
     public function getName(){
         return $this->_name;
     }
+
+    public function setTypeId ($type_id){
+        $this->_type_id = $type_id;
+    }
+    public function getTypeId(){
+        return $this->_type_id;
+    }
+
     public function setFloor ($no_of_floor){
         $this->_no_of_floor = $no_of_floor;
     }
@@ -90,17 +98,13 @@ class Housing{
     public function getWorkers(){
         return $this->_no_of_workers;
     }
-    public function setTypeId ($type_id){
-        $this->_type_id = $type_id;
-    }
-    public function getTypeId(){
-        return $this->_type_id;
-    }
+    
 }
 
 //Class for room
 class Room{
     private $_room_id;
+    private $_room_no;
     private $_house_id;
     private $_no_of_seat;
 
@@ -110,6 +114,13 @@ class Room{
     public function getRoomId()
     {
         return $this->_room_id;
+    }
+    public function setRoomNo($room_no){
+        $this->_room_no = $room_no;
+    }
+    public function getRoomNo()
+    {
+        return $this->_room_no;
     }
     public function setHouseId($house_id)
     {

@@ -1,7 +1,7 @@
 <?php
 
 include_once './common/class.common.php';
-include_once './common/class.housing.php';
+include_once './common/class.common.housing.php';
 include_once './util/class.util.php';
 
 /**

@@ -300,6 +300,7 @@ class MiddlewareUtil{
          //START HOUSING
          self::$s_Routes[PageUtil::$HOUSING]   =  PageUtil::$LOGIN ;
          self::$s_Routes[PageUtil::$HOUSING_TYPE]   =  PageUtil::$LOGIN ;
+         self::$s_Routes[PageUtil::$HOUSING_ROOM]   =  PageUtil::$LOGIN ;
 
 
          //END HOUSING
