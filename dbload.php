@@ -9,7 +9,7 @@ rid varchar(255) NOT NULL PRIMARY KEY,
 hid varchar(255)
 )ENGINE=InnoDB";
 
-$db = new QueryToTable(UTILITY."/class.database.php");
+$db = new QueryToTable();
 $db->saveTableInDB($sql); // loading and then saving in the database
 
 

@@ -74,13 +74,13 @@ if(isset($_POST['update']))
 
     $Housing->setID ($_GET['edit']);
     $Housing->setName( $_POST['txtHousing'] );
-    $Housing->setTypeId($_POST['txtType']);
+    
     $Housing->setFloor($_POST['txtFloor']);
     $Housing->setRoom($_POST['txtRoom']);
     $Housing->setProvost($_POST['txtProvost']);
     $Housing->setAssProvost($_POST['txtAssProvost']);
     $Housing->setOfficer($_POST['txtOfficer']);
-    $Housing->setDescription($_POST['txtDescription']);
+    
     $Housing->setWorkers($_POST['txtWorkers']);
 	
 	$_HousingBAO->updateHousing($Housing);

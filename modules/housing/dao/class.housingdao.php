@@ -199,18 +199,16 @@ Class HousingDAO{
 	//update an Housing object based on its 
 	public function updateHousing($Housing){
 
-		$SQL = "UPDATE hms_housing SET name='".$Housing->getName()."',
-				type_id = '".$Housing->getTypeId()."',
+		$SQL = "UPDATE hms_housing SET name='".$Housing->getName()."',				
 				no_of_floor = '".$Housing->getFloor()."',
 				no_of_room = '".$Housing->getRoom()."',
 				provost = '".$Housing->getProvost()."',
 				ass_provost = '".$Housing->getAssProvost()."',
 				officer = '".$Housing->getOfficer()."',
-				description='".$Housing->getDescription()."',
-				Tag='".$Housing->getWorkers()."'
+				no_of_workers='".$Housing->getWorkers()."'
 				WHERE id='".$Housing->getID()."'";
 
-		$this->_DB->getConnection()->begin_transaction(MYSQLI_TRANS_START_READ_WRITE);
+		
 		$SQL = $this->_DB->doQuery($SQL);
 
 	 	$Result = new Result();

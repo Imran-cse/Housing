@@ -135,6 +135,11 @@ class PermissionUtil{
     public static $HOUSING_ROOM_U='HOUSING_ROOM_U';
     public static $HOUSING_ROOM_D='HOUSING_ROOM_D';
 
+    public static $HOUSING_EDIT_C='HOUSING_EDIT_C';
+    public static $HOUSING_EDIT_R='HOUSING_EDIT_R';
+    public static $HOUSING_EDIT_U='HOUSING_EDIT_U';
+    public static $HOUSING_EDIT_D='HOUSING_EDIT_D';
+
 
     public static $POSITION_C='POSITION_C';
     public static $POSITION_R='POSITION_R';
@@ -184,6 +189,7 @@ class PageUtil{
     public static $HOUSING_TYPE='housing_type.php';
     public static $HOUSING='housing.php';
     public static $HOUSING_ROOM='housing_room.php';
+    public static $HOUSING_EDIT='housing_edit.php';
 
 
     public static $ERROR='error.php';
@@ -234,6 +240,7 @@ class RouteUtil{
          self::$s_Routes[PageUtil::$HOUSING_TYPE]  = "/modules/housing/ui/view.housingType.php";
          self::$s_Routes[PageUtil::$HOUSING]  = "/modules/housing/ui/view.housing.php";
          self::$s_Routes[PageUtil::$HOUSING_ROOM] = "/modules/housing/ui/view.housingRoom.php";
+         self::$s_Routes[PageUtil::$HOUSING_EDIT] = "/modules/housing/ui/view.housingEdit.php";
 
          self::$s_Routes[PageUtil::$HOME]             =   "/modules/dashboard/ui/view.home.php";
          self::$s_Routes[PageUtil::$LOGIN]            =   "/modules/dashboard/ui/view.login.php";

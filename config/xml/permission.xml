@@ -178,6 +178,33 @@
 		<category>HOUSING ROOM</category>
 	</permission>
 
+	<!--Housing Edit Category-->
+
+	<permission>
+		<id>HOUSING_EDIT_C</id>
+		<name>HOUSING_EDIT_C</name>
+		<category>HOUSING EDIT</category>
+	</permission>
+
+	<permission>
+		<id>HOUSING_EDIT_R</id>
+		<name>HOUSING_EDIT_R</name>
+		<category>HOUSING EDIT</category>
+	</permission>
+
+	<permission>
+		<id>HOUSING_EDIT_U</id>
+		<name>HOUSING_EDIT_U</name>
+		<category>HOUSING EDIT</category>
+	</permission>
+
+	<permission>
+		<id>HOUSING_EDIT_D</id>
+		<name>HOUSING_EDIT_D</name>
+		<category>HOUSING EDIT</category>
+	</permission>
+
+
 
 	<!-- PERMISSION Category -->
 	<permission>

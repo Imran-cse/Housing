@@ -7,9 +7,9 @@ class QueryToTable{
     var $_filename;
     private $_DB;
 
-    function __construct($fileToRead){
+    function __construct(){
 
-        $this->_filename = $fileToRead;
+     //   $this->_filename = $fileToRead;
     }
 
 
@@ -26,7 +26,6 @@ class QueryToTable{
 
 
         $SQL = $this->_DB->doQuery($sql);
-
 
         //closing the transaction
         $this->_DB->getConnection()->commit();
