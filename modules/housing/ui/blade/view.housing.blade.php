@@ -45,9 +45,9 @@ if(isset($_GET['del']))
 
 if(isset($_GET['view']))
 {
-	$Housing1 = new Housing();	
-	$Housing1->setID($_GET['view']);	
-	$getROW = $_HousingBAO->readHousing($Housing1)->getResultObject(); //reading the Housing object from the result object
+	$Housing = new Housing();	
+	$Housing->setID($_GET['view']);	
+	$getROW = $_HousingBAO->readHousing($Housing)->getResultObject(); //reading the Housing object from the result object
 
 }
 /* reading an existing Housing information */
@@ -56,13 +56,6 @@ if(isset($_GET['edit']))
 	$Housing = new Housing();	
 	$Housing->setID($_GET['edit']);	
 	$getROW = $_HousingBAO->readHousing($Housing)->getResultObject(); //reading the Housing object from the result object
-}
-
-if (isset($_GET['typeview'])) {
-	$Housing = new Housing();
-	$Housing->setTypeId($_GET['typeview']);	
-	$getROW = $_HousingBAO->readHousing1($Housing)->getResultObject();
-
 }
 
 

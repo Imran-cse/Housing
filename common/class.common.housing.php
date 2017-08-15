@@ -102,7 +102,7 @@ class Housing{
 }
 
 //Class for room
-class Room{
+class HousingRoom{
     private $_room_id;
     private $_room_no;
     private $_house_id;

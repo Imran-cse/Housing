@@ -29,16 +29,7 @@ Class HousingBAO{
 
 		return $Result;
 	}
-	public function getAllHousingTypes(){
-
-		$Result = new Result();	
-		$Result = $this->_HousingDAO->getAllHousingTypes();
-		
-		if(!$Result->getIsSuccess())
-			$Result->setResultObject("Database failure in HousingDAO.getAllHousingTypes()");		
-
-		return $Result;
-	}
+	
 
 	
 
@@ -71,21 +62,9 @@ Class HousingBAO{
 	}
 
 
-	public function readHousingType($Housing){
+	
 
-
-		$Result = new Result();	
-		$Result = $this->_HousingDAO->readHousingType($Housing);
-		
-		if(!$Result->getIsSuccess())
-			$Result->setResultObject("Database failure in HousingDAO.readDiscussionCategory()");		
-
-		return $Result;
-
-
-	}
-
-	//read an Housing object based on its id form Housing object
+	//read for edit an Housing  object based on its id form Housing object
 	public function readHousing($Housing){
 
 
@@ -100,19 +79,7 @@ Class HousingBAO{
 
 	}
 
-	public function readHousing1($Housing){
-
-
-		$Result = new Result();	
-		$Result = $this->_HousingDAO->readHousing1($Housing);
-		
-		if(!$Result->getIsSuccess())
-			$Result->setResultObject("Database failure in HousingDAO.readHousing1()");		
-
-		return $Result;
-
-
-	}
+	
 
 	//update an Housing object based on its current information
 	public function updateHousing($Housing){

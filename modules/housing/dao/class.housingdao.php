@@ -14,7 +14,7 @@ Class HousingDAO{
 	function HousingDAO(){
 
 		$this->_DB = DBUtil::getInstance();
-		$this->_Type = new housingType();
+		$this->_Type = new HousingType();
 
 	}
 
@@ -56,33 +56,7 @@ Class HousingDAO{
 
 		return $Result;
 	}
-	// get all the Housing Type from the database using the database query
-	public function getAllHousingTypes(){
-
-		$HousingTypeList = array();
-
-		$this->_DB->doQuery("SELECT * FROM hms_type");
-
-		$rows = $this->_DB->getAllRows();
-
-		for($i = 0; $i < sizeof($rows); $i++) {
-			$row = $rows[$i];
-			$this->_HousingType = new HousingType();
-
-		    $this->_HousingType->setID ( $row['id']);
-		    $this->_HousingType->setName( $row['name'] );
-
-
-		    $HousingTypeList[]=$this->_HousingType;
-
-		}
-        
-		$Result = new Result();
-		$Result->setIsSuccess(1);
-		$Result->setResultObject($HousingTypeList);
-
-		return $Result;
-	}
+	
 
 	public function getNameFromTypeID($TypeID){
 
@@ -132,32 +106,7 @@ Class HousingDAO{
 		return $Result;
 	}
 
-	//read Housing Type funtion with the Housing Type object
-
-	public function readHousingType($HousingType){
-		
-		
-		$SQL = "SELECT t.id,t.name FROM hms_housing as h,hms_type as t 
-				WHERE h.type_id='".$HousingType."'";
-		$this->_DB->doQuery($SQL);
-
-		//reading the top row for this Housing Type from the database
-		$row = $this->_DB->getTopRow();
-
-		$this->_HousingType= new HousingType();
-
-		//preparing the Housing Type object
-	    $this->_HousingType->setID ( $row['id']);
-	    $this->_HousingType->setName( $row['name'] );
-
-
-
-	 	$Result = new Result();
-		$Result->setIsSuccess(1);
-		$Result->setResultObject($this->_HousingType);
-
-		return $Result;
-	}
+	
 
 
 	//read an Housing object based on its id form Housing object
