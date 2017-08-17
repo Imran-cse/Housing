@@ -36,12 +36,7 @@ Class HousingDAO{
 		    $this->_Housing->setTypeId( $row['type_id'] );
 		    $this->_Housing->setFloor( $row['no_of_floor'] );
 		    $this->_Housing->setRoom( $row['no_of_room'] );
-		    $this->_Housing->setProvost( $row['provost'] );
-		    $this->_Housing->setAssProvost( $row['ass_provost'] );
-		    $this->_Housing->setOfficer( $row['officer'] );
-		    $this->_Housing->setDescription( $row['description'] );
-		    $this->_Housing->setWorkers( $row['no_of_workers'] );
-
+		    
 
 		    $HousingList[]=$this->_Housing;
    
@@ -87,15 +82,11 @@ Class HousingDAO{
 		$Type=$Housing->getTypeId();
 		$Floor=$Housing->getFloor();
 		$Room=$Housing->getRoom();
-		$Provost=$Housing->getProvost();
-		$AssProvost=$Housing->getAssProvost();
-		$Officer=$Housing->getOfficer();
-		$Description=$Housing->getDescription();
-		$Workers=$Housing->getWorkers();
+		
 	
 
-		$SQL = "INSERT INTO hms_housing (id,name,type_id,no_of_floor,no_of_room,provost,ass_provost,officer,description,no_of_workers) 
-				VALUES('$ID','$Name','$Type','$Floor','$Room','$Provost','$AssProvost','$Officer','$Description','$Workers')";
+		$SQL = "INSERT INTO hms_housing (id,name,type_id,no_of_floor,no_of_room) 
+				VALUES('$ID','$Name','$Type','$Floor','$Room')";
 
 		$SQL = $this->_DB->doQuery($SQL);		
 		
@@ -127,14 +118,7 @@ Class HousingDAO{
 	    $this->_Housing->setTypeId( $row['type_id'] );
 	    $this->_Housing->setFloor( $row['no_of_floor'] );
 	    $this->_Housing->setRoom( $row['no_of_room'] );
-	    $this->_Housing->setProvost( $row['provost'] );
-	    $this->_Housing->setAssProvost( $row['ass_provost'] );
-	    $this->_Housing->setOfficer( $row['officer'] );
-	    $this->_Housing->setDescription( $row['description'] );
-	    $this->_Housing->setWorkers( $row['no_of_workers'] );
-
-
-
+	    
 
 	 	$Result = new Result();
 		$Result->setIsSuccess(1);
@@ -150,11 +134,8 @@ Class HousingDAO{
 
 		$SQL = "UPDATE hms_housing SET name='".$Housing->getName()."',				
 				no_of_floor = '".$Housing->getFloor()."',
-				no_of_room = '".$Housing->getRoom()."',
-				provost = '".$Housing->getProvost()."',
-				ass_provost = '".$Housing->getAssProvost()."',
-				officer = '".$Housing->getOfficer()."',
-				no_of_workers='".$Housing->getWorkers()."'
+				no_of_room = '".$Housing->getRoom()."'
+				
 				WHERE id='".$Housing->getID()."'";
 
 		

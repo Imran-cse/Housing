@@ -22,8 +22,8 @@ Class HousingRoomDAO{
 	public function getAllHousingRoom(){
 
 		$HousingRoomList = array();
-
-		$this->_DB->doQuery("SELECT * FROM hms_room");
+		$h_id = $_GET['view'];
+		$this->_DB->doQuery("SELECT * FROM hms_room WHERE house_id = '".$h_id."'");
 
 		$rows = $this->_DB->getAllRows();
 
@@ -130,24 +130,6 @@ Class HousingRoomDAO{
 	}
 
 	
-
-	//update an Housing Room object based on its 
-	public function updateHousingRoom($HousingRoom){
-
-		$SQL = "UPDATE hms_room SET room_no ='".$HousingRoom->getRoomNo()."',				
-				no_of_seat = '".$HousingRoom->getNoOfSeat()."'
-				WHERE room_id ='".$HousingRoom->getRoomId()."'";
-
-		
-		$SQL = $this->_DB->doQuery($SQL);
-
-	 	$Result = new Result();
-		$Result->setIsSuccess(1);
-		$Result->setResultObject($SQL);
-
-		return $Result;
-
-	}
 
 	//delete an Housing Room based on its id of the database
 	public function deleteHousingRoom($HousingRoom){

@@ -17,12 +17,7 @@ if(isset($_POST['save']))
      $Housing->setName($_DB->secureInput($_POST['txtHousing']));
      $Housing->setFloor($_DB->secureInput($_POST['txtFloor']));
      $Housing->setRoom($_DB->secureInput($_POST['txtRoom']));
-     $Housing->setProvost($_DB->secureInput($_POST['txtProvost']));
-     $Housing->setAssProvost($_DB->secureInput($_POST['txtAssProvost']));
      
-     $Housing->setOfficer($_DB->secureInput($_POST['txtOfficer']));
-     $Housing->setDescription($_DB->secureInput($_POST['txtDescription']));
-     $Housing->setWorkers($_DB->secureInput($_POST['txtWorkers']));
 
    if(isset($_POST['txtType'])){ 
 	
@@ -70,11 +65,7 @@ if(isset($_POST['update']))
     
     $Housing->setFloor($_POST['txtFloor']);
     $Housing->setRoom($_POST['txtRoom']);
-    $Housing->setProvost($_POST['txtProvost']);
-    $Housing->setAssProvost($_POST['txtAssProvost']);
-    $Housing->setOfficer($_POST['txtOfficer']);
-    
-    $Housing->setWorkers($_POST['txtWorkers']);
+   
 	
 	$_HousingBAO->updateHousing($Housing);
 

@@ -75,47 +75,7 @@ include_once './common/class.common.housing.php';
 						</div>
 					</div>
 
-					<div class="form-group">
-						<label class="control-label col-sm-4" for="txtProvost">Provost Name : </label>
-						<div class="col-sm-6">	
-							<input type="text" class="form-control"  name="txtProvost" placeholder="Provost Name" value="<?php 
-							if(isset($_GET['edit'])) echo $getROW->getProvost();  ?>" />
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label class="control-label col-sm-4" for="txtAssProvost">Assistant Provost Name : </label>
-						<div class="col-sm-6">	
-							<input type="text" class="form-control"  name="txtAssProvost" placeholder="Assistant Provost Name" value="<?php 
-							if(isset($_GET['edit'])) echo $getROW->getAssProvost();  ?>" />
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label class="control-label col-sm-4" for="txtOfficer">Officer Name : </label>
-						<div class="col-sm-6">	
-							<input type="text" class="form-control"  name="txtOfficer" placeholder="Officer Name" value="<?php 
-							if(isset($_GET['edit'])) echo $getROW->getOfficer();  ?>" />
-						</div>
-					</div>
-					<?php if(!isset($_GET['edit'])){ ?>
-						<div class="form-group">
-							<label class="control-label col-sm-4" for="txtDescription">Description : </label>
-							<div class="col-sm-6">
-								<textarea rows="10" cols="40" class="form-control"  name="txtDescription" placeholder="Description" 
-									value="<?php if(isset($_GET['edit'])) echo $getROW->getDescription();  ?>" >					
-								</textarea>
-							</div>
-						</div>
-					<?php }?>
-
-					<div class="form-group">
-						<label class="control-label col-sm-4" for="txtWorkers">Number of Workers : </label>
-						<div class="col-sm-6">	
-							<input type="text" class="form-control"  name="txtWorkers" placeholder="Number of Workers" value="<?php 
-							if(isset($_GET['edit'])) echo $getROW->getWorkers();  ?>" />
-						</div>
-					</div>
+					
 
 
 
@@ -161,11 +121,7 @@ include_once './common/class.common.housing.php';
 					<th>Housing Name</th>
 					<th>Housing Type</th>
 					<th>Floors</th>
-					<th>Rooms</th>
-					<th>Provost</th>
-					<th>Assistant Provost</th>
-					<th>Officer</th>
-					<th>Workers</th>
+	
 				</tr>
 				<?php
 				for($i = 0; $i < sizeof($HousingList); $i++) {
@@ -173,7 +129,7 @@ include_once './common/class.common.housing.php';
 					?>
 				    <tr>
 				    <td>
-				    <a href="*.php?view=<?php echo $Housing->getID(); ?>" onclick="return ; " > <?php echo $Housing->getName(); ?></a>
+				    <a href="housing_room.php?view=<?php echo $Housing->getID(); ?>" onclick="return ; " > <?php echo $Housing->getName(); ?></a>
 				    </td>
 					    <td><?php $id = $Housing->getTypeId();
 					    	$Result2 = $_HousingBAO->getNameFromTypeID($id);
@@ -189,14 +145,9 @@ include_once './common/class.common.housing.php';
 					    </td>
 
 					    <td><?php echo $Housing->getFloor(); ?></td>
-					    <td><?php echo $Housing->getRoom(); ?></td>
-					    <td><?php echo $Housing->getProvost(); ?></td>
-					    <td><?php echo $Housing->getAssProvost(); ?></td>
-					    <td><?php echo $Housing->getOfficer(); ?></td>
-					    
-					    <td><?php echo $Housing->getWorkers(); ?></td>
-					    <td><a href="?edit=<?php echo $Housing->getID(); ?>" onclick="return confirm('sure to edit !'); " >Edit</a></td>
-					    <td><a href="?del=<?php echo $Housing->getID(); ?>" onclick="return confirm('sure to delete !'); " >Delete</a></td>
+					    <td><a href="?view=<?php echo $Housing->getID(); ?>" onclick="return;" >Details</a></td>
+					    <td><a href="?edit=<?php echo $Housing->getID(); ?>" onclick="return confirm('Are You Sure to edit !'); " >Edit</a></td>
+					    <td><a href="?del=<?php echo $Housing->getID(); ?>" onclick="return confirm('Are You Sure to delete!'); " >Delete</a></td>
 				    </tr>
 			    <?php
 

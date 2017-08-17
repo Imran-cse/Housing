@@ -4,6 +4,7 @@ include_once 'blade/view.housingRoom.blade.php';
 include_once './common/class.common.php';
 include_once './common/class.common.housing.php';
 
+if(isset($_GET['view'])){
 ?>
 <div class="panel panel-default">
 
@@ -18,44 +19,11 @@ include_once './common/class.common.housing.php';
                   	<label class="control-label col-sm-4" for="txtRoomNo">Room No:</label>
                   	<div class="col-sm-6">
     					<input type="text" name="txtRoomNo" class="form-control"
-    					 placeholder="Room No" value="<?php if(isset($_GET['edit'])) echo $getROW->getRoomNo();  ?>" />
+    					 placeholder="Room No" value="" />
     			  	</div>
     			</div>
 
-                <?php if(!isset($_GET['edit'])){ ?>
-
-                        <div class="form-group">
-                            <label class="control-label col-sm-4" for="txtHname">Housing Name: </label>            
-                            <div class="col-sm-6">  
-                                        <?php
-                                        
-
-                                        $var = '<select name="txtHname" class="form-control"  id="select-from-name">';
-                                        $Result = $_HousingBAO->getAllHousing();
-
-                                            //if DAO access is successful to load all the Roles then show them one by one
-
-                                        if($Result->getIsSuccess()){
-
-                                            $Housings = $Result->getResultObject();
-                                        
-                                           for ($i=0; $i < sizeof($Housings); $i++) { 
-                                                
-                                                $Housing = $Housings[$i];
-                                        
-                                                $var = $var. '<option value="'.$Housing->getID().'"';               
-
-                                                $var = $var.'>'.$Housing->getName().'</option>';
-                                
-                                            }
-
-                                            $var = $var.'</select>';
-                                        }
-                                        echo $var;
-                                        ?>  
-                            </div>
-                        </div>
-                    <?php }?>
+                
 
                 <div class="form-group">
                     <label class="control-label col-sm-4" for="txtSeat">Number Of Seat:</label>
@@ -67,21 +35,8 @@ include_once './common/class.common.housing.php';
 
 
     	        <div class="form-group">
-                  <div class="col-sm-offset-2 col-sm-10">
-    						<?php
-    						if(isset($_GET['edit']))
-    						{
-    							?>
-    							<button type="submit" name="update">Update</button>
-    							<?php
-    						}
-    						else
-    						{
-    							?>
-    							<button type="submit" name="save">Save</button>
-    							<?php
-    						}
-    						?>
+                    <div class="col-sm-offset-2 col-sm-10">    						   						
+    				    <button type="submit" name="save">Save</button>	
     			    </div>
                 </div>
     		</form>
@@ -110,8 +65,9 @@ include_once './common/class.common.housing.php';
     
                 </tr>
                 <?php
+
                 for($i = 0; $i < sizeof($HousingRoomList); $i++) {
-                    $HousingRoom = $HousingRoomList[$i];
+                     $HousingRoom = $HousingRoomList[$i];
                     ?>
                     <tr>
                     <td>
@@ -132,7 +88,6 @@ include_once './common/class.common.housing.php';
 
                         <td><?php echo $HousingRoom->getNoOfSeat(); ?></td>
                         
-                        <td><a href="?edit=<?php echo $HousingRoom->getRoomId(); ?>" onclick="return confirm('sure to edit !'); " >Edit</a></td>
                         <td><a href="?del=<?php echo $HousingRoom->getRoomId(); ?>" onclick="return confirm('sure to delete !'); " >Delete</a></td>
                     </tr>
                 <?php
@@ -151,4 +106,14 @@ include_once './common/class.common.housing.php';
 
 </div>
 
-<?php echo '<br> log:: exit view.housingRoom.php'; ?>
+<?php }
+
+else{ ?>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">                                                 
+                        <h1 align="center" style="color:red;"">Please select Housing</h1>
+                    </div>
+                </div>
+
+ <?php   }  ?>

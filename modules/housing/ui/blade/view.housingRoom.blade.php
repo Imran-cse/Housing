@@ -15,13 +15,9 @@ if(isset($_POST['save']))
 	$HousingRoom = new HousingRoom();	
 	$HousingRoom->setRoomId(Util::getGUID());
     $HousingRoom->setRoomNo($_DB->secureInput($_POST['txtRoomNo']));
+    $HousingRoom->setHouseId($_GET['view']);
     $HousingRoom->setNoOfSeat($_DB->secureInput($_POST['txtSeat']));
      
-     
-    if(isset($_POST['txtHname'])){ 
-	
-		$HousingRoom->setHouseId($_POST['txtHname']);
-	}
 	$_HousingRoomBAO->createHousingRoom($HousingRoom);		 
 }
 
@@ -42,35 +38,6 @@ if(isset($_GET['view']))
 	$HousingRoom->setRoomId($_GET['view']);	
 	$getROW = $_HousingRoomBAO->readHousingRoom($HousingRoom)->getResultObject(); //reading the Housing Room object from the result object
 
-}
-/* reading an existing Housing Room information */
-if(isset($_GET['edit']))
-{
-
-	$HousingRoom = new HousingRoom();
-
-	$HousingRoom->setRoomId($_GET['edit']);	
-
-	$getROW = $_HousingRoomBAO->readHousingRoom($HousingRoom)->getResultObject(); //reading the Housing Room object from the result object
-}
-
-
-
-
-/*updating an existing Housing Room information*/
-if(isset($_POST['update']))
-{
-	$HousingRoom = new HousingRoom();	
-
-    $HousingRoom->setRoomId ($_GET['edit']);
-    $HousingRoom->setRoomNo( $_POST['txtRoomNo'] );
-    
-    $HousingRoom->setNoOfSeat($_POST['txtSeat']);
-    
-	
-	$_HousingRoomBAO->updateHousingRoom($HousingRoom);
-
-	header("Location:".PageUtil::$HOUSING_ROOM);
 }
 
 

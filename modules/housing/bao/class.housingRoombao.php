@@ -80,17 +80,6 @@ Class HousingRoomBAO{
 	}
 
 
-	//update an Housing Room object based on its current information
-	public function updateHousingRoom($HousingRoom){
-
-		$Result = new Result();	
-		$Result = $this->_HousingRoomDAO->updateHousingRoom($HousingRoom);
-		
-		if(!$Result->getIsSuccess())
-			$Result->setResultObject("Database failure in HousingRoomDAO.updateHousingRoom()");		
-
-		return $Result;
-	}
 
 	//delete an existing Housing Room
 	public function deleteHousingRoom($HousingRoom){
