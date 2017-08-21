@@ -8,6 +8,7 @@ $_HousingBAO = new HousingBAO();
 $_HousingTypeBAO = new HousingTypeBAO();
 $_DB = DBUtil::getInstance();
 
+
 /* saving a new Housing account*/
 if(isset($_POST['save']))
 {

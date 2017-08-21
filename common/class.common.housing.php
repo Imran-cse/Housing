@@ -26,10 +26,6 @@ class Housing{
     private $_no_of_floor;
     private $_no_of_room;
     private $_provost;
-    private $_ass_provost;
-    private $_officer;
-    private $_description;
-    private $_no_of_workers;
     private $_type_id;
 
 
@@ -67,6 +63,38 @@ class Housing{
     public function getRoom(){
         return $this->_no_of_room;
     }
+    
+    
+}
+
+//Class for Housing Details
+
+class HousingDetails{
+    private $_ID;
+    private $_housing_id;
+    private $_provost;
+    private $_ass_provost;
+    private $_officer;
+    private $_description;
+    private $_no_of_workers;
+    
+
+
+
+    public function setID ( $ID ) {
+        $this->_ID = $ID;
+    }
+
+    public function getID () {
+        return $this->_ID;
+    }
+    public function setHousingId ($Hid){
+        $this->_housing_id = $Hid;
+    }
+    public function getHousingId(){
+        return $this->_housing_id;
+    }
+
     public function setProvost ($provost){
         $this->_provost = $provost;
     }
@@ -138,6 +166,47 @@ class HousingRoom{
     {
         return $this->_no_of_seat;
     }
+}
+
+/**
+* 
+*/
+class HousingRoomAssign
+{
+    private $_user_id;
+    private $_house_id;
+    private $_room_id;
+    
+
+    public function setUserId($user_id)
+    {
+        $this->_user_id = $user_id;
+    }
+    public function getUserId()
+    {
+        return $this->_user_id;
+    }
+    
+    public function setHouseId($house_id)
+    {
+        $this->_house_id = $house_id;
+    }
+    public function getHouseId()
+    {
+        return $this->_house_id;
+    }
+
+    public function setRoomId($room_id){
+        $this->_room_id = $room_id;
+    }
+    public function getRoomId()
+    {
+        return $this->_room_id;
+    }
+    
+    
+    
+    
 }
 
  ?>

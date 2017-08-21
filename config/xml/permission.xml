@@ -178,6 +178,60 @@
 		<category>HOUSING ROOM</category>
 	</permission>
 
+	<!--Housing Room Assign Category-->
+
+	<permission>
+		<id>HOUSING_ROOM_ASSIGN_C</id>
+		<name>HOUSING_ROOM_ASSIGN_C</name>
+		<category>HOUSING ROOM ASSIGN</category>
+	</permission>
+
+	<permission>
+		<id>HOUSING_ROOM_ASSIGN_R</id>
+		<name>HOUSING_ROOM_ASSIGN_R</name>
+		<category>HOUSING ROOM ASSIGN</category>
+	</permission>
+
+	<permission>
+		<id>HOUSING_ROOM_ASSIGN_U</id>
+		<name>HOUSING_ROOM_ASSIGN_U</name>
+		<category>HOUSING ROOM ASSIGN</category>
+	</permission>
+
+	<permission>
+		<id>HOUSING_ROOM_ASSIGN_D</id>
+		<name>HOUSING_ROOM_ASSIGN_D</name>
+		<category>HOUSING ROOM ASSIGN</category>
+	</permission>
+
+
+
+	<!--Housing Details Category-->
+
+	<permission>
+		<id>HOUSING_DETAILS_C</id>
+		<name>HOUSING_DETAILS_C</name>
+		<category>HOUSING DETAILS</category>
+	</permission>
+
+	<permission>
+		<id>HOUSING_DETAILS_R</id>
+		<name>HOUSING_DETAILS_R</name>
+		<category>HOUSING DETAILS</category>
+	</permission>
+
+	<permission>
+		<id>HOUSING_DETAILS_U</id>
+		<name>HOUSING_DETAILS_U</name>
+		<category>HOUSING DETAILS</category>
+	</permission>
+
+	<permission>
+		<id>HOUSING_DETAILS_D</id>
+		<name>HOUSING_DETAILS_D</name>
+		<category>HOUSING DETAILS</category>
+	</permission>
+
 	
 
 

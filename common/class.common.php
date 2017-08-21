@@ -135,6 +135,16 @@ class PermissionUtil{
     public static $HOUSING_ROOM_U='HOUSING_ROOM_U';
     public static $HOUSING_ROOM_D='HOUSING_ROOM_D';
 
+    public static $HOUSING_DETAILS_C='HOUSING_DETAILS_C';
+    public static $HOUSING_DETAILS_R='HOUSING_DETAILS_R';
+    public static $HOUSING_DETAILS_U='HOUSING_DETAILS_U';
+    public static $HOUSING_DETAILS_D='HOUSING_DETAILS_D';
+
+    public static $HOUSING_ROOM_ASSIGN_C='HOUSING_ROOM_ASSIGN_C';
+    public static $HOUSING_ROOM_ASSIGN_R='HOUSING_ROOM_ASSIGN_R';
+    public static $HOUSING_ROOM_ASSIGN_U='HOUSING_ROOM_ASSIGN_U';
+    public static $HOUSING_ROOM_ASSIGN_D='HOUSING_ROOM_ASSIGN_D';
+
     
 
 
@@ -186,6 +196,8 @@ class PageUtil{
     public static $HOUSING_TYPE='housing_type.php';
     public static $HOUSING='housing.php';
     public static $HOUSING_ROOM='housing_room.php';
+    public static $HOUSING_DETAIL='housing_details.php';
+    public static $HOUSING_ROOM_ASSIGN='housingRoom_assign.php';
     
 
 
@@ -237,6 +249,8 @@ class RouteUtil{
          self::$s_Routes[PageUtil::$HOUSING_TYPE]  = "/modules/housing/ui/view.housingType.php";
          self::$s_Routes[PageUtil::$HOUSING]  = "/modules/housing/ui/view.housing.php";
          self::$s_Routes[PageUtil::$HOUSING_ROOM] = "/modules/housing/ui/view.housingRoom.php";
+         self::$s_Routes[PageUtil::$HOUSING_DETAIL] = "/modules/housing/ui/view.housingDetails.php";
+         self::$s_Routes[PageUtil::$HOUSING_ROOM_ASSIGN] = "/modules/housing/ui/view.housingRoomAssign.php";
          
 
          self::$s_Routes[PageUtil::$HOME]             =   "/modules/dashboard/ui/view.home.php";
@@ -305,6 +319,8 @@ class MiddlewareUtil{
          self::$s_Routes[PageUtil::$HOUSING]   =  PageUtil::$LOGIN ;
          self::$s_Routes[PageUtil::$HOUSING_TYPE]   =  PageUtil::$LOGIN ;
          self::$s_Routes[PageUtil::$HOUSING_ROOM]   =  PageUtil::$LOGIN ;
+         self::$s_Routes[PageUtil::$HOUSING_DETAIL]   =  PageUtil::$LOGIN;
+         self::$s_Routes[PageUtil::$HOUSING_ROOM_ASSIGN]   =  PageUtil::$LOGIN ;
 
 
          //END HOUSING

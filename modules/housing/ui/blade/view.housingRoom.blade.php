@@ -2,12 +2,13 @@
 
 include_once './util/class.util.php';
 include_once '/../../bao/class.housingRoombao.php';
-include_once '/../../bao/class.housingbao.php';
 
-$_HousingBAO = new HousingBAO();
+
+
 $_HousingRoomBAO = new HousingRoomBAO();
 $_DB = DBUtil::getInstance();
-
+//$delid=$_GET['delid'];
+//$HId=$_GET['hid'];
 /* saving a new Housing Room account*/
 if(isset($_POST['save']))
 {
@@ -15,7 +16,8 @@ if(isset($_POST['save']))
 	$HousingRoom = new HousingRoom();	
 	$HousingRoom->setRoomId(Util::getGUID());
     $HousingRoom->setRoomNo($_DB->secureInput($_POST['txtRoomNo']));
-    $HousingRoom->setHouseId($_GET['view']);
+    $HousingRoom->setHouseId($_GET['h_id']);
+    //$HousingRoom->setHouseId($_GET['view']);
     $HousingRoom->setNoOfSeat($_DB->secureInput($_POST['txtSeat']));
      
 	$_HousingRoomBAO->createHousingRoom($HousingRoom);		 
@@ -23,25 +25,29 @@ if(isset($_POST['save']))
 
 
 /* deleting an existing Housing Room */
-if(isset($_GET['del']))
+if(isset($_GET['del']) && isset($_GET['view']))
 {
-
 	$HousingRoom = new HousingRoom();	
-	$HousingRoom->setRoomId($_GET['del']);	
+	$HousingRoom->setRoomId($_GET["del"]);	
 	$_HousingRoomBAO->deleteHousingRoom($HousingRoom); //reading the Housing object from the result object
 
-	header("Location:".PageUtil::$HOUSING_ROOM);
+	header("Location:".PageUtil::$HOUSING_ROOM."?h_id=".$_GET['view']);
 }
+
+
+
+
+
 if(isset($_GET['view']))
 {
 	$HousingRoom = new HousingRoom();	
-	$HousingRoom->setRoomId($_GET['view']);	
+	$HousingRoom->setHouseId($_GET['view']);	
 	$getROW = $_HousingRoomBAO->readHousingRoom($HousingRoom)->getResultObject(); //reading the Housing Room object from the result object
 
 }
 
 
 
-echo '<br> log:: exit view.housingRoom.blade.php';
 
-?>
+
+echo '<br> log:: exit view.housingRoom.blade.php';

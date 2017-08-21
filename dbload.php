@@ -4,8 +4,8 @@ include_once 'path.php';
 include_once UTILITY.'/class.util.php';
 include_once UTILITY.'/class.database.php';
 
+///util/class.database.php-> QueryTable()
 $db = new QueryToTable();
-
 
 
 //Table structure for table `hms_type`
@@ -26,11 +26,6 @@ $sql = "CREATE TABLE hms_housing (
   type_id varchar(128) NOT NULL,
   no_of_floor int(11) NOT NULL,
   no_of_room int(11) NOT NULL,
-  provost varchar(40),
-  ass_provost varchar(128),
-  officer varchar(128),
-  description varchar(250),
-  no_of_workers int(11),
   PRIMARY KEY (id),
   FOREIGN KEY (type_id) REFERENCES hms_type(id) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB";
@@ -65,6 +60,25 @@ $sql = "CREATE TABLE hms_assign (
 ) ENGINE=InnoDB";
 
 $db->saveTableInDB($sql);
+
+
+$sql = "CREATE TABLE hms_housing_details (
+  id varchar(128) NOT NULL,
+  housing_id varchar(128) NOT NULL,
+  provost varchar(40) NOT NULL,
+  ass_provost varchar(128) NOT NULL,
+  officer varchar(128) NOT NULL,
+  description varchar(250) NOT NULL,
+  no_of_workers int(11) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (housing_id) REFERENCES hms_housing(id) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB";
+
+$db->saveTableInDB($sql);
+
+
+
+ 
 
 
 

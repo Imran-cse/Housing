@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 10, 2017 at 06:38 PM
+-- Generation Time: Aug 21, 2017 at 04:42 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -43,20 +43,42 @@ CREATE TABLE `hms_housing` (
   `name` varchar(40) NOT NULL,
   `type_id` varchar(128) NOT NULL,
   `no_of_floor` int(11) NOT NULL,
-  `no_of_room` int(11) NOT NULL,
-  `provost` varchar(40) NOT NULL,
-  `ass_provost` varchar(128) NOT NULL,
-  `officer` varchar(128) NOT NULL,
-  `description` varchar(250) DEFAULT NULL,
-  `no_of_workers` int(11) NOT NULL
+  `no_of_room` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `hms_housing`
 --
 
-INSERT INTO `hms_housing` (`id`, `name`, `type_id`, `no_of_floor`, `no_of_room`, `provost`, `ass_provost`, `officer`, `description`, `no_of_workers`) VALUES
-('{9FCF0283-2EE6-450E-870C-69E4757A8654}', 'Khan Bahadur Ahsanulla', '{A10D8B22-8015-4D50-8D4B-BABF1F72B7D4}', 4, 96, 'Prof. Dr.', 'Assistant Prof.', 'Section Officer', 'Boys hall Khulna University', 20);
+INSERT INTO `hms_housing` (`id`, `name`, `type_id`, `no_of_floor`, `no_of_room`) VALUES
+('{755934EE-5250-4480-980C-AB5A74770B38}', 'Khan Jahan Ali Hall', '{A10D8B22-8015-4D50-8D4B-BABF1F72B7D4}', 4, 106),
+('{89606478-8F3F-4CF4-BF93-73160D3EAAF0}', 'Bangabandhu Sheikh Mujibur Rahman', '{A10D8B22-8015-4D50-8D4B-BABF1F72B7D4}', 4, 96),
+('{9BDEAC3B-8F43-481D-A434-C116FC635F7E}', 'Banga Mata Fozilatunnessa Mujib', '{0BCFBE69-B3D3-40CF-B4C0-29228A62631B}', 4, 76),
+('{9FCF0283-2EE6-450E-870C-69E4757A8654}', 'Khan Bahadur Ahsanullah', '{A10D8B22-8015-4D50-8D4B-BABF1F72B7D4}', 4, 96),
+('{F7A9D391-0127-4053-8345-ADC5207630BA}', 'Aporajita', '{0BCFBE69-B3D3-40CF-B4C0-29228A62631B}', 4, 160);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hms_housing_details`
+--
+
+CREATE TABLE `hms_housing_details` (
+  `id` varchar(128) NOT NULL,
+  `housing_id` varchar(128) NOT NULL,
+  `provost` varchar(50) NOT NULL,
+  `ass_provost` varchar(255) NOT NULL,
+  `officer` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `no_of_workers` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `hms_housing_details`
+--
+
+INSERT INTO `hms_housing_details` (`id`, `housing_id`, `provost`, `ass_provost`, `officer`, `description`, `no_of_workers`) VALUES
+('{9A4ACC43-9658-4068-AF9D-34E41A7FA68F}', '{755934EE-5250-4480-980C-AB5A74770B38}', 'Prof. Dr.', 'Assistant provost', 'Employee', 'ku', 20);
 
 -- --------------------------------------------------------
 
@@ -70,6 +92,26 @@ CREATE TABLE `hms_room` (
   `house_id` varchar(128) NOT NULL,
   `no_of_seat` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `hms_room`
+--
+
+INSERT INTO `hms_room` (`room_id`, `room_no`, `house_id`, `no_of_seat`) VALUES
+('{14F89FB2-DCBF-4A39-BD25-EDBD2B00F2C6}', 104, '{755934EE-5250-4480-980C-AB5A74770B38}', 4),
+('{1B338CD2-4078-44EB-8FE9-7802B602BF22}', 310, '{9FCF0283-2EE6-450E-870C-69E4757A8654}', 4),
+('{1EAC74BC-69CA-4602-9720-CD99FC3606CD}', 402, '{755934EE-5250-4480-980C-AB5A74770B38}', 4),
+('{2256EE66-B95C-459D-9578-6C066E23AC3F}', 104, '{9FCF0283-2EE6-450E-870C-69E4757A8654}', 4),
+('{2C8DCADC-57BC-40FB-B00B-3C0F419D21B9}', 316, '{9FCF0283-2EE6-450E-870C-69E4757A8654}', 4),
+('{72D3958D-D574-45FD-AA78-703A4A601ECC}', 402, '{9FCF0283-2EE6-450E-870C-69E4757A8654}', 4),
+('{7D815158-7F3C-4112-8554-B352B73DD5FE}', 102, '{755934EE-5250-4480-980C-AB5A74770B38}', 4),
+('{7DEC8736-8A79-40BE-9F0C-7C82D6B3019D}', 101, '{755934EE-5250-4480-980C-AB5A74770B38}', 4),
+('{834E9708-9B75-4085-9760-18F34D01933C}', 102, '{9FCF0283-2EE6-450E-870C-69E4757A8654}', 4),
+('{97F41494-7A82-43E1-BA2F-166FE79FE7D2}', 101, '{89606478-8F3F-4CF4-BF93-73160D3EAAF0}', 4),
+('{9C763426-8AD7-4354-B380-024FDF0808F7}', 425, '{755934EE-5250-4480-980C-AB5A74770B38}', 4),
+('{BED387CE-9E20-40B2-BF23-39450BD100A8}', 101, '{9FCF0283-2EE6-450E-870C-69E4757A8654}', 4),
+('{DD038795-E84F-437D-A66D-BD568E692DE7}', 425, '{9FCF0283-2EE6-450E-870C-69E4757A8654}', 4),
+('{DFAA88EC-204E-402C-B6CB-A83C7AB7A523}', 103, '{755934EE-5250-4480-980C-AB5A74770B38}', 4);
 
 -- --------------------------------------------------------
 
@@ -87,10 +129,10 @@ CREATE TABLE `hms_type` (
 --
 
 INSERT INTO `hms_type` (`id`, `name`) VALUES
+('{A10D8B22-8015-4D50-8D4B-BABF1F72B7D4}', 'Boys Hall'),
+('{452DD60B-A7EB-441D-9457-3A4EB70096C4}', 'Dorm'),
 ('{0BCFBE69-B3D3-40CF-B4C0-29228A62631B}', 'Girls Hall'),
 ('{3A4F1094-C5A5-4489-91C3-2E1F987FA0CB}', 'Staff Quarters'),
-('{452DD60B-A7EB-441D-9457-3A4EB70096C4}', 'Dorm'),
-('{A10D8B22-8015-4D50-8D4B-BABF1F72B7D4}', 'Boys Hall'),
 ('{CE01A104-B263-4601-8288-05431F61F0DE}', 'Teacher\'s Quarters');
 
 -- --------------------------------------------------------
@@ -186,6 +228,7 @@ CREATE TABLE `tbl_discussion_comment` (
 INSERT INTO `tbl_discussion_comment` (`CommentID`, `DiscussionID`, `Comment`, `CreatorID`, `CommentTime`, `CommentIDTop`) VALUES
 ('{00AADED4-6799-4F2C-BECB-ED50F7B03DDE}', '{C9FB74F8-8341-4706-BE40-93BFDC3444D0}', 'new comment', 'mkazi078@uottawa.ca', '2017-06-26 19:18:08', NULL),
 ('{1634B01B-5F82-43EF-96F8-E6149F488424}', '{C9FB74F8-8341-4706-BE40-93BFDC3444D0}', 'it is PIE', 'mkazi078@uottawa.ca', '0000-00-00 00:00:00', NULL),
+('{19918AD2-47E4-4BCA-8933-C4A970BBE22E}', '{C9FB74F8-8341-4706-BE40-93BFDC3444D0}', 'gg', 'test@test.com', '2017-08-18 14:27:56', NULL),
 ('{550A15FC-06B8-43DF-83EE-097E35920170}', '{C9FB74F8-8341-4706-BE40-93BFDC3444D0}', 'little difficult', 'mohidul@gmail.com', '0000-00-00 00:00:00', NULL),
 ('{A15517C2-883F-4E5E-B0AC-9A1DB556741F}', '{C9FB74F8-8341-4706-BE40-93BFDC3444D0}', 'Polymorphism, inheritence, encapsulation', 'mkazi078@uottawa.ca', '0000-00-00 00:00:00', NULL);
 
@@ -224,7 +267,15 @@ INSERT INTO `tbl_permission` (`ID`, `Name`, `Category`) VALUES
 ('DISCUSSION_U', 'DISCUSSION_U', 'DISCUSSION'),
 ('HOUSING_C', 'HOUSING_C', 'HOUSING'),
 ('HOUSING_D', 'HOUSING_D', 'HOUSING'),
+('HOUSING_DETAILS_C', 'HOUSING_DETAILS_C', 'HOUSING DETAILS'),
+('HOUSING_DETAILS_D', 'HOUSING_DETAILS_D', 'HOUSING DETAILS'),
+('HOUSING_DETAILS_R', 'HOUSING_DETAILS_R', 'HOUSING DETAILS'),
+('HOUSING_DETAILS_U', 'HOUSING_DETAILS_U', 'HOUSING DETAILS'),
 ('HOUSING_R', 'HOUSING_R', 'HOUSING'),
+('HOUSING_ROOM_ASSIGN_C', 'HOUSING_ROOM_ASSIGN_C', 'HOUSING ROOM ASSIGN'),
+('HOUSING_ROOM_ASSIGN_D', 'HOUSING_ROOM_ASSIGN_D', 'HOUSING ROOM ASSIGN'),
+('HOUSING_ROOM_ASSIGN_R', 'HOUSING_ROOM_ASSIGN_R', 'HOUSING ROOM ASSIGN'),
+('HOUSING_ROOM_ASSIGN_U', 'HOUSING_ROOM_ASSIGN_U', 'HOUSING ROOM ASSIGN'),
 ('HOUSING_ROOM_C', 'HOUSING_ROOM_C', 'HOUSING ROOM'),
 ('HOUSING_ROOM_D', 'HOUSING_ROOM_D', 'HOUSING ROOM'),
 ('HOUSING_ROOM_R', 'HOUSING_ROOM_R', 'HOUSING ROOM'),
@@ -333,62 +384,70 @@ CREATE TABLE `tbl_role_permission` (
 --
 
 INSERT INTO `tbl_role_permission` (`Row`, `RoleID`, `PermissionID`) VALUES
-(1798, 'administrator', 'DISCIPLINE_C'),
-(1799, 'administrator', 'DISCIPLINE_D'),
-(1800, 'administrator', 'DISCIPLINE_R'),
-(1801, 'administrator', 'DISCIPLINE_U'),
-(1802, 'administrator', 'DISCUSSION_C'),
-(1803, 'administrator', 'DISCUSSION_R'),
-(1804, 'administrator', 'DISCUSSION_D'),
-(1805, 'administrator', 'DISCUSSION_U'),
-(1806, 'administrator', 'DISCUSSION_CAT_C'),
-(1807, 'administrator', 'DISCUSSION_CAT_D'),
-(1808, 'administrator', 'DISCUSSION_CAT_U'),
-(1809, 'administrator', 'DISCUSSION_CAT_R'),
-(1810, 'administrator', 'DISCUSSION_COMMENT_C'),
-(1811, 'administrator', 'DISCUSSION_COMMENT_D'),
-(1812, 'administrator', 'DISCUSSION_COMMENT_R'),
-(1813, 'administrator', 'DISCUSSION_COMMENT_U'),
-(1814, 'administrator', 'HOUSING_C'),
-(1815, 'administrator', 'HOUSING_D'),
-(1816, 'administrator', 'HOUSING_R'),
-(1817, 'administrator', 'HOUSING_U'),
-(1818, 'administrator', 'HOUSING_ROOM_C'),
-(1819, 'administrator', 'HOUSING_ROOM_D'),
-(1820, 'administrator', 'HOUSING_ROOM_R'),
-(1821, 'administrator', 'HOUSING_ROOM_U'),
-(1822, 'administrator', 'HOUSING_TYPE_C'),
-(1823, 'administrator', 'HOUSING_TYPE_D'),
-(1824, 'administrator', 'HOUSING_TYPE_R'),
-(1825, 'administrator', 'HOUSING_TYPE_U'),
-(1826, 'administrator', 'PERMISSION_C'),
-(1827, 'administrator', 'PERMISSION_D'),
-(1828, 'administrator', 'PERMISSION_R'),
-(1829, 'administrator', 'PERMISSION_U'),
-(1830, 'administrator', 'POSITION_C'),
-(1831, 'administrator', 'POSITION_D'),
-(1832, 'administrator', 'POSITION_R'),
-(1833, 'administrator', 'POSITION_U'),
-(1834, 'administrator', 'ROLE_C'),
-(1835, 'administrator', 'ROLE_D'),
-(1836, 'administrator', 'ROLE_R'),
-(1837, 'administrator', 'ROLE_U'),
-(1838, 'administrator', 'SCHOOL_C'),
-(1839, 'administrator', 'SCHOOL_D'),
-(1840, 'administrator', 'SCHOOL_R'),
-(1841, 'administrator', 'SCHOOL_U'),
-(1842, 'administrator', 'TERM_C'),
-(1843, 'administrator', 'TERM_D'),
-(1844, 'administrator', 'TERM_R'),
-(1845, 'administrator', 'TERM_U'),
-(1846, 'administrator', 'USER_C'),
-(1847, 'administrator', 'USER_D'),
-(1848, 'administrator', 'USER_R'),
-(1849, 'administrator', 'USER_U'),
-(1850, 'administrator', 'YEAR_C'),
-(1851, 'administrator', 'YEAR_D'),
-(1852, 'administrator', 'YEAR_R'),
-(1853, 'administrator', 'YEAR_U');
+(2038, 'administrator', 'DISCIPLINE_C'),
+(2039, 'administrator', 'DISCIPLINE_D'),
+(2040, 'administrator', 'DISCIPLINE_R'),
+(2041, 'administrator', 'DISCIPLINE_U'),
+(2042, 'administrator', 'DISCUSSION_C'),
+(2043, 'administrator', 'DISCUSSION_D'),
+(2044, 'administrator', 'DISCUSSION_R'),
+(2045, 'administrator', 'DISCUSSION_U'),
+(2046, 'administrator', 'DISCUSSION_CAT_C'),
+(2047, 'administrator', 'DISCUSSION_CAT_D'),
+(2048, 'administrator', 'DISCUSSION_CAT_R'),
+(2049, 'administrator', 'DISCUSSION_CAT_U'),
+(2050, 'administrator', 'DISCUSSION_COMMENT_C'),
+(2051, 'administrator', 'DISCUSSION_COMMENT_D'),
+(2052, 'administrator', 'DISCUSSION_COMMENT_R'),
+(2053, 'administrator', 'DISCUSSION_COMMENT_U'),
+(2054, 'administrator', 'HOUSING_C'),
+(2055, 'administrator', 'HOUSING_D'),
+(2056, 'administrator', 'HOUSING_R'),
+(2057, 'administrator', 'HOUSING_U'),
+(2058, 'administrator', 'HOUSING_DETAILS_C'),
+(2059, 'administrator', 'HOUSING_DETAILS_D'),
+(2060, 'administrator', 'HOUSING_DETAILS_R'),
+(2061, 'administrator', 'HOUSING_DETAILS_U'),
+(2062, 'administrator', 'HOUSING_ROOM_C'),
+(2063, 'administrator', 'HOUSING_ROOM_D'),
+(2064, 'administrator', 'HOUSING_ROOM_R'),
+(2065, 'administrator', 'HOUSING_ROOM_U'),
+(2066, 'administrator', 'HOUSING_ROOM_ASSIGN_C'),
+(2067, 'administrator', 'HOUSING_ROOM_ASSIGN_D'),
+(2068, 'administrator', 'HOUSING_ROOM_ASSIGN_R'),
+(2069, 'administrator', 'HOUSING_ROOM_ASSIGN_U'),
+(2070, 'administrator', 'HOUSING_TYPE_D'),
+(2071, 'administrator', 'HOUSING_TYPE_R'),
+(2072, 'administrator', 'HOUSING_TYPE_U'),
+(2073, 'administrator', 'HOUSING_TYPE_C'),
+(2074, 'administrator', 'PERMISSION_C'),
+(2075, 'administrator', 'PERMISSION_D'),
+(2076, 'administrator', 'PERMISSION_R'),
+(2077, 'administrator', 'PERMISSION_U'),
+(2078, 'administrator', 'POSITION_C'),
+(2079, 'administrator', 'POSITION_D'),
+(2080, 'administrator', 'POSITION_R'),
+(2081, 'administrator', 'POSITION_U'),
+(2082, 'administrator', 'ROLE_C'),
+(2083, 'administrator', 'ROLE_D'),
+(2084, 'administrator', 'ROLE_R'),
+(2085, 'administrator', 'ROLE_U'),
+(2086, 'administrator', 'SCHOOL_C'),
+(2087, 'administrator', 'SCHOOL_D'),
+(2088, 'administrator', 'SCHOOL_R'),
+(2089, 'administrator', 'SCHOOL_U'),
+(2090, 'administrator', 'TERM_C'),
+(2091, 'administrator', 'TERM_D'),
+(2092, 'administrator', 'TERM_R'),
+(2093, 'administrator', 'TERM_U'),
+(2094, 'administrator', 'USER_C'),
+(2095, 'administrator', 'USER_D'),
+(2096, 'administrator', 'USER_R'),
+(2097, 'administrator', 'USER_U'),
+(2098, 'administrator', 'YEAR_C'),
+(2099, 'administrator', 'YEAR_D'),
+(2100, 'administrator', 'YEAR_R'),
+(2101, 'administrator', 'YEAR_U');
 
 -- --------------------------------------------------------
 
@@ -457,6 +516,7 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`ID`, `UniversityID`, `Email`, `Password`, `FirstName`, `LastName`, `Status`, `IsLogged`, `IsArchived`, `IsDeleted`) VALUES
+('imran@imran.com', '150203', 'imran@imran.com', '123', 'Imran', 'Hossain', 'pending', NULL, NULL, NULL),
 ('pp@cse.com', '150215', 'pp@cse.com', '123', 'Pranta', 'Protik', 'approved', NULL, NULL, NULL),
 ('test@test.com', '020201', 'test@test.com', '123', 'I AM', 'ADMIN', 'approved', NULL, NULL, NULL);
 
@@ -481,6 +541,7 @@ CREATE TABLE `tbl_user_details` (
 --
 
 INSERT INTO `tbl_user_details` (`ID`, `FatherName`, `MotherName`, `PermanentAddress`, `HomePhone`, `CurrentAddress`, `MobilePhone`) VALUES
+('imran@imran.com', NULL, NULL, NULL, NULL, NULL, NULL),
 ('pp@cse.com', NULL, NULL, NULL, NULL, NULL, NULL),
 ('test@test.com', 'My father', 'My mother', 'My address', '04100000', 'Same', '0171100000');
 
@@ -541,7 +602,8 @@ CREATE TABLE `tbl_user_role` (
 INSERT INTO `tbl_user_role` (`ID`, `UserID`, `RoleID`) VALUES
 (98, 'test@test.com', 'administrator'),
 (99, 'test@test.com', 'teacher'),
-(100, 'pp@cse.com', 'student');
+(100, 'pp@cse.com', 'student'),
+(101, 'imran@imran.com', 'student');
 
 -- --------------------------------------------------------
 
@@ -587,7 +649,15 @@ ALTER TABLE `hms_assign`
 --
 ALTER TABLE `hms_housing`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`),
   ADD KEY `type_id` (`type_id`);
+
+--
+-- Indexes for table `hms_housing_details`
+--
+ALTER TABLE `hms_housing_details`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `housing_id` (`housing_id`);
 
 --
 -- Indexes for table `hms_room`
@@ -600,7 +670,8 @@ ALTER TABLE `hms_room`
 -- Indexes for table `hms_type`
 --
 ALTER TABLE `hms_type`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`);
 
 --
 -- Indexes for table `tbl_discipline`
@@ -696,7 +767,7 @@ ALTER TABLE `tbl_year`
 -- AUTO_INCREMENT for table `tbl_role_permission`
 --
 ALTER TABLE `tbl_role_permission`
-  MODIFY `Row` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1854;
+  MODIFY `Row` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2102;
 --
 -- AUTO_INCREMENT for table `tbl_user_position`
 --
@@ -706,7 +777,7 @@ ALTER TABLE `tbl_user_position`
 -- AUTO_INCREMENT for table `tbl_user_role`
 --
 ALTER TABLE `tbl_user_role`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 --
 -- Constraints for dumped tables
 --
@@ -724,6 +795,12 @@ ALTER TABLE `hms_assign`
 --
 ALTER TABLE `hms_housing`
   ADD CONSTRAINT `hms_housing_ibfk_1` FOREIGN KEY (`type_id`) REFERENCES `hms_type` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `hms_housing_details`
+--
+ALTER TABLE `hms_housing_details`
+  ADD CONSTRAINT `hms_housing_details_ibfk_1` FOREIGN KEY (`housing_id`) REFERENCES `hms_housing` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `hms_room`

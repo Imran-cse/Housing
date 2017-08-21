@@ -11,18 +11,22 @@ Class HousingRoomBAO{
 
 	private $_DB;
 	private $_HousingRoomDAO;
+	//private $_h_id;
 
 	function HousingRoomBAO(){
 
 		$this->_HousingRoomDAO = new HousingRoomDAO();
+		//$this->_h_id = new HousingRoomBAO();
 
 	}
 
 	//get all Housing Room value
-	public function getAllHousingRoom(){
+	public function getAllHousingRoom($hid){
 
 		$Result = new Result();	
-		$Result = $this->_HousingRoomDAO->getAllHousingRoom();
+		
+		
+		$Result = $this->_HousingRoomDAO->getAllHousingRoom($hid);
 		
 		if(!$Result->getIsSuccess())
 			$Result->setResultObject("Database failure in HousingRoomDAO.getAllHousingRoom()");		
@@ -30,7 +34,6 @@ Class HousingRoomBAO{
 		return $Result;
 	}
 
-	
 	
 
 	//create Housing Room funtion with the Housing object
@@ -76,6 +79,17 @@ Class HousingRoomBAO{
 
 		return $Result;
 
+
+	}
+	public function getHousingIdFromRoomId($HousingRoomId)
+	{
+		$Result = new Result();	
+		$Result = $this->_HousingRoomDAO->getHousingIdFromRoomId($HousingRoomId);
+		
+		if(!$Result->getIsSuccess())
+			$Result->setResultObject("Database failure in HousingRoomDAO.getHousingIdFromRoomId()");	//getNameFromId edit	
+
+		return $Result;
 
 	}
 

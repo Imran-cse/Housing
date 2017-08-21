@@ -3,6 +3,7 @@
 include_once 'blade/view.housing.blade.php';
 include_once './common/class.common.php';
 include_once './common/class.common.housing.php';
+
 ?>
 
 
@@ -20,7 +21,7 @@ include_once './common/class.common.housing.php';
 						<div class="col-sm-6">
 
 							<input type="text" class="form-control"  name="txtHousing" placeholder="Housing Name" value="<?php 
-							if(isset($_GET['edit'])) echo $getROW->getName();  ?>" />
+							if(isset($_GET['edit'])) echo $getROW->getName();  ?>" required />
 						
 						</div>
 					</div>
@@ -63,7 +64,7 @@ include_once './common/class.common.housing.php';
 						<label class="control-label col-sm-4" for="txtFloor">Number of Floors : </label>
 						<div class="col-sm-6">	
 							<input type="text" class="form-control"  name="txtFloor" placeholder="Floors" value="<?php 
-							if(isset($_GET['edit'])) echo $getROW->getFloor();  ?>" />
+							if(isset($_GET['edit'])) echo $getROW->getFloor();  ?>" required />
 						</div>
 					</div>
 
@@ -71,7 +72,7 @@ include_once './common/class.common.housing.php';
 						<label class="control-label col-sm-4" for="txtRoom">Number of Rooms : </label>
 						<div class="col-sm-6">	
 							<input type="text" class="form-control"  name="txtRoom" placeholder="Rooms" value="<?php 
-							if(isset($_GET['edit'])) echo $getROW->getRoom();  ?>" />
+							if(isset($_GET['edit'])) echo $getROW->getRoom();  ?>" required />
 						</div>
 					</div>
 
@@ -86,13 +87,13 @@ include_once './common/class.common.housing.php';
 								if(isset($_GET['edit']))
 								{
 									?>
-									<button type="submit" name="update">Update</button>
+									<button type="submit" name="update" class="btn btn-default">Update</button>
 									<?php
 								}
 								else
 								{
 									?>
-									<button type="submit" name="save">Save</button>
+									<button type="submit" name="save" class="btn btn-default">Save</button>
 									<?php
 								}
 								?>
@@ -129,7 +130,7 @@ include_once './common/class.common.housing.php';
 					?>
 				    <tr>
 				    <td>
-				    <a href="housing_room.php?view=<?php echo $Housing->getID(); ?>" onclick="return ; " > <?php echo $Housing->getName(); ?></a>
+				    <a href="housing_room.php?view=<?php echo $Housing->getID();  ?>&h_id=<?php echo $Housing->getID(); ?>" onclick="return ; " > <?php echo $Housing->getName(); ?></a>
 				    </td>
 					    <td><?php $id = $Housing->getTypeId();
 					    	$Result2 = $_HousingBAO->getNameFromTypeID($id);
@@ -145,7 +146,7 @@ include_once './common/class.common.housing.php';
 					    </td>
 
 					    <td><?php echo $Housing->getFloor(); ?></td>
-					    <td><a href="?view=<?php echo $Housing->getID(); ?>" onclick="return;" >Details</a></td>
+					    <td><a href="housing_details.php?view=<?php echo $Housing->getID(); ?>&h_id=<?php echo $Housing->getID(); ?>" onclick="return;" >Details Add</a></td>
 					    <td><a href="?edit=<?php echo $Housing->getID(); ?>" onclick="return confirm('Are You Sure to edit !'); " >Edit</a></td>
 					    <td><a href="?del=<?php echo $Housing->getID(); ?>" onclick="return confirm('Are You Sure to delete!'); " >Delete</a></td>
 				    </tr>
@@ -165,6 +166,6 @@ include_once './common/class.common.housing.php';
 
 </div>
 
-<?php  echo '<br> log:: exit view.housing.php'; ?>
+
 
 

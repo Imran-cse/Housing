@@ -18,7 +18,7 @@ include_once './common/class.common.housing.php';
                   	<label class="control-label col-sm-4" for="txtType">Type Name:</label>
                   	<div class="col-sm-6">
     					<input type="text" name="txtType" class="form-control"
-    					 placeholder="Type Name" value="<?php if(isset($_GET['edit'])) echo $getROW->getName();  ?>" />
+    					 placeholder="Type Name" value="<?php if(isset($_GET['edit'])) echo $getROW->getName();  ?>" required  />
     			  	</div>
     			</div>
 
@@ -28,13 +28,13 @@ include_once './common/class.common.housing.php';
     						if(isset($_GET['edit']))
     						{
     							?>
-    							<button type="submit" name="update">Update</button>
+    							<button type="submit" name="update" class="btn btn-default">Update</button>
     							<?php
     						}
     						else
     						{
     							?>
-    							<button type="submit" name="save">Save</button>
+    							<button type="submit" name="save" class="btn btn-default">Save</button>
     							<?php
     						}
     						?>

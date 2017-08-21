@@ -9,21 +9,22 @@ include_once 'class.housingdao.php';
 Class HousingRoomDAO{
 
 	private $_DB;
-	private $_Housing;
-
+	private $_HousingRoom;
+	
 	function HousingRoomDAO(){
 
 		$this->_DB = DBUtil::getInstance();
-		$this->_Housing= new Housing();
+		$this->_HousingRoom= new HousingRoom();
+		
 
 	}
 
 	// get all the Housing from the database using the database query
-	public function getAllHousingRoom(){
+	public function getAllHousingRoom($hid){
 
 		$HousingRoomList = array();
-		$h_id = $_GET['view'];
-		$this->_DB->doQuery("SELECT * FROM hms_room WHERE house_id = '".$h_id."'");
+
+		$this->_DB->doQuery("SELECT * FROM hms_room WHERE house_id = '".$hid."' ORDER BY room_no ASC");
 
 		$rows = $this->_DB->getAllRows();
 
@@ -134,9 +135,9 @@ Class HousingRoomDAO{
 	//delete an Housing Room based on its id of the database
 	public function deleteHousingRoom($HousingRoom){
 
-
+		
 		$SQL = "DELETE from hms_room where room_id ='".$HousingRoom->getRoomId()."'";
-	
+		
 		$SQL = $this->_DB->doQuery($SQL);
 
 	 	$Result = new Result();
