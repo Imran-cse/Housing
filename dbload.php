@@ -54,7 +54,7 @@ $sql = "CREATE TABLE hms_assign (
   user_id varchar(40) NOT NULL,
   house_id varchar(128) NOT NULL,
   room_id varchar(128) NOT NULL,
-  
+  FOREIGN KEY (user_id) REFERENCES tbl_user(ID) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (house_id) REFERENCES hms_housing(id) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (room_id) REFERENCES hms_room(room_id) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB";

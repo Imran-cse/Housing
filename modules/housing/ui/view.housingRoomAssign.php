@@ -147,70 +147,32 @@ $_SESSION["rid"] = $_GET['r_id'];
 
 						$id = $HousingRoomAssign->getUserId();
 	                    $Result2 = $_HousingRoomAssignBAO->getUserFromId($id);
-
-					?>
-				    <tr>
-				    	
-				    	<td><?php 
-				    		
-                            if ($Result2->getIsSuccess()) {
+	                    if ($Result2->getIsSuccess()) {
 
                                 $User = $Result2->getResultObject();
 
-                                echo $User->getUniversityID();
-                            }
-                            
-                            ?>
-                                
-                        </td>
+						?>
+					    <tr>
+					    	
+					    	<td><a href="user_details.php?id=<?php echo $User->getID();?>" onclick="return ; " > <?php 
+					    	echo $User->getUniversityID(); ?></a>
+					    	</td>
 
-                        <td><?php 
-				    		
-                            if ($Result2->getIsSuccess()) {
+	                        <td><?php echo $User->getEmail();?></td>
 
-                                $User = $Result2->getResultObject();
+	                        <td><?php echo $User->getFirstName();?></td>
+	                        <td><?php echo $User->getLastName();?></td>
+					    	
+						    
 
-                                echo $User->getEmail();
-                            }
-                            
-                            ?>
-                                
-                        </td>
-
-                        <td><?php 
-				    		
-                            if ($Result2->getIsSuccess()) {
-
-                                $User = $Result2->getResultObject();
-
-                                echo $User->getFirstName();
-                            }
-                            
-                            ?>
-                                
-                        </td>
-                        <td><?php 
-				    		
-                            if ($Result2->getIsSuccess()) {
-
-                                $User = $Result2->getResultObject();
-
-                                echo $User->getLastName();
-                            }
-                            
-                            ?>
-                                
-                        </td>
-				    	
-					    
-
-					    <td><a href="?del=<?php echo $HousingRoomAssign->getUserId(); ?>&h_id=<?php echo $HousingRoomAssign->getHouseId(); ?>&r_id=<?php echo $HousingRoomAssign->getRoomId(); ?>" onclick="return confirm('Are You Sure to delete!'); " >Delete</a></td>
-				    </tr>
+						    <td><a href="?del=<?php echo $HousingRoomAssign->getUserId(); ?>&h_id=<?php echo $HousingRoomAssign->getHouseId(); ?>&r_id=<?php echo $HousingRoomAssign->getRoomId(); ?>" onclick="return confirm('Are You Sure to delete!'); " >Delete</a></td>
+					    </tr>
 			    <?php
 
 				}
 
 			}
+		}
 			else{
 
 				echo $Result->getResultObject(); //giving failure message
