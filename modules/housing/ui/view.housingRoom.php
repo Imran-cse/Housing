@@ -15,11 +15,11 @@ $_SESSION["hid"] = $_GET['h_id'];
 <div class="panel panel-default">
 
     <div class="panel-heading">Housing Room</div>
-    <div class="panel-heading">
+    <div class="panel-heading" align="center">
         <?php
                                         
 
-        $var = '<select name="txtType" class="form-control"  id="select-from-type">';
+        $var = '';
         $Result = $_HousingRoomBAO->getNameFromId($_SESSION["hid"]);
 
             //if DAO access is successful to load all the Roles then show them one by one
@@ -102,7 +102,7 @@ $_SESSION["hid"] = $_GET['h_id'];
                     ?>
                     <tr>
                     <td>
-                    <a href="housingRoom_assign.php?view=<?php echo $HousingRoom->getRoomId();?>&h_id=<?php echo $HousingRoom->getHouseId(); ?>" onclick="return ; " > <?php echo $HousingRoom->getRoomNo(); ?></a>
+                    <a href="housing_room_assign.php?view=<?php echo $HousingRoom->getRoomId();?>&h_id=<?php echo $HousingRoom->getHouseId(); ?>&r_id=<?php echo $HousingRoom->getRoomId(); ?>" onclick="return ; " > <?php echo $HousingRoom->getRoomNo(); ?></a>
                     </td>
                         <td><?php $id = $HousingRoom->getHouseId();
                             $Result2 = $_HousingRoomBAO->getNameFromId($id);

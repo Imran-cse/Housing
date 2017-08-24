@@ -13,7 +13,7 @@ $_SESSION["hid"] = $_GET['h_id'];
 <div class="panel panel-default">
     
     <div class="panel-heading">Housing</div>
-	    <div class="panel-heading">
+	    <div class="panel-heading" align="center">
 	        <?php
 	                                        
 

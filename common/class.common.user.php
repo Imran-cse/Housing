@@ -14,6 +14,7 @@ class User{
     private $_IsDeleted=0;
     private $_Roles;
     private $_Positions;
+   
 
 
     public function setID ( $ID ) {
@@ -83,7 +84,7 @@ class User{
     }
 
     public function setIsLogged( $IsLogged ) {
-        $this->IsLogged = $IsLogged;
+        $this->_IsLogged = $IsLogged;
     }
 
     public function getIsLogged() {
@@ -123,6 +124,8 @@ class User{
     public function getPositions() {
         return $this->_Positions;
     }
+
+    
 
 }
 

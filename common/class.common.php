@@ -96,7 +96,7 @@ class Result{
 
         return $this->_ResultObject;
     }
-
+    
 }
 
 
@@ -197,7 +197,7 @@ class PageUtil{
     public static $HOUSING='housing.php';
     public static $HOUSING_ROOM='housing_room.php';
     public static $HOUSING_DETAIL='housing_details.php';
-    public static $HOUSING_ROOM_ASSIGN='housingRoom_assign.php';
+    public static $HOUSING_ROOM_ASSIGN='housing_room_assign.php';
     
 
 
