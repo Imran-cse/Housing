@@ -8,41 +8,75 @@ $_HousingDetailsBAO = new HousingDetailsBAO();
 $_DB = DBUtil::getInstance();
 
 /* saving a new Housing account*/
-if(isset($_POST['save']))
+if(isset($_POST['provostSave']))
 {
 	 
-	 $HousingDetails = new HousingDetails();	
-	 $HousingDetails->setID(Util::getGUID());
-     $HousingDetails->setHousingId($_GET['view']);
-     $HousingDetails->setProvost($_DB->secureInput($_POST['txtProvost']));
-     $HousingDetails->setAssProvost($_DB->secureInput($_POST['txtAssProvost']));
-     $HousingDetails->setOfficer($_DB->secureInput($_POST['txtOfficer']));
-     $HousingDetails->setDescription($_DB->secureInput($_POST['txtDescription']));
-     $HousingDetails->setWorkers($_DB->secureInput($_POST['txtWorkers']));
-     
-
-	 $_HousingDetailsBAO->createHousingDetails($HousingDetails);		 
+	 $HousingProvost = new HousingProvost();	
+	 $HousingProvost->setID(Util::getGUID());
+     $HousingProvost->setHousingId($_GET['view']);
+     $HousingProvost->setProvost($_DB->secureInput($_POST['txtProvost']));
+   
+	 $_HousingDetailsBAO->createHousingProvost($HousingProvost);		 
 }
+
+if(isset($_POST['assProvostSave']))
+{
+	 
+	 $HousingAssistantProvost = new HousingAssistantProvost();	
+	 $HousingAssistantProvost->setID(Util::getGUID());
+     $HousingAssistantProvost->setHousingId($_GET['view']);
+     $HousingAssistantProvost->setAssProvost($_DB->secureInput($_POST['txtAssProvost']));
+   
+	 $_HousingDetailsBAO->createHousingAssProvost($HousingAssistantProvost);		 
+}
+
+if(isset($_POST['employeeSave']))
+{
+	 
+	 $HousingEmployee = new HousingEmployee();	
+	 $HousingEmployee->setID(Util::getGUID());
+     $HousingEmployee->setHousingId($_GET['view']);
+     $HousingEmployee->setOfficer($_DB->secureInput($_POST['txtOfficer']));
+   
+	 $_HousingDetailsBAO->createHousingEmployee($HousingEmployee);		 
+}
+
+
+
 
 
 /* deleting an existing Housing */
-if(isset($_GET['del']) && isset($_GET['view']))
+if(isset($_GET['provostDel']) && isset($_GET['view']))
 {
 
-	$HousingDetails = new HousingDetails();	
-	$HousingDetails->setID($_GET['del']);	
-	$_HousingDetailsBAO->deleteHousingDetails($HousingDetails); //reading the Housing object from the result object
+	$HousingProvost = new HousingProvost();	
+	$HousingProvost->setID($_GET['provostDel']);	
+	$_HousingDetailsBAO->deleteHousingProvost($HousingProvost); //reading the Housing object from the result object
 
-	header("Location:".PageUtil::$HOUSING_DETAIL."?h_id=".$_GET['view']);
+	header("Location:".PageUtil::$HOUSING_DETAIL."?h_id=".$_GET['view']. "&view=".$_GET['view']);
 }
 
-if(isset($_GET['view']))
+if(isset($_GET['assProvostDel']) && isset($_GET['view']))
 {
-	$HousingDetails = new HousingDetails();	
-	$HousingDetails->setID($_GET['view']);	
-	$getROW = $_HousingDetailsBAO->readHousingDetails($HousingDetails)->getResultObject(); //reading the Housing object from the result object
 
+	$HousingAssistantProvost = new HousingAssistantProvost();	
+	$HousingAssistantProvost->setID($_GET['assProvostDel']);	
+	$_HousingDetailsBAO->deleteHousingAssistantProvost($HousingAssistantProvost); 
+
+	header("Location:".PageUtil::$HOUSING_DETAIL."?h_id=".$_GET['view']. "&view=".$_GET['view']);
 }
+
+if(isset($_GET['employeeDel']) && isset($_GET['view']))
+{
+
+	$HousingEmployee = new HousingEmployee();	
+	$HousingEmployee->setID($_GET['employeeDel']);	
+	$_HousingDetailsBAO->deleteHousingEmployee($HousingEmployee); //reading the Housing object from the result object
+
+	header("Location:".PageUtil::$HOUSING_DETAIL."?h_id=".$_GET['view']. "&view=".$_GET['view']);
+}
+
+
 
 
 

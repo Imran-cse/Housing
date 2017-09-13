@@ -57,7 +57,7 @@ $_SESSION["rid"] = $_GET['r_id'];
 		<div id="form">
 			<form method="post" class="form-horizontal">
 				<div class="form-group">
-					<label class="control-label col-sm-4" for="txtType">User Name: </label>			
+					<label class="control-label col-sm-4" for="txtType">User ID: </label>			
 					<div class="col-sm-6">	
 					    <?php
 					    

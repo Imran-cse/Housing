@@ -1275,3 +1275,12 @@
 - [Thu, 24 Aug 17 21:01:02 +0000]	debug:	exit blade.user.php	@file:"C:\wamp64\www\Housing\util\class.util.php", object:"LogUtil", line:374
 - [Thu, 24 Aug 17 21:06:05 +0000]	debug:	exit blade.login.php	@file:"C:\wamp64\www\Housing\util\class.util.php", object:"LogUtil", line:374
 - [Thu, 24 Aug 17 21:06:05 +0000]	debug:	exit blade.login.php	@file:"C:\wamp64\www\Housing\util\class.util.php", object:"LogUtil", line:374
+- [Thu, 07 Sep 17 16:19:54 +0000]	debug:	exit blade.login.php	@file:"C:\wamp64\www\Housing\util\class.util.php", object:"LogUtil", line:374
+- [Thu, 07 Sep 17 16:19:58 +0000]	debug:	exit blade.login.php	@file:"C:\wamp64\www\Housing\util\class.util.php", object:"LogUtil", line:374
+- [Thu, 07 Sep 17 16:22:03 +0000]	debug:	exit blade.user_details.php	@file:"C:\wamp64\www\Housing\util\class.util.php", object:"LogUtil", line:374
+- [Thu, 07 Sep 17 16:43:47 +0000]	debug:	exit blade.user_details.php	@file:"C:\wamp64\www\Housing\util\class.util.php", object:"LogUtil", line:374
+- [Thu, 07 Sep 17 22:35:33 +0000]	debug:	exit blade.login.php	@file:"C:\wamp64\www\Housing\util\class.util.php", object:"LogUtil", line:374
+- [Thu, 07 Sep 17 22:35:33 +0000]	debug:	exit blade.login.php	@file:"C:\wamp64\www\Housing\util\class.util.php", object:"LogUtil", line:374
+- [Wed, 13 Sep 17 13:41:24 +0000]	debug:	exit blade.login.php	@file:"C:\wamp64\www\Housing\util\class.util.php", object:"LogUtil", line:374
+- [Wed, 13 Sep 17 13:41:26 +0000]	debug:	exit blade.login.php	@file:"C:\wamp64\www\Housing\util\class.util.php", object:"LogUtil", line:374
+- [Wed, 13 Sep 17 14:57:07 +0000]	debug:	exit blade.user_details.php	@file:"C:\wamp64\www\Housing\util\class.util.php", object:"LogUtil", line:374

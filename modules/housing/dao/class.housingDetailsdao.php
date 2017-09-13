@@ -9,48 +9,105 @@ include_once 'class.housingdao.php';
 Class HousingDetailsDAO{
 
 	private $_DB;
-	private $_HousingDetails;
+	private $_HousingProvost;
+	private $_HousingAssistantProvost;
 
 	function HousingDetailsDAO(){
 
 		$this->_DB = DBUtil::getInstance();
-		$this->_HousingDetails= new HousingDetails();
+		$this->_HousingProvost= new HousingProvost();
+		$this->_HousingAssistantProvost= new HousingAssistantProvost();
 
 	}
 
 	// get all the Housing from the database using the database query
-	public function getAllHousingDetails(){
+	
 
-		$HousingDetailsList = array();
-		$h_id = $_GET['h_id'];
-		$this->_DB->doQuery("SELECT * FROM hms_housing_details WHERE housing_id = '".$h_id."'");
+	public function getAllProvost($id)
+	{
+		$HousingProvostList = array();
+		
+		$this->_DB->doQuery("SELECT * FROM hms_provost WHERE house_id = '".$id."'");
 
 		$rows = $this->_DB->getAllRows();
 
 		for($i = 0; $i < sizeof($rows); $i++) {
 			$row = $rows[$i];
-			$this->_HousingDetails = new HousingDetails();
+			$this->_HousingProvost = new HousingProvost();
 
-		    $this->_HousingDetails->setID ( $row['id']);
-		    $this->_HousingDetails->setHousingId( $row['housing_id'] );
-		    $this->_HousingDetails->setProvost( $row['provost'] );
-		    $this->_HousingDetails->setAssProvost( $row['ass_provost'] );
-		    $this->_HousingDetails->setOfficer( $row['officer'] );
-		    $this->_HousingDetails->setDescription( $row['description'] );
-		    $this->_HousingDetails->setWorkers( $row['no_of_workers'] );
+		    $this->_HousingProvost->setID ( $row['provost_id']);
+		    $this->_HousingProvost->setHousingId( $row['house_id'] );
+		    $this->_HousingProvost->setProvost( $row['provost_name'] );
+		    
 		    
 
 
-		    $HousingDetailsList[]=$this->_HousingDetails;
+		    $HousingProvostList[]=$this->_HousingProvost;
    
 		}
 
-		//todo: LOG util with level of log
+		$Result = new Result();
+		$Result->setIsSuccess(1);
+		$Result->setResultObject($HousingProvostList);
 
+		return $Result;
+	}
+	public function getAllAssistantProvost($id)
+	{
+		$HousingAssistantProvostList = array();
+		
+		$this->_DB->doQuery("SELECT * FROM hms_assistant_provost WHERE house_id = '".$id."'");
+
+		$rows = $this->_DB->getAllRows();
+
+		for($i = 0; $i < sizeof($rows); $i++) {
+			$row = $rows[$i];
+			$this->_HousingAssistantProvost = new HousingAssistantProvost();
+
+		    $this->_HousingAssistantProvost->setID ( $row['assistant_provost_id']);
+		    $this->_HousingAssistantProvost->setHousingId( $row['house_id'] );
+		    $this->_HousingAssistantProvost->setAssProvost( $row['name'] );
+		    
+		    
+
+
+		    $HousingAssistantProvostList[]=$this->_HousingAssistantProvost;
+   
+		}
 
 		$Result = new Result();
 		$Result->setIsSuccess(1);
-		$Result->setResultObject($HousingDetailsList);
+		$Result->setResultObject($HousingAssistantProvostList);
+
+		return $Result;
+	}
+
+	public function getAllEmployee($id)
+	{
+		$HousingEmployeeList = array();
+		
+		$this->_DB->doQuery("SELECT * FROM hms_employee WHERE house_id = '".$id."'");
+
+		$rows = $this->_DB->getAllRows();
+
+		for($i = 0; $i < sizeof($rows); $i++) {
+			$row = $rows[$i];
+			$this->_HousingEmployee = new HousingEmployee();
+
+		    $this->_HousingEmployee->setID ( $row['employee_id']);
+		    $this->_HousingEmployee->setHousingId( $row['house_id'] );
+		    $this->_HousingEmployee->setOfficer( $row['name'] );
+		    
+		    
+
+
+		    $HousingEmployeeList[]=$this->_HousingEmployee;
+   
+		}
+
+		$Result = new Result();
+		$Result->setIsSuccess(1);
+		$Result->setResultObject($HousingEmployeeList);
 
 		return $Result;
 	}
@@ -78,21 +135,15 @@ Class HousingDetailsDAO{
 
 
 	//create Housing Details funtion with the Housing object
-	public function createHousingDetails($HousingDetails){
+	public function createHousingProvost($HousingProvost){
 
-		$Id=$HousingDetails->getID();
+		$Id=$HousingProvost->getID();
 		
-		$HousingId=$HousingDetails->getHousingId();
-		$Provost=$HousingDetails->getProvost();
-		$AssProvost=$HousingDetails->getAssProvost();
-		$Officer=$HousingDetails->getOfficer();
-		$Description=$HousingDetails->getDescription();
-		$Workers=$HousingDetails->getWorkers();
-		
+		$HousingId=$HousingProvost->getHousingId();
+		$Provost=$HousingProvost->getProvost();
 	
-
-		$SQL = "INSERT INTO hms_housing_details (id,housing_id,provost,ass_provost,officer,description,no_of_workers) 
-				VALUES('$Id','$HousingId','$Provost','$AssProvost','$Officer','$Description','$Workers')";
+		$SQL = "INSERT INTO hms_provost (provost_id,house_id,provost_name) 
+				VALUES('$Id','$HousingId','$Provost')";
 
 		$SQL = $this->_DB->doQuery($SQL);		
 		
@@ -103,49 +154,87 @@ Class HousingDetailsDAO{
 		return $Result;
 	}
 
+	public function createHousingAssProvost($HousingAssProvost){
+
+		$Id=$HousingAssProvost->getID();
+		
+		$HousingId=$HousingAssProvost->getHousingId();
+		
+		$AssProvost=$HousingAssProvost->getAssProvost();
+		
+		
 	
 
+		$SQL = "INSERT INTO hms_assistant_provost (assistant_provost_id,house_id,name) 
+				VALUES('$Id','$HousingId','$AssProvost')";
 
-	//read an Housing Details object based on its id form Housing object
-	public function readHousingDetails($HousingDetails){
+		$SQL = $this->_DB->doQuery($SQL);		
 		
-		
-		$SQL = "SELECT * FROM hms_housing_details WHERE housing_id='".$_GET['view']."'";
-		$this->_DB->doQuery($SQL);
-
-
-		//reading the top row for this Housing Details from the database
-		$row = $this->_DB->getTopRow();
-
-		$this->_HousingDetails= new HousingDetails();
-
-		//preparing the Housing Details object
-	    $this->_HousingDetails->setID ( $row['id']);
-	    $this->_HousingDetails->setHousingId( $row['housing_id'] );
-	    $this->_HousingDetails->setProvost( $row['provost'] );
-	    $this->_HousingDetails->setAssProvost( $row['ass_provost'] );
-	    $this->_HousingDetails->setOfficer( $row['officer'] );
-	    $this->_HousingDetails->setDescription( $row['description'] );
-	    $this->_HousingDetails->setWorkers( $row['no_of_workers'] );
-    
-
-
-
-
 	 	$Result = new Result();
 		$Result->setIsSuccess(1);
-		$Result->setResultObject($this->_HousingDetails);
+		$Result->setResultObject($SQL);
+
+		return $Result;
+	}
+	public function createHousingEmployee($HousingEmployee){
+
+		$Id=$HousingEmployee->getID();
+		
+		$HousingId=$HousingEmployee->getHousingId();
+		$Officer=$HousingEmployee->getOfficer();
+		
+		
+	
+
+		$SQL = "INSERT INTO hms_employee (employee_id,house_id,name) 
+				VALUES('$Id','$HousingId','$Officer')";
+
+		$SQL = $this->_DB->doQuery($SQL);		
+		
+	 	$Result = new Result();
+		$Result->setIsSuccess(1);
+		$Result->setResultObject($SQL);
 
 		return $Result;
 	}
 
-	
+
 
 	//delete an Housing Details based on its id of the database
-	public function deleteHousingDetails($HousingDetails){
+	public function deleteHousingProvost($HousingProvost){
 
 
-		$SQL = "DELETE from hms_housing_details where id ='".$HousingDetails->getID()."'";
+		$SQL = "DELETE from hms_provost where provost_id ='".$HousingProvost->getID()."'";
+	
+		$SQL = $this->_DB->doQuery($SQL);
+
+	 	$Result = new Result();
+		$Result->setIsSuccess(1);
+		$Result->setResultObject($SQL);
+
+		return $Result;
+
+	}
+
+	public function deleteHousingAssistantProvost($HousingAssistantProvost){
+
+
+		$SQL = "DELETE from hms_assistant_provost where assistant_provost_id ='".$HousingAssistantProvost->getID()."'";
+	
+		$SQL = $this->_DB->doQuery($SQL);
+
+	 	$Result = new Result();
+		$Result->setIsSuccess(1);
+		$Result->setResultObject($SQL);
+
+		return $Result;
+
+	}
+
+	public function deleteHousingEmployee($HousingEmployee){
+
+
+		$SQL = "DELETE from hms_employee where employee_id ='".$HousingEmployee->getID()."'";
 	
 		$SQL = $this->_DB->doQuery($SQL);
 

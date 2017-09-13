@@ -69,18 +69,12 @@ class Housing{
 
 //Class for Housing Details
 
-class HousingDetails{
+class HousingProvost{
     private $_ID;
     private $_housing_id;
     private $_provost;
-    private $_ass_provost;
-    private $_officer;
-    private $_description;
-    private $_no_of_workers;
     
-
-
-
+ 
     public function setID ( $ID ) {
         $this->_ID = $ID;
     }
@@ -101,31 +95,68 @@ class HousingDetails{
     public function getProvost(){
         return $this->_provost;
     }
+    
+    
+}
+
+class HousingAssistantProvost{
+    private $_ID;
+    private $_housing_id;
+    private $_ass_provost;
+  
+    public function setID ( $ID ) {
+        $this->_ID = $ID;
+    }
+
+    public function getID () {
+        return $this->_ID;
+    }
+    public function setHousingId ($Hid){
+        $this->_housing_id = $Hid;
+    }
+    public function getHousingId(){
+        return $this->_housing_id;
+    }
+
+    
     public function setAssProvost ($ass_provost){
         $this->_ass_provost = $ass_provost;
     }
     public function getAssProvost(){
         return $this->_ass_provost;
     }
+    
+    
+}
+
+class HousingEmployee{
+    private $_ID;
+    private $_housing_id;
+    private $_officer;
+    
+ 
+    public function setID ( $ID ) {
+        $this->_ID = $ID;
+    }
+
+    public function getID () {
+        return $this->_ID;
+    }
+    public function setHousingId ($Hid){
+        $this->_housing_id = $Hid;
+    }
+    public function getHousingId(){
+        return $this->_housing_id;
+    }
+
+    
     public function setOfficer ($officer){
         $this->_officer = $officer;
     }
     public function getOfficer(){
         return $this->_officer;
     }
-    public function setDescription ($Description){
-        $this->_description = $Description;
-    }
-    public function getDescription(){
-        return $this->_description;
-    }
-
-    public function setWorkers ($no_of_workers){
-        $this->_no_of_workers = $no_of_workers;
-    }
-    public function getWorkers(){
-        return $this->_no_of_workers;
-    }
+    
     
 }
 
