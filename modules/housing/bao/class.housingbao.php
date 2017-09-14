@@ -3,7 +3,6 @@
 include_once './util/class.util.php';
 include_once '/../dao/class.housingdao.php';
 
-
 /*
 	Housing Business Object 
 */

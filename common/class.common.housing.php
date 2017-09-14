@@ -235,9 +235,6 @@ class HousingRoomAssign
         return $this->_room_id;
     }
     
-    
-    
-    
 }
 
  ?>

@@ -145,6 +145,11 @@ class PermissionUtil{
     public static $HOUSING_ROOM_ASSIGN_U='HOUSING_ROOM_ASSIGN_U';
     public static $HOUSING_ROOM_ASSIGN_D='HOUSING_ROOM_ASSIGN_D';
 
+    public static $HOUSING_SEARCH_C='HOUSING_SEARCH_C';
+    public static $HOUSING_SEARCH_R='HOUSING_SEARCH_R';
+    public static $HOUSING_SEARCH_U='HOUSING_SEARCH_U';
+    public static $HOUSING_SEARCH_D='HOUSING_SEARCH_D';
+
     
 
 
@@ -198,6 +203,7 @@ class PageUtil{
     public static $HOUSING_ROOM='housing_room.php';
     public static $HOUSING_DETAIL='housing_details.php';
     public static $HOUSING_ROOM_ASSIGN='housing_room_assign.php';
+    public static $HOUSING_SEARCH='housing_search.php';
     
 
 
@@ -220,8 +226,6 @@ class PageUtil{
     public static $USER_DETAILS='user_details.php';
     public static $USER_SEARCH='user_search.php';
     public static $USER_FORGOT_PASSWORD='forgot_password.php';
-
-
 
 }
 
@@ -251,7 +255,7 @@ class RouteUtil{
          self::$s_Routes[PageUtil::$HOUSING_ROOM] = "/modules/housing/ui/view.housingRoom.php";
          self::$s_Routes[PageUtil::$HOUSING_DETAIL] = "/modules/housing/ui/view.housingDetails.php";
          self::$s_Routes[PageUtil::$HOUSING_ROOM_ASSIGN] = "/modules/housing/ui/view.housingRoomAssign.php";
-         
+         self::$s_Routes[PageUtil::$HOUSING_SEARCH] = "/modules/housing/ui/view.housingSearch.php";
 
          self::$s_Routes[PageUtil::$HOME]             =   "/modules/dashboard/ui/view.home.php";
          self::$s_Routes[PageUtil::$LOGIN]            =   "/modules/dashboard/ui/view.login.php";
@@ -321,6 +325,7 @@ class MiddlewareUtil{
          self::$s_Routes[PageUtil::$HOUSING_ROOM]   =  PageUtil::$LOGIN ;
          self::$s_Routes[PageUtil::$HOUSING_DETAIL]   =  PageUtil::$LOGIN;
          self::$s_Routes[PageUtil::$HOUSING_ROOM_ASSIGN]   =  PageUtil::$LOGIN ;
+         self::$s_Routes[PageUtil::$HOUSING_SEARCH]   =  PageUtil::$LOGIN ;
 
 
          //END HOUSING

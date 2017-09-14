@@ -319,6 +319,18 @@
 				</Permissions>
 			</Menu>
 
+			<Menu>
+				<ParentMenu>Housing Related</ParentMenu>
+				<Title>Search Housing User</Title>
+				<Link>housing_search.php</Link>
+				<Permissions>
+					<Permission>USER_R</Permission>
+					
+				</Permissions>
+			</Menu>
+
+
+
 			
 
 
