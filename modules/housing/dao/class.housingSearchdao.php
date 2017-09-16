@@ -16,40 +16,31 @@ Class HousingSearchDAO{
 
 	}
 	
-	public function getAllHousingName()
+	public function getHousingNameFromId($id)
 	{
-		$HousingList = array();
+		$SQL = "SELECT * FROM hms_housing WHERE id='".$id."'";
+		$SQL = $this->_DB->doQuery($SQL);
 
-		$this->_DB->doQuery("SELECT * FROM hms_housing");
+		$row = $this->_DB->getTopRow();
 
-		$rows = $this->_DB->getAllRows();
+		$this->_Housing = new Housing();
 
-		for($i = 0; $i < sizeof($rows); $i++) {
-			$row = $rows[$i];
-			$this->_Housing = new Housing();
-
-		    $this->_Housing->setID ( $row['id']);
-		    $this->_Housing->setName( $row['name'] );
-		    
-		    
-
-		    $HousingList[]=$this->_Housing;
-   
-		}
-
-		$Result = new Result();
+		$this->_Housing->setID ( $row['id']);
+		$this->_Housing->setName( $row['name'] );
+		
+		
+	 	$Result = new Result();
 		$Result->setIsSuccess(1);
-		$Result->setResultObject($HousingList);
+		$Result->setResultObject($this->_Housing);
 
 		return $Result;
 	}
 
 	//search an user object based on some criteria
-	public function searchUser($Housing,$SearchField,$SearchText){
+	public function searchUser($SearchField,$SearchText){
 		
 		$Room = array();
-		$SQL = "SELECT DISTINCT r.room_no FROM tbl_User u,hms_assign a,hms_room r WHERE u.ID=a.user_id AND 
-				a.house_id='$Housing' AND r.room_id=a.room_id AND u.".$SearchField." Like '$SearchText'";
+		$SQL = "SELECT DISTINCT r.* FROM tbl_User u,hms_assign a,hms_room r WHERE u.ID=a.user_id AND r.room_id=a.room_id AND u.".$SearchField." Like '$SearchText'";
 
 
 		$this->_DB->doQuery($SQL);
@@ -61,8 +52,11 @@ Class HousingSearchDAO{
 
 		    $this->_Room = new HousingRoom();
 
-		    //$this->_Room->setRoomId ( $row['room_id']);
-		    $this->_Room->setRoomNo ( $row['room_no'] );   
+		    $this->_Room->setRoomId ( $row['room_id']);
+		    $this->_Room->setRoomNo ( $row['room_no'] );
+		    $this->_Room->setHouseId ( $row['house_id'] );
+
+
 		    
 
 		    $Room[]=$this->_Room;

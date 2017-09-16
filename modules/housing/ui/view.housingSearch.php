@@ -16,37 +16,7 @@ include_once './common/class.common.housing.php';
 			<div id="form">
 				<form method="post" class="form-horizontal">
 
-						<div class="form-group">
-							<label class="control-label col-sm-4" for="txtHousing">Housing Name : </label>			
-							<div class="col-sm-6">	
-									    <?php
-									    
-
-									    $var = '<select name="txtHousing" class="form-control"  id="select-from-housing">';
-										$Result = $_HousingSearchBAO->getAllHousingName();
-
-											//if DAO access is successful to load all the Roles then show them one by one
-
-										if($Result->getIsSuccess()){
-
-											$Housings = $Result->getResultObject();
-										
-									       for ($i=0; $i < sizeof($Housings); $i++) { 
-									       		
-									       		$Housing = $Housings[$i];
-									    
-									    		$var = $var. '<option value="'.$Housing->getID().'"';   			
-
-									          	$var = $var.'>'.$Housing->getName().'</option>';
-								
-											}
-
-											$var = $var.'</select>';
-										}
-										echo $var;
-										?>	
-							</div>
-					</div>
+					
 
 					<div class="form-group">
 		              	<label class="control-label col-sm-4" for="selectedField">Search Field:</label>
@@ -97,6 +67,7 @@ include_once './common/class.common.housing.php';
 			$Roomlist = $ResultSearch->getResultObject();
 		?>
 			<tr>
+				<th>Housing Name</th>
 				<th>Room</th>
 				
 			</tr>
@@ -105,7 +76,19 @@ include_once './common/class.common.housing.php';
 				$Room = $Roomlist[$i];
 				?>
 			    <tr>
-				    <td><?php echo $Room->getRoomNo(); ?></td>
+			    	<td><?php 
+			    		$Result = $_HousingSearchBAO->getHousingNameFromId($Room->getHouseId());
+			    		if($Result->getIsSuccess())
+			    		{
+			    			$Housing = $Result->getResultObject();             
+
+            				echo $Housing->getName();
+			    		}
+
+
+
+			    	 ?></td>
+				    <td ><?php echo $Room->getRoomNo(); ?></td>
 				    
 				    
 

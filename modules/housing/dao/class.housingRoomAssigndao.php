@@ -121,6 +121,29 @@ Class HousingRoomAssignDAO{
 		return $Result;
 	}
 
+	public function getUserFromUniversityID($uid){
+
+		$SQL = "SELECT * FROM tbl_user WHERE UniversityID='".$uid."'";
+		$SQL = $this->_DB->doQuery($SQL);
+
+		$row = $this->_DB->getTopRow();
+
+		$this->_User = new User();
+
+		$this->_User->setID ( $row['ID']);
+		$this->_User->setUniversityID( $row['UniversityID'] );
+		$this->_User->setEmail( $row['Email'] );
+		$this->_User->setFirstName( $row['FirstName'] );
+		$this->_User->setLastName( $row['LastName'] );
+		
+		
+	 	$Result = new Result();
+		$Result->setIsSuccess(1);
+		$Result->setResultObject($this->_User);
+
+		return $Result;
+	}
+
 	public function getNumberOfUsersFromRoom($hid,$rid){
 		
 		$SQL = "SELECT count(*) FROM hms_assign WHERE house_id='".$hid."' and room_id='".$rid."'";
@@ -184,7 +207,11 @@ Class HousingRoomAssignDAO{
 		$UserId=$HousingRoomAssign->getUserId();
 		$HousingId=$HousingRoomAssign->getHouseId();
 		$RoomId=$HousingRoomAssign->getRoomId();
-		
+		$SQL="SELECT * FROM hms_assign WHERE hms_assign.user_id='".$UserId."'";
+		$this->_DB->doQuery($SQL);
+		$rows=$this->_DB->getAllRows();
+		if (empty($rows)) {
+
 		$SQL = "INSERT INTO hms_assign (user_id,house_id,room_id)
 				VALUES('$UserId','$HousingId','$RoomId')";
 
@@ -195,6 +222,13 @@ Class HousingRoomAssignDAO{
 		$Result->setResultObject($SQL);
 
 		return $Result;
+		}else{
+			$Result = new Result();
+			$Result->setIsSuccess(1);
+			$Result->setResultObject($SQL);
+
+			return $Result;
+		}
 	}
 
 	

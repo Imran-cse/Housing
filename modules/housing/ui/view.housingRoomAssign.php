@@ -12,6 +12,28 @@ $_SESSION["rid"] = $_GET['r_id'];
 
 ?>
 
+<script>
+
+    function addFunction(id) {
+        var val=$('#pid').val();
+        //var rid = $_SESSION["rid"].val();
+        if(id.length==0){
+            $('#addStudent').html("");
+            $('#addStudent').style.border="0px";
+            return;
+        }
+        xmlhttp=new XMLHttpRequest();
+        xmlhttp.onreadystatechange=function () {
+            if(this.readyState==4&&this.status==200){
+                $('#addStudent').html(this.responseText);
+                $('#addStudent').style.border="1px solid";
+            }
+        }
+        xmlhttp.open("GET","./modules/housing/ui/addResponse.php?key="+id+"&pid="+val,true);
+        xmlhttp.send();
+    }
+</script>
+
 
 <div class="panel panel-default">
     
@@ -36,7 +58,7 @@ $_SESSION["rid"] = $_GET['r_id'];
     </div>
     <div class="panel-heading" align="center">
         <?php
-	        $var = '';
+	        $var = 'Room';
 	        $Result = $_HousingRoomAssignBAO->getRoomNoFromId($_SESSION["rid"]);
 
 	            //if DAO access is successful to load all the Roles then show them one by one
@@ -45,7 +67,7 @@ $_SESSION["rid"] = $_GET['r_id'];
 
 	            $HousingRoom = $Result->getResultObject();             
 
-	            $var = $HousingRoom->getRoomNo();
+	            $var = $var." : " .$HousingRoom->getRoomNo();
 
 	        }
 	        echo $var;
@@ -57,40 +79,22 @@ $_SESSION["rid"] = $_GET['r_id'];
 		<div id="form">
 			<form method="post" class="form-horizontal">
 				<div class="form-group">
-					<label class="control-label col-sm-4" for="txtType">User ID: </label>			
-					<div class="col-sm-6">	
-					    <?php
-					    
-
-						    $var = '<select name="txtUser" class="form-control"  id="select-from-type">';
-							$Result = $_HousingRoomAssignBAO->getAllHousingUsers();
-
-								//if DAO access is successful to load all the Roles then show them one by one
-
-							if($Result->getIsSuccess()){
-
-								$HousingUsers = $Result->getResultObject();
-							
-						       for ($i=0; $i < sizeof($HousingUsers); $i++) { 
-						       		
-						       		$User = $HousingUsers[$i];
-						    
-						    		$var = $var. '<option value="'.$User->getID().'"';   			
-
-						          	$var = $var.'>'.$User->getUniversityID().'</option>';
+					<label for="student_add" class="control-label col-md-3 text-info">Add User:</label>
+					<div class="col-md-5">
+						<input type="search" name="student_add" id="student_add" class="form-control alert-info" onkeyup="addFunction(this.value);" placeholder="Search..." required>
 					
-								}
-
-								$var = $var.'</select>';
-							}
-							echo $var;
-							
-							?>	
 					</div>
+					
+					<div id="addStudent" class="col-md-4" style="text-align: left"></div>
+				
+					
 				</div>
+				
+				
+				
 	
 		        <div class="form-group">        
-	                <div class="col-sm-offset-2 col-sm-10">
+	                <div class="col-sm-offset-2 col-sm-6">
 	                	<?php
 
 	                		$Result = $_HousingRoomAssignBAO->getNumberOfUsersFromRoom($_SESSION["hid"],$_SESSION["rid"]);
@@ -101,13 +105,16 @@ $_SESSION["rid"] = $_GET['r_id'];
 	                				if($_SESSION["countUsers"] < $_SESSION["totalUsers"]){?>
 
 
-	                					<button type="submit" name="save" class="btn btn-default">Save</button>
+                					<button type="submit" name="save" class="btn btn-default">Assign</button>
 								
 								
 									<?php }
-									 else { ?>
+									 else { 
 
-											<label class="control-label" >There is no available seat in this Room</label>
+									 	?>
+
+											<label class="control-label" >No available seat in this Room</label>
+
 									<?php }
 								}
 						 	} ?>

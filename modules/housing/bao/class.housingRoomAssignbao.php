@@ -62,6 +62,19 @@ Class HousingRoomAssignBAO{
 
 
 	}
+	public function getUserFromUniversityID($uid){
+
+
+		$Result = new Result();	
+		$Result = $this->_HousingRoomAssignDAO->getUserFromUniversityID($uid);
+		
+		if(!$Result->getIsSuccess())
+			$Result->setResultObject("Database failure in HousingRoomAssignDAO.getUserFromUniversityID()");	//getNameFromId edit	
+
+		return $Result;
+
+
+	}
 
 	public function getUserFromId($uid){
 
