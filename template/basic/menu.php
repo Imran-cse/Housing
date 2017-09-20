@@ -50,10 +50,10 @@ function print_top_menu($globalMenu,$logoutMenu)
 
 		//buiding full menu layout, first part menu, next part user logout menu
 		$menu_content = 	'<div class="dropdown"><div class="row">';
-		$menu_content = 	$menu_content.'<div class="col-sm-11">';
+		$menu_content = 	$menu_content.'<div class="col-sm-10">';
 		$menu_content = 	$menu_content.build_top_nav_menu($globalMenu);
 		$menu_content = 	$menu_content.'</div>';
-		$menu_content = 	$menu_content.'<div class="col-sm-1">'.$logoutMenu;
+		$menu_content = 	$menu_content.'<div class="col-sm-2">'.$logoutMenu;
 		$menu_content = 	$menu_content.'</div>';
 		$menu_content = 	$menu_content.'</div></div>';
 	}
@@ -64,7 +64,7 @@ function print_top_menu($globalMenu,$logoutMenu)
 //logout menu part
 function build_top_logout_menu($CurrentUser){
 
-   $logout_content = '<button class="btn btn-default  dropdown-toggle" type="button" data-toggle="dropdown">'.
+   $logout_content = '<button class="btn btn-default  dropdown-toggle" type="button" data-toggle="dropdown" data-hover="dropdown">'.
    					 $CurrentUser->getFirstName().' '.$CurrentUser->getLastName().'<span class="caret"></span></button>';
    $logout_content = $logout_content.'<ul class="dropdown-menu">';
    $logout_content = $logout_content.'<li><a tabindex="-1" href="home.php">Home</a></li>';

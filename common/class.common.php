@@ -401,7 +401,7 @@ class MiddlewareUtil{
 
         return $page;
         //return "$scheme$user$pass$host$port$path$query$fragment";
-}
+    }
 
 
 //applying middleware such as login.php comes before home.php
