@@ -24,7 +24,7 @@ if(isset($_POST['save']))
 	
 		$Housing->setTypeId($_POST['txtType']);
 	}
-	 $_HousingBAO->createHousing($Housing);		 
+	$_HousingBAO->createHousing($Housing);		 
 }
 
 

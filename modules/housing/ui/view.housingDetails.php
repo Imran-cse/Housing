@@ -53,6 +53,7 @@ div.tab button.active {
 
 <script>
 	$(document).ready(function(){
+		$('#divId').val("asdas");
 		detailsAdd(event,'Provost');
 	});
 	function detailsAdd(evt, name) {
@@ -71,13 +72,14 @@ div.tab button.active {
 	    }
 	    document.getElementById(name).style.display = "block";
 	    evt.currentTarget.className += " active";
+	  
 
 	}
 </script>
 
 
 <div class="panel panel-default">
-    
+    <input type="hidden" id="divId" value="" >
     <div class="panel-heading">Housing Details</div>
 	    <div class="panel-heading" align="center">
 	        <?php

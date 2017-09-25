@@ -14,9 +14,15 @@ if(isset($_POST['save']))
 	$HousingRoomAssign = new HousingRoomAssign();
 	$HousingRoomAssign->setHouseId($_GET['h_id']);	
     $HousingRoomAssign->setRoomId($_GET['r_id']);
-    if(isset($_POST['txtUser'])){ 
-	
-		$HousingRoomAssign->setUserId($_POST['txtUser']);
+    if(isset($_POST['student_add'])){
+
+    	$Result = $_HousingRoomAssignBAO->getUserFromUniversityID($_POST['student_add']);
+    	if($Result->getIsSuccess())
+    	{
+    		$User = $Result->getResultObject();
+    		$id = $User->getID();
+    		$HousingRoomAssign->setUserId($id);
+    	} 
 	}
      
 	$_HousingRoomAssignBAO->createHousingRoomAssign($HousingRoomAssign);		 

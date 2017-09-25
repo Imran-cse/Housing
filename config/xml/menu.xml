@@ -329,9 +329,46 @@
 				</Permissions>
 			</Menu>
 
+			<Menu>
+				<ParentMenu>Housing Management</ParentMenu>
+				<Title>Application Related</Title>
+				<Permissions>
+					<Permission>HOUSING_APPLICATION_C</Permission>
+					<Permission>HOUSING_APPLICATION_R</Permission>
+					<Permission>HOUSING_APPLICATION_U</Permission>
+				</Permissions>
+			</Menu>
 
+			<Menu>
+				<ParentMenu>Application Related</ParentMenu>
+				<Title>Application</Title>
+				<Link>housing_application.php</Link>
+				<Permissions>
+					<Permission>HOUSING_APPLICATION_C</Permission>
+					<Permission>HOUSING_APPLICATION_U</Permission>
+					<Permission>HOUSING_APPLICATION_D</Permission>
+				</Permissions>
+			</Menu>
 
-			
+			<Menu>
+				<ParentMenu>Application Related</ParentMenu>
+				<Title>Application Type</Title>
+				<Link>housing_application_type.php</Link>
+				<Permissions>
+					<Permission>HOUSING_APPLICATION_TYPE_C</Permission>
+					<Permission>HOUSING_APPLICATION_TYPE_U</Permission>
+					<Permission>HOUSING_APPLICATION_TYPE_D</Permission>
+				</Permissions>
+			</Menu>
 
-
+			<Menu>
+				<ParentMenu>Application Related</ParentMenu>
+				<Title>Manage Application</Title>
+				<Link>housing_application_manage.php</Link>
+				<Permissions>
+					<Permission>HOUSING_APPLICATION_MANAGE_C</Permission>
+					<Permission>HOUSING_APPLICATION_MANAGE_U</Permission>
+					<Permission>HOUSING_APPLICATION_MANAGE_D</Permission>
+				</Permissions>
+			</Menu>
 </Menus>
