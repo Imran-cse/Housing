@@ -120,6 +120,7 @@ class PermissionUtil{
     public static $DISCUSSION_COMMENT_D='DISCUSSION_COMMENT_D';
 
 
+    //Permission for housing
     public static $HOUSING_C='HOUSING_C';
     public static $HOUSING_R='HOUSING_R';
     public static $HOUSING_U='HOUSING_U';
@@ -150,8 +151,20 @@ class PermissionUtil{
     public static $HOUSING_SEARCH_U='HOUSING_SEARCH_U';
     public static $HOUSING_SEARCH_D='HOUSING_SEARCH_D';
 
-    
+    public static $HOUSING_APPLICATION_C = 'HOUSING_APPLICATION_C';
+    public static $HOUSING_APPLICATION_R = 'HOUSING_APPLICATION_R';
+    public static $HOUSING_APPLICATION_U = 'HOUSING_APPLICATION_U';
+    public static $HOUSING_APPLICATION_D = 'HOUSING_APPLICATION_D';
 
+    public static $HOUSING_APPLICATION_TYPE_C = 'HOUSING_APPLICATION_TYPE_C';
+    public static $HOUSING_APPLICATION_TYPE_R = 'HOUSING_APPLICATION_TYPE_R';
+    public static $HOUSING_APPLICATION_TYPE_U = 'HOUSING_APPLICATION_TYPE_U';
+    public static $HOUSING_APPLICATION_TYPE_D = 'HOUSING_APPLICATION_TYPE_D';
+
+    public static $HOUSING_APPLICATION_MANAGE_C = 'HOUSING_APPLICATION_MANAGE_C';
+    public static $HOUSING_APPLICATION_MANAGE_R = 'HOUSING_APPLICATION_MANAGE_R';
+    public static $HOUSING_APPLICATION_MANAGE_U = 'HOUSING_APPLICATION_MANAGE_U';
+    public static $HOUSING_APPLICATION_MANAGE_D = 'HOUSING_APPLICATION_MANAGE_D';
 
     public static $POSITION_C='POSITION_C';
     public static $POSITION_R='POSITION_R';
@@ -204,7 +217,9 @@ class PageUtil{
     public static $HOUSING_DETAIL='housing_details.php';
     public static $HOUSING_ROOM_ASSIGN='housing_room_assign.php';
     public static $HOUSING_SEARCH='housing_search.php';
-    
+    public static $HOUSING_APPLICATION = 'housing_application.php';
+    public static $HOUSING_APPLICATION_TYPE = 'housing_application_type.php';
+    public static $HOUSING_APPLICATION_MANAGE = 'housing_application_manage.php';
 
 
     public static $ERROR='error.php';
@@ -256,6 +271,9 @@ class RouteUtil{
          self::$s_Routes[PageUtil::$HOUSING_DETAIL] = "/modules/housing/ui/view.housingDetails.php";
          self::$s_Routes[PageUtil::$HOUSING_ROOM_ASSIGN] = "/modules/housing/ui/view.housingRoomAssign.php";
          self::$s_Routes[PageUtil::$HOUSING_SEARCH] = "/modules/housing/ui/view.housingSearch.php";
+         self::$s_Routes[PageUtil::$HOUSING_APPLICATION] = "/modules/housing/ui/view.housingApplication.php";
+         self::$s_Routes[PageUtil::$HOUSING_APPLICATION_TYPE] = "/modules/housing/ui/view.housingApplicationType.php";
+         self::$s_Routes[PageUtil::$HOUSING_APPLICATION_MANAGE] = "/modules/housing/ui/view.housingApplicationManage.php";
 
          self::$s_Routes[PageUtil::$HOME]             =   "/modules/dashboard/ui/view.home.php";
          self::$s_Routes[PageUtil::$LOGIN]            =   "/modules/dashboard/ui/view.login.php";
@@ -401,7 +419,7 @@ class MiddlewareUtil{
 
         return $page;
         //return "$scheme$user$pass$host$port$path$query$fragment";
-}
+    }
 
 
 //applying middleware such as login.php comes before home.php

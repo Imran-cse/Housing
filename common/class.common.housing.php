@@ -237,4 +237,158 @@ class HousingRoomAssign
     
 }
 
- ?>
+class HousingApplication
+{
+    private $_id;
+    private $_subject;
+    private $_user_id;
+    private $_discipline;
+    private $_description;
+    private $_status;
+    private $_date;
+
+    public function setId($id)
+    {
+        $this->_id = $id;
+    }
+
+    public function getId()
+    {
+        return $this->_id;
+    }
+
+    public function setSubject($subject)
+    {
+        $this->_subject = $subject;
+    }
+
+    public function getSubject()
+    {
+        return $this->_subject;
+    }
+
+    public function setUserId($user_id)
+    {
+        $this->_user_id = $user_id;
+    }
+
+    public function getUserId()
+    {
+        return $this->_user_id;
+    }
+
+    public function setDiscipline($discipline)
+    {
+        $this->_discipline = $discipline;
+    }
+
+    public function getDiscipline()
+    {
+        return $this->_discipline;
+    }
+
+    public function setDescription($description)
+    {
+        $this->_description = $description;
+    }
+
+    public function getDescription()
+    {
+        return $this->_description;
+    }
+
+    public function setStatus($status)
+    {
+        $this->_status = $status;
+    }
+
+    public function getStatus()
+    {
+        return $this->_status;
+    }
+
+    public function setDate($date)
+    {
+        $this->_date = $date;
+    }
+
+    public function getDate()
+    {
+        return $this->_date;
+    }
+}
+
+class HousingApplicationType
+{
+    private $_id;
+    private $_name;
+
+    public function setId($id)
+    {
+        $this->_id = $id;
+    }
+
+    public function getId()
+    {
+        return $this->_id;
+    }
+
+    public function setName($name)
+    {
+        $this->_name = $name;
+    }
+
+    public function getName()
+    {
+        return $this->_name;
+    }
+}
+
+class HousingDiscipline
+{
+    private $_ID;
+    private $_Name;
+    private $_ShortCode;
+    private $_SchoolId;
+
+    public function setID($ID)
+    {
+        $this->_ID = $ID;
+    }
+
+    public function getID()
+    {
+        return $this->_ID;
+    }
+
+    public function setName($Name)
+    {
+        $this->_Name = $Name;
+    }
+
+    public function getName()
+    {
+        return $this->_Name;
+    }
+
+    public function setShortCode($ShortCode)
+    {
+        $this->_ShortCode = $ShortCode;
+    }
+
+    public function getShortCode()
+    {
+        return $this->_ShortCode;
+    }
+
+    public function setSchoolID($SchoolID)
+    {
+        $this->_SchoolId = $SchoolID;
+    }
+
+    public function getSchoolID()
+    {
+        return $this->_SchoolId;
+    }
+
+}

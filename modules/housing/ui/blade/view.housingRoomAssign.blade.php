@@ -23,8 +23,6 @@ if(isset($_POST['save']))
     		$id = $User->getID();
     		$HousingRoomAssign->setUserId($id);
     	} 
-	
-		
 	}
      
 	$_HousingRoomAssignBAO->createHousingRoomAssign($HousingRoomAssign);		 

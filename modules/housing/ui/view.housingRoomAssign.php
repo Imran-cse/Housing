@@ -58,7 +58,7 @@ $_SESSION["rid"] = $_GET['r_id'];
     </div>
     <div class="panel-heading" align="center">
         <?php
-	        $var = 'Room';
+	        $var = 'Room No';
 	        $Result = $_HousingRoomAssignBAO->getRoomNoFromId($_SESSION["rid"]);
 
 	            //if DAO access is successful to load all the Roles then show them one by one
