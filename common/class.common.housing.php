@@ -240,9 +240,10 @@ class HousingRoomAssign
 class HousingApplication
 {
     private $_id;
-    private $_application_type_id;
+    private $_subject;
     private $_user_id;
     private $_discipline;
+    private $_description;
     private $_status;
     private $_date;
 
@@ -256,14 +257,14 @@ class HousingApplication
         return $this->_id;
     }
 
-    public function setApplicationTypeId($application_type_id)
+    public function setSubject($subject)
     {
-        $this->_application_type_id = $application_type_id;
+        $this->_subject = $subject;
     }
 
-    public function getApplicationTypeId()
+    public function getSubject()
     {
-        return $this->_application_type_id;
+        return $this->_subject;
     }
 
     public function setUserId($user_id)
@@ -284,6 +285,16 @@ class HousingApplication
     public function getDiscipline()
     {
         return $this->_discipline;
+    }
+
+    public function setDescription($description)
+    {
+        $this->_description = $description;
+    }
+
+    public function getDescription()
+    {
+        return $this->_description;
     }
 
     public function setStatus($status)

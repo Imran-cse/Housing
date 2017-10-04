@@ -5,8 +5,10 @@ include_once './common/class.common.php';
 include_once './common/class.common.housing.php';
 
 ?>
-
-<div class="panel col-md-5 col-md-offset-4" style="border-top: outset; border-left: outset;
+<script type="text/javascript">
+    
+</script>
+<div class="panel col-md-8 col-md-offset-2" style="border-top: outset; border-left: outset;
                                 border-bottom: inset; border-right: inset; margin-top: 50px">
     <div class="panel-heading">
         Application
@@ -14,6 +16,18 @@ include_once './common/class.common.housing.php';
     <div class="panel-body">
         <div id="form">
             <form class="form-horizontal" method="post">
+                <div class="form-group">
+                    <label for="subject" class="col-md-2 control-label">Subject</label>
+                    <div class="col-md-8">
+                        <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="description" class="col-md-2 control-label">Description</label>
+                    <div class="col-md-8">
+                        <textarea class="form-control" name="description" placeholder="Type your application here.." required></textarea>
+                    </div>
+                </div>
                 <div class="form-group">
                     <label for="discipline" class="col-md-2 control-label">Discipline</label>
                     <div class="col-md-8">

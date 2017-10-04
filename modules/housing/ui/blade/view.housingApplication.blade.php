@@ -1,9 +1,7 @@
 <?php
 include_once './util/class.util.php';
-include_once '/../../bao/class.housingApplicationTypebao.php';
 include_once '/../../bao/class.housingApplicationbao.php';
 
-$_HousingApplicationTypeBAO = new HousingApplicationTypeBAO();
 $_HousingApplicationBAO = new HousingApplicationBAO();
 $_DB = DBUtil::getInstance();
 $globalUser = '';
@@ -17,11 +15,9 @@ if(isset($_POST['save'])){
 	
 		$HousingApplication->setDiscipline($_POST['discipline']);
 	}
-	if(isset($_POST['applicationType'])){ 
-	
-		$HousingApplication->setApplicationTypeId($_POST['applicationType']);
-	}
 	$HousingApplication->setUserId($globalUser->getID());
+	$HousingApplication->setSubject($_DB->secureinput($_POST['subject']));
+	$HousingApplication->setDescription($_DB->secureinput($_POST['description']));
 	$HousingApplication->setStatus(0);
 	$HousingApplication->setDate(date("Y/m/d"));
 

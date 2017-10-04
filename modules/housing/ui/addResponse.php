@@ -7,7 +7,7 @@ $PId=$_GET['pid'];
 if (strlen($Key)>0) {
     $servername = "localhost";
     $username = "root";
-    $password = "";
+    $password = "2110";
     $dbname = "wpl_housing";
 
 // Create connection

@@ -330,12 +330,27 @@
 			</Menu>
 
 			<Menu>
-				<ParentMenu>Housing Management</ParentMenu>
-				<Title>Application Related</Title>
+				<ParentMenu></ParentMenu>
+				<Title>Application</Title>
 				<Permissions>
 					<Permission>HOUSING_APPLICATION_C</Permission>
 					<Permission>HOUSING_APPLICATION_R</Permission>
 					<Permission>HOUSING_APPLICATION_U</Permission>
+					<Permission>HOUSING_APPLICATION_D</Permission>
+					<Permission>HOUSING_APPLICATION_TYPE_C</Permission>
+					<Permission>HOUSING_APPLICATION_TYPE_R</Permission>
+					<Permission>HOUSING_APPLICATION_TYPE_U</Permission>
+					<Permission>HOUSING_APPLICATION_TYPE_D</Permission>
+				</Permissions>
+			</Menu>
+
+			<Menu>
+				<ParentMenu>Application</ParentMenu>
+				<Title>Application Related</Title>
+				<Permissions>
+					<Permission>HOUSING_APPLICATION_C</Permission>
+					<Permission>HOUSING_APPLICATION_U</Permission>
+					<Permission>HOUSING_APPLICATION_D</Permission>
 				</Permissions>
 			</Menu>
 

@@ -44,13 +44,14 @@ class HousingApplicationDAO
 
 	public function createApplication($HousingApplication){
 		$Id = $HousingApplication->getId();
-		$ApplicationTypeId = $HousingApplication->getApplicationTypeId();
+		$Subject = $HousingApplication->getSubject();
 		$UserId = $HousingApplication->getUserId();
 		$Discipline = $HousingApplication->getDiscipline();
+		$Description = $HousingApplication->getDescription();
 		$Status = $HousingApplication->getStatus();
 		$Date = $HousingApplication->getDate();
 
-		$SQL = $this->_DB->doQuery("INSERT INTO hms_application(id, application_type_id, user_id, discipline, application_status) VALUES('$Id', '$ApplicationTypeId', '$UserId', '$Discipline', '$Status')");
+		$SQL = $this->_DB->doQuery("INSERT INTO hms_application(id, subject, user_id, discipline, description, status) VALUES('$Id', '$Subject', '$UserId', '$Discipline', '$Description','$Status')");
 
 		$Result = new Result();
 		$Result->setIsSuccess(1);
