@@ -1,13 +1,13 @@
 <?php
 
-include_once './util/class.util.php';
-include_once '/../dao/class.housingApplicationdao.php';
+include_once UTILITY.'class.util.php';
+include_once MODULES_HOUSING_DAO.'class.housingApplicationdao.php';
 
 class HousingApplicationBAO
 {
 	private $_HousingApplicationDAO;
 
-	function HousingApplicationBAO(){
+	function __construct(){
 		$this->_HousingApplicationDAO = new HousingApplicationDAO();
 	}
 

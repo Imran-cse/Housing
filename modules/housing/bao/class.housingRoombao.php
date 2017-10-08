@@ -1,7 +1,7 @@
 <?php
 
-include_once './util/class.util.php';
-include_once '/../dao/class.housingRoomdao.php';
+include_once UTILITY.'class.util.php';
+include_once MODULES_HOUSING_DAO.'class.housingRoomdao.php';
 
 
 /*
@@ -13,7 +13,7 @@ Class HousingRoomBAO{
 	private $_HousingRoomDAO;
 	//private $_h_id;
 
-	function HousingRoomBAO(){
+	function __construct(){
 
 		$this->_HousingRoomDAO = new HousingRoomDAO();
 		//$this->_h_id = new HousingRoomBAO();

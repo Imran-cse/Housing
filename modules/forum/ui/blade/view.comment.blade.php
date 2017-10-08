@@ -1,8 +1,8 @@
 <?php
 
-include_once './util/class.util.php';
-include_once '/../../bao/class.commentbao.php';
-include_once '/../../bao/class.discussionbao.php';
+include_once UTILITY.'class.util.php';
+include_once MODULES_FORUM.'bao/class.commentbao.php';
+include_once MODULES_FORUM.'bao/class.discussionbao.php';
 
 
 $_CommentBAO = new CommentBAO();

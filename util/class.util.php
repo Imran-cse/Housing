@@ -59,7 +59,7 @@ class ConfigUtil implements I_DBConfig, I_LogConfig, I_LanguageConfig{
 	private $_log_level="info";
 	private $_log_file_path;
 
-	private $_lang_default="EN";
+	private $_lang_default="en";
 
 
 	private function __construct(){
@@ -88,7 +88,7 @@ class ConfigUtil implements I_DBConfig, I_LogConfig, I_LanguageConfig{
 	*/
 	private function readConfig(){
 
-		$this->_ini_array = parse_ini_file("./config/system.ini");
+		$this->_ini_array = parse_ini_file(CONFIG.'system.ini');
 
 		$this->_host =	$this->_ini_array['db_host'];
 		$this->_username = $this->_ini_array['db_username'];
@@ -466,7 +466,7 @@ class LangUtil{
 		//getting the default language text
 		$this->_lang_default = $_config->getDefaultLanguage();
 
-		self::$_lang_array = parse_ini_file("./lang/lang_".$this->_lang_default.".txt");
+		self::$_lang_array = parse_ini_file(LANGUAGE.'lang_'.$this->_lang_default.'.txt');
 
 	}
 

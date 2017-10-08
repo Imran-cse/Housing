@@ -1,11 +1,16 @@
 <?php
 
-include_once 'blade/view.housingApplication.blade.php';
-include_once './common/class.common.php';
-include_once './common/class.common.housing.php';
+include_once MODULES_HOUSING_BLADE.'view.housingApplication.blade.php';
+include_once COMMON.'class.common.php';
+include_once COMMON.'class.common.housing.php';
 
 ?>
-
+<script>
+    function success() {
+        $document.getElementById("success").innerHTML = "Successful";
+    }
+</script>
+<h1 id="success"></h1>
 <div class="panel col-md-8 col-md-offset-2" style="border-top: outset; border-left: outset;
                                 border-bottom: inset; border-right: inset; margin-top: 50px">
     <div class="panel-heading">
@@ -73,14 +78,8 @@ include_once './common/class.common.housing.php';
                     </div>
                 </div>
                 <div>
-                    <button type="submit" name="save" class="btn btn-primary">Save</button>
+                    <button type="submit" name="save" onclick="success();" class="btn btn-primary">Save</button>
                 </div>
-                <?php
-                    $Result = new Result();
-                    if ($Result->getIsSuccess()) {
-                        echo "successful";
-                    }
-                ?>
             </form>
         </div>
     </div>

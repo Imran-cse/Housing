@@ -1,7 +1,7 @@
 <?php
-include_once './common/class.common.php';
-include_once './common/class.common.forum.php';
-include_once './util/class.util.php';
+include_once COMMON.'class.common.php';
+include_once COMMON.'class.common.forum.php';
+include_once UTILITY.'class.util.php';
 include_once 'class.discussiondao.php';
 
 Class CommentDAO{
@@ -9,7 +9,7 @@ Class CommentDAO{
 	private $_DB;
 	private $_Cat;
 
-	function CommentDAO(){
+	public function __construct(){
 
 		$this->_DB = DBUtil::getInstance();
 		$this->_Cat = new Comment();

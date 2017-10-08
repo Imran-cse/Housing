@@ -1,8 +1,8 @@
 <?php
 
-include_once 'blade/view.housingDetails.blade.php';
-include_once './common/class.common.php';
-include_once './common/class.common.housing.php';
+include_once MODULES_HOUSING_BLADE'view.housingDetails.blade.php';
+include_once COMMON.'class.common.php';
+include_once COMMON.'class.common.housing.php';
 
 
 $_SESSION["hid"] = $_GET['h_id'];

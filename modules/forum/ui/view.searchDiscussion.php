@@ -1,7 +1,7 @@
 <?php
 //session_start();
 include_once 'blade/view.searchDiscussion.blade.php';
-include_once './common/class.common.php';
+include_once COMMON.'class.common.php';
 
 $Discussion1 = $Discussion; 
 

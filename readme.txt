@@ -14,8 +14,3 @@ Assistant Professor
 CSE Discipline, Khulna University
 Bangladesh
 
-Academic Qualification
-------------------------------
-Ph.D in Electrical and Computer Engineering (uOttawa, Canada)
-M.Sc in Computer Science (uOttawa, Canada)
-B.Sc in Computer Science and Engineering (KU, Bangladesh)

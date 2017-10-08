@@ -1,8 +1,8 @@
 <?php
 
 include_once 'blade/view.answered.blade.php';
-include_once './common/class.common.php';
-include_once './common/class.common.forum.php';
+include_once COMMON.'class.common.php';
+include_once COMMON.'class.common.forum.php';
 
 ?>
 <div class="panel panel-default">

@@ -1,8 +1,8 @@
 <?php
 // write dao object for each class
-include_once './common/class.common.php';
-include_once './common/class.common.forum.php';
-include_once './util/class.util.php';
+include_once COMMON.'class.common.php';
+include_once COMMON.'class.common.forum.php';
+include_once UTILITY.'class.util.php';
 include_once 'class.discussionCategorydao.php';
 
 Class DiscussionDAO{
@@ -10,7 +10,7 @@ Class DiscussionDAO{
 	private $_DB;
 	private $_Cat;
 
-	function DiscussionDAO(){
+	public function __construct(){
 
 		$this->_DB = DBUtil::getInstance();
 		$this->_Cat = new DiscussionCategory();

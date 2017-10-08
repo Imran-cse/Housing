@@ -1,6 +1,6 @@
 <?php
 
-include_once './common/class.common.php'; 
+include_once COMMON.'class.common.php';
 //very important include in every new page before using session globaluser
 
 
@@ -198,5 +198,8 @@ function console_log( $data ){
   echo 'console.log('. json_encode( $data ) .')';
   echo '</script>';
 }
+
+
+
 
 ?>

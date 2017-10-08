@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 02, 2017 at 05:45 PM
+-- Generation Time: Sep 07, 2017 at 04:41 PM
 -- Server version: 5.7.14
--- PHP Version: 5.6.25
+-- PHP Version: 7.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,19 @@ SET time_zone = "+00:00";
 --
 -- Database: `based`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hms_hall`
+--
+
+CREATE TABLE `hms_hall` (
+  `id` varchar(40) NOT NULL,
+  `name` varchar(40) NOT NULL,
+  `description` varchar(200) DEFAULT NULL,
+  `provost` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -148,6 +161,10 @@ INSERT INTO `tbl_permission` (`ID`, `Name`, `Category`) VALUES
 ('DISCUSSION_D', 'DISCUSSION_D', 'DISCUSSION'),
 ('DISCUSSION_R', 'DISCUSSION_R', 'DISCUSSION'),
 ('DISCUSSION_U', 'DISCUSSION_U', 'DISCUSSION'),
+('HALL_C', 'HALL_C', 'HALL'),
+('HALL_D', 'HALL_D', 'HALL'),
+('HALL_R', 'HALL_R', 'HALL'),
+('HALL_U', 'HALL_U', 'HALL'),
 ('PERMISSION_C', 'PERMISSION_C', 'PERMISSION'),
 ('PERMISSION_D', 'PERMISSION_D', 'PERMISSION'),
 ('PERMISSION_R', 'PERMISSION_R', 'PERMISSION'),
@@ -224,6 +241,7 @@ CREATE TABLE `tbl_role` (
 
 INSERT INTO `tbl_role` (`ID`, `Name`) VALUES
 ('administrator', 'Administrator'),
+('hall assign', 'Hall Assign'),
 ('registration coordinator', 'Registration Coordinator'),
 ('student', 'Student'),
 ('stuff', 'Stuff'),
@@ -247,50 +265,78 @@ CREATE TABLE `tbl_role_permission` (
 --
 
 INSERT INTO `tbl_role_permission` (`Row`, `RoleID`, `PermissionID`) VALUES
-(1514, 'administrator', 'DISCIPLINE_C'),
-(1515, 'administrator', 'DISCIPLINE_D'),
-(1516, 'administrator', 'DISCIPLINE_R'),
-(1517, 'administrator', 'DISCIPLINE_U'),
-(1518, 'administrator', 'DISCUSSION_C'),
-(1519, 'administrator', 'DISCUSSION_D'),
-(1520, 'administrator', 'DISCUSSION_R'),
-(1521, 'administrator', 'DISCUSSION_U'),
-(1522, 'administrator', 'DISCUSSION_CAT_C'),
-(1523, 'administrator', 'DISCUSSION_CAT_D'),
-(1524, 'administrator', 'DISCUSSION_CAT_R'),
-(1525, 'administrator', 'DISCUSSION_CAT_U'),
-(1526, 'administrator', 'DISCUSSION_COMMENT_C'),
-(1527, 'administrator', 'DISCUSSION_COMMENT_D'),
-(1528, 'administrator', 'DISCUSSION_COMMENT_R'),
-(1529, 'administrator', 'DISCUSSION_COMMENT_U'),
-(1530, 'administrator', 'PERMISSION_C'),
-(1531, 'administrator', 'PERMISSION_D'),
-(1532, 'administrator', 'PERMISSION_R'),
-(1533, 'administrator', 'PERMISSION_U'),
-(1534, 'administrator', 'POSITION_C'),
-(1535, 'administrator', 'POSITION_D'),
-(1536, 'administrator', 'POSITION_R'),
-(1537, 'administrator', 'POSITION_U'),
-(1538, 'administrator', 'ROLE_C'),
-(1539, 'administrator', 'ROLE_D'),
-(1540, 'administrator', 'ROLE_R'),
-(1541, 'administrator', 'ROLE_U'),
-(1542, 'administrator', 'SCHOOL_C'),
-(1543, 'administrator', 'SCHOOL_D'),
-(1544, 'administrator', 'SCHOOL_R'),
-(1545, 'administrator', 'SCHOOL_U'),
-(1546, 'administrator', 'TERM_C'),
-(1547, 'administrator', 'TERM_D'),
-(1548, 'administrator', 'TERM_R'),
-(1549, 'administrator', 'TERM_U'),
-(1550, 'administrator', 'USER_C'),
-(1551, 'administrator', 'USER_D'),
-(1552, 'administrator', 'USER_R'),
-(1553, 'administrator', 'USER_U'),
-(1554, 'administrator', 'YEAR_C'),
-(1555, 'administrator', 'YEAR_D'),
-(1556, 'administrator', 'YEAR_R'),
-(1557, 'administrator', 'YEAR_U');
+(1646, 'student', 'DISCUSSION_C'),
+(1647, 'student', 'DISCUSSION_D'),
+(1648, 'student', 'DISCUSSION_R'),
+(1649, 'student', 'DISCUSSION_U'),
+(1650, 'student', 'DISCUSSION_CAT_C'),
+(1651, 'student', 'DISCUSSION_CAT_D'),
+(1652, 'student', 'DISCUSSION_CAT_R'),
+(1653, 'student', 'DISCUSSION_CAT_U'),
+(1654, 'student', 'DISCUSSION_COMMENT_C'),
+(1655, 'student', 'DISCUSSION_COMMENT_D'),
+(1656, 'student', 'DISCUSSION_COMMENT_R'),
+(1657, 'student', 'DISCUSSION_COMMENT_U'),
+(1750, 'administrator', 'DISCIPLINE_C'),
+(1751, 'administrator', 'DISCIPLINE_D'),
+(1752, 'administrator', 'DISCIPLINE_R'),
+(1753, 'administrator', 'DISCIPLINE_U'),
+(1754, 'administrator', 'DISCUSSION_C'),
+(1755, 'administrator', 'DISCUSSION_D'),
+(1756, 'administrator', 'DISCUSSION_R'),
+(1757, 'administrator', 'DISCUSSION_U'),
+(1758, 'administrator', 'DISCUSSION_CAT_C'),
+(1759, 'administrator', 'DISCUSSION_CAT_D'),
+(1760, 'administrator', 'DISCUSSION_CAT_R'),
+(1761, 'administrator', 'DISCUSSION_CAT_U'),
+(1762, 'administrator', 'DISCUSSION_COMMENT_C'),
+(1763, 'administrator', 'DISCUSSION_COMMENT_D'),
+(1764, 'administrator', 'DISCUSSION_COMMENT_R'),
+(1765, 'administrator', 'DISCUSSION_COMMENT_U'),
+(1766, 'administrator', 'HALL_C'),
+(1767, 'administrator', 'HALL_D'),
+(1768, 'administrator', 'HALL_R'),
+(1769, 'administrator', 'HALL_U'),
+(1770, 'administrator', 'PERMISSION_C'),
+(1771, 'administrator', 'PERMISSION_D'),
+(1772, 'administrator', 'PERMISSION_R'),
+(1773, 'administrator', 'PERMISSION_U'),
+(1774, 'administrator', 'POSITION_C'),
+(1775, 'administrator', 'POSITION_D'),
+(1776, 'administrator', 'POSITION_R'),
+(1777, 'administrator', 'POSITION_U'),
+(1778, 'administrator', 'ROLE_C'),
+(1779, 'administrator', 'ROLE_D'),
+(1780, 'administrator', 'ROLE_R'),
+(1781, 'administrator', 'ROLE_U'),
+(1782, 'administrator', 'SCHOOL_C'),
+(1783, 'administrator', 'SCHOOL_D'),
+(1784, 'administrator', 'SCHOOL_R'),
+(1785, 'administrator', 'SCHOOL_U'),
+(1786, 'administrator', 'TERM_C'),
+(1787, 'administrator', 'TERM_D'),
+(1788, 'administrator', 'TERM_R'),
+(1789, 'administrator', 'TERM_U'),
+(1790, 'administrator', 'USER_C'),
+(1791, 'administrator', 'USER_D'),
+(1792, 'administrator', 'USER_R'),
+(1793, 'administrator', 'USER_U'),
+(1794, 'administrator', 'YEAR_C'),
+(1795, 'administrator', 'YEAR_D'),
+(1796, 'administrator', 'YEAR_R'),
+(1797, 'administrator', 'YEAR_U'),
+(1809, 'hall assign', 'TERM_C'),
+(1810, 'hall assign', 'TERM_D'),
+(1811, 'hall assign', 'TERM_R'),
+(1812, 'hall assign', 'TERM_U'),
+(1813, 'hall assign', 'USER_C'),
+(1814, 'hall assign', 'USER_D'),
+(1815, 'hall assign', 'USER_R'),
+(1816, 'hall assign', 'USER_U'),
+(1817, 'hall assign', 'YEAR_C'),
+(1818, 'hall assign', 'YEAR_D'),
+(1819, 'hall assign', 'YEAR_R'),
+(1820, 'hall assign', 'YEAR_U');
 
 -- --------------------------------------------------------
 
@@ -359,7 +405,12 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`ID`, `UniversityID`, `Email`, `Password`, `FirstName`, `LastName`, `Status`, `IsLogged`, `IsArchived`, `IsDeleted`) VALUES
-('test@test.com', '020201', 'test@test.com', '123', 'I AM', 'ADMIN', 'approved', NULL, NULL, NULL);
+('another1@test.com', '020205', 'another1@test.com', '123', 'Another1', 'Test ', 'approved', NULL, NULL, NULL),
+('another@test.com', '020202', 'another@test.com', '123', 'Another', 'Test     ', 'approved', NULL, NULL, NULL),
+('super@test.com', '020203', 'super@test.com', '123', 'Super', 'Test', 'approved', NULL, NULL, NULL),
+('test1@test.com', '140201', 'test1@test.com', '123', 'test', 'test', 'approved', NULL, NULL, NULL),
+('test@test.com', '020201', 'test@test.com', '123', 'I AM', 'ADMIN ', 'approved', NULL, NULL, NULL),
+('working@test.com', '020204', 'working@test.com', '123', 'Working', 'Test', 'pending', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -382,7 +433,12 @@ CREATE TABLE `tbl_user_details` (
 --
 
 INSERT INTO `tbl_user_details` (`ID`, `FatherName`, `MotherName`, `PermanentAddress`, `HomePhone`, `CurrentAddress`, `MobilePhone`) VALUES
-('test@test.com', 'My father', 'My mother', 'My address', '04100000', 'Same', '0171100000');
+('another1@test.com', NULL, NULL, NULL, NULL, NULL, NULL),
+('another@test.com', NULL, NULL, NULL, NULL, NULL, NULL),
+('super@test.com', NULL, NULL, NULL, NULL, NULL, NULL),
+('test1@test.com', NULL, NULL, NULL, NULL, NULL, NULL),
+('test@test.com', 'My father', 'My mother', 'My address', '04100000', 'Same', '0171100000'),
+('working@test.com', NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -420,7 +476,22 @@ INSERT INTO `tbl_user_position` (`ID`, `UserID`, `PositionID`) VALUES
 (21, '{8B24B76D-9969-4F71-ABC4-6EE59355C686}', '{64D25DDA-16B6-47B8-BBFC-4E2AAF5680C7}'),
 (24, '{9E2E6363-A0FF-4C0F-B58F-D162725FB702}', '{C27B6BCF-FB83-4F3D-85CA-B7870D8B12D0}'),
 (30, 'mohidul@gmail.com', '{64D25DDA-16B6-47B8-BBFC-4E2AAF5680C7}'),
-(37, 'mkazi078@uottawa.ca', '{64D25DDA-16B6-47B8-BBFC-4E2AAF5680C7}');
+(37, 'mkazi078@uottawa.ca', '{64D25DDA-16B6-47B8-BBFC-4E2AAF5680C7}'),
+(41, 'test@test.com', '{64D25DDA-16B6-47B8-BBFC-4E2AAF5680C7}'),
+(44, 'another@test.com', '{64D25DDA-16B6-47B8-BBFC-4E2AAF5680C7}'),
+(45, 'another@test.com', '{ADA027D3-21C1-47AF-A21D-759CAFCFE58D}'),
+(46, 'another@test.com', '{C27B6BCF-FB83-4F3D-85CA-B7870D8B12D0}'),
+(47, 'another@test.com', '{92FDDA3F-1E91-4AA3-918F-EB595F85790C}'),
+(48, 'another@test.com', '{818DE12F-60CC-42E4-BAEC-48EAAED65179}'),
+(49, 'another@test.com', '{B78C7A7B-4D38-4025-8170-7B8C9F291946}'),
+(50, 'another@test.com', '{7CDA1F32-A2F8-4469-B5A8-C2038FCE1F9A}'),
+(51, 'another@test.com', '{B76EB035-EA26-4CEB-B029-1C6129574D98}'),
+(52, 'another@test.com', '{2E024DF5-BD45-4EF2-A5E3-43BCA3E9777F}'),
+(53, 'another@test.com', '{EB4880E2-01B3-4C6E-A2C9-89B6E5427C0A}'),
+(54, 'another@test.com', '{932CB0EE-76C2-448E-A40E-2D167EECC479}'),
+(55, 'another@test.com', '{1BFE76DB-C2AA-4FAA-A23B-F43E6150A2F6}'),
+(56, 'another@test.com', '{928EE9FF-E02D-470F-9A6A-AD0EB38B848F}'),
+(57, 'another1@test.com', '{1BFE76DB-C2AA-4FAA-A23B-F43E6150A2F6}');
 
 -- --------------------------------------------------------
 
@@ -439,8 +510,13 @@ CREATE TABLE `tbl_user_role` (
 --
 
 INSERT INTO `tbl_user_role` (`ID`, `UserID`, `RoleID`) VALUES
-(98, 'test@test.com', 'administrator'),
-(99, 'test@test.com', 'teacher');
+(105, 'test@test.com', 'administrator'),
+(106, 'test@test.com', 'teacher'),
+(109, 'another@test.com', 'student'),
+(110, 'super@test.com', 'student'),
+(111, 'working@test.com', 'student'),
+(113, 'another1@test.com', 'hall assign'),
+(114, 'test1@test.com', 'hall assign');
 
 -- --------------------------------------------------------
 
@@ -472,6 +548,12 @@ INSERT INTO `tbl_year` (`ID`, `Name`) VALUES
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `hms_hall`
+--
+ALTER TABLE `hms_hall`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tbl_discipline`
@@ -567,17 +649,17 @@ ALTER TABLE `tbl_year`
 -- AUTO_INCREMENT for table `tbl_role_permission`
 --
 ALTER TABLE `tbl_role_permission`
-  MODIFY `Row` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1558;
+  MODIFY `Row` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1821;
 --
 -- AUTO_INCREMENT for table `tbl_user_position`
 --
 ALTER TABLE `tbl_user_position`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 --
 -- AUTO_INCREMENT for table `tbl_user_role`
 --
 ALTER TABLE `tbl_user_role`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,17 +1,17 @@
 <?php
 // write dao object for each class
 
-include_once './common/class.common.php';
-include_once './common/class.common.housing.php';
-include_once './util/class.util.php';
-include_once 'class.housingdao.php';
+include_once COMMON.'class.common.php';
+include_once COMMON.'class.common.housing.php';
+include_once UTILITY.'class.util.php';
+include_once MODULES_HOUSING_DAO.'class.housingdao.php';
 
 Class HousingRoomDAO{
 
 	private $_DB;
 	private $_HousingRoom;
 	
-	function HousingRoomDAO(){
+	function __construct(){
 
 		$this->_DB = DBUtil::getInstance();
 		$this->_HousingRoom= new HousingRoom();
