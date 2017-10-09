@@ -242,6 +242,7 @@ class HousingApplication
     private $_id;
     private $_subject;
     private $_user_id;
+    private $_receiver;
     private $_discipline;
     private $_description;
     private $_status;
@@ -275,6 +276,16 @@ class HousingApplication
     public function getUserId()
     {
         return $this->_user_id;
+    }
+
+    public function setReceiver($receiver)
+    {
+        $this->_receiver = $receiver;
+    }
+
+    public function getReceiver()
+    {
+        return $this->_receiver;
     }
 
     public function setDiscipline($discipline)
@@ -315,32 +326,6 @@ class HousingApplication
     public function getDate()
     {
         return $this->_date;
-    }
-}
-
-class HousingApplicationType
-{
-    private $_id;
-    private $_name;
-
-    public function setId($id)
-    {
-        $this->_id = $id;
-    }
-
-    public function getId()
-    {
-        return $this->_id;
-    }
-
-    public function setName($name)
-    {
-        $this->_name = $name;
-    }
-
-    public function getName()
-    {
-        return $this->_name;
     }
 }
 

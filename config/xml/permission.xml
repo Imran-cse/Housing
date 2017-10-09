@@ -256,32 +256,6 @@
 		<category>HOUSING APPLICATION</category>
 	</permission>
 
-	<!-- Housing Application Type Category -->
-
-	<permission>
-		<id>HOUSING_APPLICATION_TYPE_C</id>
-		<name>HOUSING_APPLICATION_TYPE_C</name>
-		<category>HOUSING APPLICATION TYPE</category>
-	</permission>
-
-	<permission>
-		<id>HOUSING_APPLICATION_TYPE_R</id>
-		<name>HOUSING_APPLICATION_TYPE_R</name>
-		<category>HOUSING APPLICATION TYPE</category>
-	</permission>
-
-	<permission>
-		<id>HOUSING_APPLICATION_TYPE_U</id>
-		<name>HOUSING_APPLICATION_TYPE_U</name>
-		<category>HOUSING APPLICATION TYPE</category>
-	</permission>
-
-	<permission>
-		<id>HOUSING_APPLICATION_TYPE_D</id>
-		<name>HOUSING_APPLICATION_TYPE_D</name>
-		<category>HOUSING APPLICATION TYPE</category>
-	</permission>
-
 	<permission>
 		<id>HOUSING_APPLICATION_MANAGE_C</id>
 		<name>HOUSING_APPLICATION_MANAGE_C</name>
