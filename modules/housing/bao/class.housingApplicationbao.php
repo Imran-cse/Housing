@@ -17,7 +17,18 @@ class HousingApplicationBAO
 		$Result = $this->_HousingApplicationDAO->getAllDisciplines();
 
 		if(!$Result->getIsSuccess())
-			$Result->setResultObject("Database failure in HousingApplicationTypeDAO.getAllHousingApplicationTypes()");
+			$Result->setResultObject("Database failure in HousingApplicationDAO.getAllDisciplines()");
+
+		return $Result;
+	}
+
+	public function getApplicationTemplate($aid){
+
+		$Result = new Result();
+		$Result = $this->_HousingApplicationDAO->getApplicationTemplate($aid);
+
+		if(!$Result->getIsSuccess())
+			$Result->setResultObject("Database failure in HousingApplicationDAO.getApplicationTemplate()");
 
 		return $Result;
 	}

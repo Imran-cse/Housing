@@ -42,10 +42,25 @@ class HousingApplicationDAO
 		return $Result;
 	}
 
-	public function getApplicationTemplate(){
-		$ApplicationTemplateList = array();
+	public function getApplicationTemplate($aid){
+		$SQL = "SELECT * FROM hms_application_template WHERE id='".$aid."'";
+		$SQL = $this->_DB->doQuery($SQL);
 
-		$this->_DB->doQuery("SELECT * FROM hms_application_template WHERE id='$_GET['view']'");
+		$row = $this->_DB->getTopRow();
+
+		$this->_ApplicationTemplate = new ApplicationTemplate();
+
+		$this->_ApplicationTemplate->setId ( $row['id']);
+		$this->_ApplicationTemplate->setReceiver( $row['receiver'] );
+		$this->_ApplicationTemplate->setSubject( $row['subject'] );
+		$this->_ApplicationTemplate->setBody( $row['body'] );
+		
+		
+	 	$Result = new Result();
+		$Result->setIsSuccess(1);
+		$Result->setResultObject($this->_ApplicationTemplate);
+
+		return $Result;
 	}
 
 	public function createApplication($HousingApplication){

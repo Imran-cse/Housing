@@ -353,6 +353,18 @@ class MiddlewareUtil{
 
          self::$s_Routes[PageUtil::$HALL]   =  PageUtil::$LOGIN ;
 
+         self::$s_Routes[PageUtil::$HOUSING_TYPE]   =  PageUtil::$LOGIN ;
+         self::$s_Routes[PageUtil::$HOUSING]   =  PageUtil::$LOGIN ;
+         self::$s_Routes[PageUtil::$HOUSING_ROOM]   =  PageUtil::$LOGIN ;
+         self::$s_Routes[PageUtil::$HOUSING_DETAIL]   =  PageUtil::$LOGIN ;
+         self::$s_Routes[PageUtil::$HOUSING_ROOM_ASSIGN]   =  PageUtil::$LOGIN ;
+         self::$s_Routes[PageUtil::$HOUSING_SEARCH]   =  PageUtil::$LOGIN ;
+         self::$s_Routes[PageUtil::$HOUSING_APPLICATION]   =  PageUtil::$LOGIN ;
+         self::$s_Routes[PageUtil::$HOUSING_APPLICATION_MANAGE]   =  PageUtil::$LOGIN ;
+         self::$s_Routes[PageUtil::$APPLICATION_TEMPLATE]   =  PageUtil::$LOGIN ;
+         self::$s_Routes[PageUtil::$APPLICATION_FORMAT]   =  PageUtil::$LOGIN ;
+         
+
          self::$s_Routes[PageUtil::$ROLE]   =  PageUtil::$LOGIN ;
          self::$s_Routes[PageUtil::$PERMISSION]   =  PageUtil::$LOGIN ;
          

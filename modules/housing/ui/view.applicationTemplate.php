@@ -17,7 +17,7 @@ include_once COMMON.'class.common.housing.php';
                 <div class="form-group">
                     <label for="receiver" class="col-md-2 control-label">Receiver</label>
                     <div class="col-md-8">
-                        <input type="text" name="receiver" class="form-control" required>
+                        <input type="text" name="receiver" class="form-control" placeholder="Receiver" required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -29,7 +29,7 @@ include_once COMMON.'class.common.housing.php';
                 <div class="form-group">
                     <label for="body" class="col-md-2 control-label">Body</label>
                     <div class="col-md-8">
-                        <textarea class="form-control" name="body" placeholder="Type your application here.." required></textarea>
+                        <textarea class="form-control" style="width:100%; height: 200px;" name="body" placeholder="Type your application here.." required></textarea>
                     </div>
                 </div>
                 
