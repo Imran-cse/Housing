@@ -402,4 +402,26 @@
 					<Permission>HOUSING_APPLICATION_MANAGE_D</Permission>
 				</Permissions>
 			</Menu>
+
+			<Menu>
+				<ParentMenu>Application Related</ParentMenu>
+				<Title>Application Template</Title>
+				<Link>application_template.php</Link>
+				<Permissions>
+					<Permission>APPLICATION_TEMPLATE_C</Permission>
+					<Permission>APPLICATION_TEMPLATE_U</Permission>
+					<Permission>APPLICATION_TEMPLATE_D</Permission>
+				</Permissions>
+			</Menu>
+
+			<Menu>
+				<ParentMenu>Application Related</ParentMenu>
+				<Title>Application Format</Title>
+				<Link>application_format.php</Link>
+				<Permissions>
+					<Permission>APPLICATION_FORMAT_C</Permission>
+					<Permission>APPLICATION_FORMAT_U</Permission>
+					<Permission>APPLICATION_FORMAT_D</Permission>
+				</Permissions>
+			</Menu>
 </Menus>

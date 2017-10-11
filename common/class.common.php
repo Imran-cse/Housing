@@ -197,6 +197,16 @@ class PermissionUtil{
     public static $HOUSING_APPLICATION_MANAGE_R = 'HOUSING_APPLICATION_MANAGE_R';
     public static $HOUSING_APPLICATION_MANAGE_U = 'HOUSING_APPLICATION_MANAGE_U';
     public static $HOUSING_APPLICATION_MANAGE_D = 'HOUSING_APPLICATION_MANAGE_D';
+
+    public static $APPLICATION_TEMPLATE_C = 'APPLICATION_TEMPLATE_C';
+    public static $APPLICATION_TEMPLATE_R = 'APPLICATION_TEMPLATE_R';
+    public static $APPLICATION_TEMPLATE_U = 'APPLICATION_TEMPLATE_U';
+    public static $APPLICATION_TEMPLATE_D = 'APPLICATION_TEMPLATE_D';
+
+    public static $APPLICATION_FORMAT_C = 'APPLICATION_FORMAT_C';
+    public static $APPLICATION_FORMAT_R = 'APPLICATION_FORMAT_R';
+    public static $APPLICATION_FORMAT_U = 'APPLICATION_FORMAT_U';
+    public static $APPLICATION_FORMAT_D = 'APPLICATION_FORMAT_D';
 }
 
 class PageUtil{
@@ -232,6 +242,8 @@ class PageUtil{
     public static $HOUSING_SEARCH='housing_search.php';
     public static $HOUSING_APPLICATION = 'housing_application.php';
     public static $HOUSING_APPLICATION_MANAGE = 'housing_application_manage.php';
+    public static $APPLICATION_TEMPLATE = 'application_template.php';
+    public static $APPLICATION_FORMAT = 'application_format.php';
 
     public static $USER='user.php';
     public static $USER_NEW='user_new.php';
@@ -288,6 +300,8 @@ class RouteUtil{
          self::$s_Routes[PageUtil::$HOUSING_SEARCH] = "/modules/housing/ui/view.housingSearch.php";
          self::$s_Routes[PageUtil::$HOUSING_APPLICATION] = "/modules/housing/ui/view.housingApplication.php";
          self::$s_Routes[PageUtil::$HOUSING_APPLICATION_MANAGE] = "/modules/housing/ui/view.housingApplicationManage.php";
+         self::$s_Routes[PageUtil::$APPLICATION_TEMPLATE] = "/modules/housing/ui/view.applicationTemplate.php";
+         self::$s_Routes[PageUtil::$APPLICATION_FORMAT] = "/modules/housing/ui/view.applicationFormat.php";
  
 
         //the page not found will redirect to error page

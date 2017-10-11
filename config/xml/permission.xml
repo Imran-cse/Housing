@@ -306,6 +306,47 @@
 		<category>HOUSING APPLICATION MANAGE</category>
 	</permission>
 
+	<permission>
+		<id>APPLICATION_TEMPLATE_C</id>
+		<name>APPLICATION_TEMPLATE_C</name>
+		<category>APPLICATION TEMPLATE</category>
+	</permission>
+		<permission>
+		<id>APPLICATION_TEMPLATE_R</id>
+		<name>APPLICATION_TEMPLATE_R</name>
+		<category>APPLICATION TEMPLATE</category>
+	</permission>
+		<permission>
+		<id>APPLICATION_TEMPLATE_U</id>
+		<name>APPLICATION_TEMPLATE_U</name>
+		<category>APPLICATION TEMPLATE</category>
+	</permission>
+		<permission>
+		<id>APPLICATION_TEMPLATE_D</id>
+		<name>APPLICATION_TEMPLATE_D</name>
+		<category>APPLICATION TEMPLATE</category>
+	</permission>
+
+	<permission>
+		<id>APPLICATION_FORMAT_C</id>
+		<name>APPLICATION_FORMAT_C</name>
+		<category>APPLICATION FORMAT</category>
+	</permission>
+		<permission>
+		<id>APPLICATION_FORMAT_R</id>
+		<name>APPLICATION_FORMAT_R</name>
+		<category>APPLICATION FORMAT</category>
+	</permission>
+		<permission>
+		<id>APPLICATION_FORMAT_U</id>
+		<name>APPLICATION_FORMAT_U</name>
+		<category>APPLICATION FORMAT</category>
+	</permission>
+		<permission>
+		<id>APPLICATION_FORMAT_D</id>
+		<name>APPLICATION_FORMAT_D</name>
+		<category>APPLICATION FORMAT</category>
+	</permission>
 
 	<!-- PERMISSION Category -->
 	<permission>

@@ -6,16 +6,6 @@ include_once COMMON.'class.common.housing.php';
 
 ?>
 
-
-
-
-<script>
-    function success() {
-        $document.getElementById("success").innerHTML = "Successful";
-    }
-</script>
-<h1 id="success"></h1>
-
 <div class="panel col-md-8 col-md-offset-2" style="border-top: outset; border-left: outset;
                                 border-bottom: inset; border-right: inset; margin-top: 50px">
     <div class="panel-heading">
@@ -53,38 +43,9 @@ include_once COMMON.'class.common.housing.php';
                         <textarea class="form-control" name="description" placeholder="Type your application here.." required></textarea>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="discipline" class="col-md-2 control-label">Discipline</label>
-                    <div class="col-md-8">
-                        <?php
-
-                        $var = '<select name="discipline" class="form-control"  id="select-from-type">';
-                        $Result = $_HousingApplicationBAO->getAllDisciplines();
-
-                        //if DAO access is successful to load all the Roles then show them one by one
-
-                        if($Result->getIsSuccess()){
-
-                            $Disciplines = $Result->getResultObject();
-
-                            for ($i=0; $i < sizeof($Disciplines); $i++) {
-
-                                $Discipline = $Disciplines[$i];
-
-                                $var = $var. '<option value="'.$Discipline->getID().'"';
-
-                                $var = $var.'>'.$Discipline->getName().'</option>';
-
-                            }
-
-                            $var = $var.'</select>';
-                        }
-                        echo $var;
-                        ?>
-                    </div>
-                </div>
+                
                 <div>
-                    <button type="submit" name="save" onclick="success();" class="btn btn-primary">Save</button>
+                    <button type="submit" name="apply" class="btn btn-primary">Apply</button>
                 </div>
 
             </form>
