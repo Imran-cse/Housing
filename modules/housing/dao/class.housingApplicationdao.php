@@ -42,6 +42,12 @@ class HousingApplicationDAO
 		return $Result;
 	}
 
+	public function getApplicationTemplate(){
+		$ApplicationTemplateList = array();
+
+		$this->_DB->doQuery("SELECT * FROM hms_application_template WHERE id='$_GET['view']'");
+	}
+
 	public function createApplication($HousingApplication){
 		$Id = $HousingApplication->getId();
 		$Subject = $HousingApplication->getSubject();
