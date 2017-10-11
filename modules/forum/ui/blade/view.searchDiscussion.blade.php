@@ -1,7 +1,7 @@
 <?php
 
-include_once './util/class.util.php';
-include_once '/../../bao/class.searchDiscussionbao.php';
+include_once UTILITY.'class.util.php';
+include_once MODULES_FORUM.'bao/class.searchDiscussionbao.php';
 
 $_searchDiscussionBAO = new searchDiscussionBAO();
 $_DB = DBUtil::getInstance();

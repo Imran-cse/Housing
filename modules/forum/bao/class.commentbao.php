@@ -1,7 +1,7 @@
 <?php
 
-include_once './util/class.util.php';
-include_once '/../dao/class.commentdao.php';
+include_once UTILITY.'class.util.php';
+include_once MODULES_FORUM.'dao/class.commentdao.php';
 
 
 /*
@@ -12,7 +12,7 @@ Class CommentBAO{
 	private $_DB;
 	private $_CommentDAO;
 
-	function CommentBAO(){
+	public function __construct(){
 
 		$this->_CommentDAO = new CommentDAO();
 

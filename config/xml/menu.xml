@@ -7,10 +7,10 @@
 		<Permissions>
 			<Permission>USER_C</Permission>
 			<Permission>USER_U</Permission>
-			<Permission>USER_D</Permission>
+			<Permission>USER_D</Permission>				
 			<Permission>ROLE_C</Permission>
 			<Permission>ROLE_U</Permission>
-			<Permission>ROLE_D</Permission>
+			<Permission>ROLE_D</Permission>	
 			<Permission>PERMISSION_C</Permission>
 			<Permission>PERMISSION_U</Permission>
 			<Permission>PERMISSION_D</Permission>
@@ -22,8 +22,8 @@
 			<Permission>SCHOOL_D</Permission>
 			<Permission>POSITION_C</Permission>
 			<Permission>POSITION_U</Permission>
-			<Permission>POSITION_D</Permission>
-		</Permissions>
+			<Permission>POSITION_D</Permission>						
+		</Permissions>			
 	</Menu>
 
 		<Menu>
@@ -32,12 +32,12 @@
 			<Permissions>
 				<Permission>ROLE_C</Permission>
 				<Permission>ROLE_U</Permission>
-				<Permission>ROLE_D</Permission>
+				<Permission>ROLE_D</Permission>	
 				<Permission>PERMISSION_C</Permission>
 				<Permission>PERMISSION_U</Permission>
-				<Permission>PERMISSION_D</Permission>
+				<Permission>PERMISSION_D</Permission>															
 			</Permissions>
-		</Menu>
+		</Menu>	
 
 			<Menu>
 				<ParentMenu>Role Related</ParentMenu>
@@ -67,7 +67,7 @@
 			<Permissions>
 				<Permission>USER_C</Permission>
 				<Permission>USER_U</Permission>
-				<Permission>USER_D</Permission>
+				<Permission>USER_D</Permission>	
 				<Permission>DISCIPLINE_C</Permission>
 				<Permission>DISCIPLINE_U</Permission>
 				<Permission>DISCIPLINE_D</Permission>
@@ -78,7 +78,7 @@
 				<Permission>POSITION_U</Permission>
 				<Permission>POSITION_D</Permission>
 			</Permissions>
-		</Menu>
+		</Menu>	
 
 			<Menu>
 				<ParentMenu>Setup Related</ParentMenu>
@@ -109,7 +109,7 @@
 					<Permission>SCHOOL_U</Permission>
 					<Permission>SCHOOL_D</Permission>
 				</Permissions>
-			</Menu>
+			</Menu>			
 			<Menu>
 				<ParentMenu>Setup Related</ParentMenu>
 				<Title>Manage Position</Title>
@@ -126,17 +126,17 @@
 		<ParentMenu></ParentMenu>
 		<Title>User</Title>
 		<Permissions>
-			<Permission>USER_R</Permission>
-		</Permissions>
+			<Permission>USER_R</Permission>	
+		</Permissions>			
 	</Menu>
 
 		<Menu>
 			<ParentMenu>User</ParentMenu>
 			<Title>User Related</Title>
 			<Permissions>
-				<Permission>USER_R</Permission>
+				<Permission>USER_R</Permission>														
 			</Permissions>
-		</Menu>
+		</Menu>	
 
 			<Menu>
 				<ParentMenu>User Related</ParentMenu>
@@ -174,12 +174,12 @@
 			<Permission>DISCUSSION_C</Permission>
 			<Permission>DISCUSSION_R</Permission>
 			<Permission>DISCUSSION_U</Permission>
-			<Permission>DISCUSSION_D</Permission>
+			<Permission>DISCUSSION_D</Permission>												
 			<Permission>DISCUSSION_CAT_C</Permission>
 			<Permission>DISCUSSION_CAT_R</Permission>
 			<Permission>DISCUSSION_CAT_U</Permission>
-			<Permission>DISCUSSION_CAT_D</Permission>
-		</Permissions>
+			<Permission>DISCUSSION_CAT_D</Permission>												
+		</Permissions>			
 	</Menu>
 
 		<Menu>
@@ -189,7 +189,7 @@
 				<Permission>DISCUSSION_C</Permission>
 				<Permission>DISCUSSION_R</Permission>
 				<Permission>DISCUSSION_U</Permission>
-				<Permission>DISCUSSION_D</Permission>
+				<Permission>DISCUSSION_D</Permission>												
 				<Permission>DISCUSSION_CAT_C</Permission>
 				<Permission>DISCUSSION_CAT_U</Permission>
 				<Permission>DISCUSSION_CAT_D</Permission>
@@ -270,6 +270,37 @@
 					<Permission>DISCUSSION_R</Permission>
 					<Permission>DISCUSSION_U</Permission>
 					<Permission>DISCUSSION_D</Permission>
+				</Permissions>
+			</Menu>
+
+<!-- Hall -->
+	<Menu>
+		<ParentMenu></ParentMenu>
+		<Title>Hall Management</Title>
+		<Permissions>
+			<Permission>HALL_C</Permission>
+			<Permission>HALL_U</Permission>
+			<Permission>HALL_D</Permission>				
+		</Permissions>			
+	</Menu>
+		<Menu>
+			<ParentMenu>Hall Management</ParentMenu>
+			<Title>Hall Related</Title>
+			<Permissions>
+				<Permission>HALL_C</Permission>
+				<Permission>HALL_U</Permission>
+				<Permission>HALL_D</Permission>															
+			</Permissions>
+		</Menu>	
+
+			<Menu>
+				<ParentMenu>Hall Related</ParentMenu>
+				<Title>Manage Hall</Title>
+				<Link>hall.php</Link>
+				<Permissions>
+					<Permission>HALL_C</Permission>
+					<Permission>HALL_U</Permission>
+					<Permission>HALL_D</Permission>
 				</Permissions>
 			</Menu>
 

@@ -1,7 +1,7 @@
 <?php
 
-include_once './util/class.util.php';
-include_once '/../dao/class.housingSearchdao.php';
+include_once UTILITY.'class.util.php';
+include_once MODULES_HOUSING_DAO.'class.housingSearchdao.php';
 
 /*
 	Housing Details Business Object 
@@ -11,7 +11,7 @@ Class HousingSearchBAO{
 	private $_DB;
 	private $_HousingSearchDAO;
 
-	function HousingSearchBAO(){
+	function __construct(){
 
 		$this->_HousingSearchDAO = new HousingSearchDAO();
 	}

@@ -1,7 +1,7 @@
 <?php
 
-include_once './util/class.util.php';
-include_once '/../dao/class.discussionCategorydao.php';
+include_once UTILITY.'class.util.php';
+include_once MODULES_FORUM.'dao/class.discussionCategorydao.php';
 
 
 /*
@@ -12,7 +12,7 @@ Class DiscussionCategoryBAO{
 	private $_DB;
 	private $_DiscussionCategoryDAO;
 
-	function DiscussionCategoryBAO(){
+	public function __construct(){
 
 		$this->_DiscussionCategoryDAO = new DiscussionCategoryDAO();
 

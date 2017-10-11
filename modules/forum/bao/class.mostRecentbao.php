@@ -1,7 +1,7 @@
 <?php
 
-include_once './util/class.util.php';
-include_once '/../dao/class.mostRecentdao.php';
+include_once UTILITY.'class.util.php';
+include_once MODULES_FORUM.'dao/class.mostRecentdao.php';
 
 
 /*
@@ -12,7 +12,7 @@ Class MostRecentBAO{
 	private $_DB;
 	private $_MostRecentDAO;
 
-	function MostRecentBAO(){
+	public function __construct(){
 
 		$this->_MostRecentDAO = new MostRecentDAO();
 

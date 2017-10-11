@@ -1,12 +1,11 @@
 <?php
 // write dao object for each class
 
-include_once './common/class.common.php';
-include_once './common/class.common.housing.php';
-include_once './common/class.common.user.php';
-include_once './util/class.util.php';
-include_once 'class.housingdao.php';
-
+include_once COMMON.'class.common.php';
+include_once COMMON.'class.common.housing.php';
+include_once COMMON.'class.common.user.php';
+include_once UTILITY.'class.util.php';
+include_once MODULES_HOUSING_DAO.'class.housingdao.php';
 
 
 Class HousingRoomAssignDAO{
@@ -14,7 +13,7 @@ Class HousingRoomAssignDAO{
 	private $_DB;
 	private $_HousingRoomAssign;
 	
-	function HousingRoomAssignDAO(){
+	function __construct(){
 
 		$this->_DB = DBUtil::getInstance();
 		$this->_HousingRoomAssign= new HousingRoomAssign();

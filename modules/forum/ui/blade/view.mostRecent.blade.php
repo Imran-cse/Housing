@@ -1,7 +1,7 @@
 <?php
 
-include_once './util/class.util.php';
-include_once '/../../bao/class.mostRecentbao.php';
+include_once UTILITY.'class.util.php';
+include_once MODULES_FORUM.'bao/class.mostRecentbao.php';
 
 $_MostRecentBAO = new MostRecentBAO();
 $_DB = DBUtil::getInstance();

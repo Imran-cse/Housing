@@ -1,11 +1,11 @@
 <?php
 include_once 'path.php';
 
-include_once UTILITY.'/class.util.php';
-include_once UTILITY.'/class.database.php';
+include_once UTILITY.'class.util.php';
+include_once UTILITY.'class.database.php';
 
-///util/class.database.php-> QueryTable()
 $db = new QueryToTable();
+
 
 
 //Table structure for table `hms_type`
@@ -26,11 +26,18 @@ $sql = "CREATE TABLE hms_housing (
   type_id varchar(128) NOT NULL,
   no_of_floor int(11) NOT NULL,
   no_of_room int(11) NOT NULL,
+  
   PRIMARY KEY (id),
   FOREIGN KEY (type_id) REFERENCES hms_type(id) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB";
 
 $db->saveTableInDB($sql);
+
+provost varchar(40),
+  ass_provost varchar(128),
+  officer varchar(128),
+  description varchar(250),
+  no_of_workers int(11),
 
 
 // Table structure for table `hms_room`
@@ -51,9 +58,10 @@ $db->saveTableInDB($sql);
 
 
 $sql = "CREATE TABLE hms_assign (
-  user_id varchar(40) NOT NULL,
+  user_id varchar(128) NOT NULL,
   house_id varchar(128) NOT NULL,
   room_id varchar(128) NOT NULL,
+
   FOREIGN KEY (user_id) REFERENCES tbl_user(ID) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (house_id) REFERENCES hms_housing(id) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (room_id) REFERENCES hms_room(room_id) ON DELETE CASCADE ON UPDATE CASCADE
@@ -61,28 +69,39 @@ $sql = "CREATE TABLE hms_assign (
 
 $db->saveTableInDB($sql);
 
-//Table structure for table `hms_housing_details`
+$sql = "CREATE TABLE hms_provost (
+  provost_id varchar(128) NOT NULL,
+  house_id varchar(128) NOT NULL,
+  provost_name varchar(128) NOT NULL,
 
-$sql = "CREATE TABLE hms_housing_details (
-  id varchar(128) NOT NULL,
-  housing_id varchar(128) NOT NULL,
-  provost varchar(40),
-  ass_provost varchar(128),
-  officer varchar(128),
-  description varchar(250),
-  no_of_workers int(11) NOT NULL,
-  PRIMARY KEY (id),
-  FOREIGN KEY (housing_id) REFERENCES hms_housing(id) ON DELETE CASCADE ON UPDATE CASCADE
+  PRIMARY KEY (provost_id),
+  FOREIGN KEY (house_id) REFERENCES hms_housing(id) ON DELETE CASCADE ON UPDATE CASCADE
+  
 ) ENGINE=InnoDB";
 
 $db->saveTableInDB($sql);
 
 
+$sql = "CREATE TABLE hms_assistant_provost (
+  assistant_provost_id varchar(128) NOT NULL,
+  house_id varchar(128) NOT NULL,
+  name varchar(128) NOT NULL,
 
- 
+  PRIMARY KEY (assistant_provost_id),
+  FOREIGN KEY (house_id) REFERENCES hms_housing(id) ON DELETE CASCADE ON UPDATE CASCADE
+  
+) ENGINE=InnoDB";
 
+$db->saveTableInDB($sql);
 
+$sql = "CREATE TABLE hms_employee (
+  employee_id varchar(128) NOT NULL,
+  house_id varchar(128) NOT NULL,
+  name varchar(128) NOT NULL,
 
+  PRIMARY KEY (employee_id),
+  FOREIGN KEY (house_id) REFERENCES hms_housing(id) ON DELETE CASCADE ON UPDATE CASCADE
+  
+) ENGINE=InnoDB";
 
-
-?>
+$db->saveTableInDB($sql);

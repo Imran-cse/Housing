@@ -1,8 +1,8 @@
 <?php
 
-include_once './common/class.common.php';
-include_once './common/class.common.housing.php';
-include_once './util/class.util.php';
+include_once COMMON.'class.common.php';
+include_once COMMON.'class.common.housing.php';
+include_once UTILITY.'class.util.php';
 
 class HousingApplicationDAO
 {
@@ -10,7 +10,7 @@ class HousingApplicationDAO
 	private $_HousingDiscipline;
 	private $_HousingApplication;
 
-	function HousingApplicationDAO(){
+	function __construct(){
 		$this->_DB = DBUtil::getInstance();
 		$this->_HousingDiscipline = new HousingDiscipline();
 		$this->_HousingApplication = new HousingApplication();

@@ -1,7 +1,7 @@
 <?php
 
-include_once './util/class.util.php';
-include_once '/../dao/class.unanswereddao.php';
+include_once UTILITY.'class.util.php';
+include_once MODULES_FORUM.'dao/class.unanswereddao.php';
 
 
 /*
@@ -12,7 +12,7 @@ Class UnansweredBAO{
 	private $_DB;
 	private $_UnansweredDAO;
 
-	function UnansweredBAO(){
+	public function __construct(){
 
 		$this->_UnansweredDAO = new UnansweredDAO();
 

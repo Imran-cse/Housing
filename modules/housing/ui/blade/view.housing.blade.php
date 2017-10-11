@@ -1,8 +1,8 @@
 <?php
 
-include_once './util/class.util.php';
-include_once '/../../bao/class.housingbao.php';
-include_once '/../../bao/class.housingTypebao.php';
+include_once UTILITY.'class.util.php';
+include_once MODULES_HOUSING_BAO.'class.housingbao.php';
+include_once MODULES_HOUSING_BAO.'class.housingTypebao.php';
 
 $_HousingBAO = new HousingBAO();
 $_HousingTypeBAO = new HousingTypeBAO();

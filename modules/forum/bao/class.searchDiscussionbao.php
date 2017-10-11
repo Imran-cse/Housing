@@ -1,7 +1,7 @@
 <?php
 
-include_once './util/class.util.php';
-include_once '/../dao/class.searchDiscussiondao.php';
+include_once UTILITY.'class.util.php';
+include_once MODULES_FORUM.'dao/class.searchDiscussiondao.php';
 
 
 /*
@@ -12,7 +12,7 @@ Class searchDiscussionBAO{
 	private $_DB;
 	private $_searchDiscussionDAO;
 
-	function searchDiscussionBAO(){
+	public function __construct(){
 
 		$this->_searchDiscussionDAO = new searchDiscussionDAO();
 
