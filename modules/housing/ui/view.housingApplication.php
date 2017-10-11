@@ -5,12 +5,6 @@ include_once COMMON.'class.common.php';
 include_once COMMON.'class.common.housing.php';
 
 ?>
-<script>
-    function success() {
-        $document.getElementById("success").innerHTML = "Successful";
-    }
-</script>
-<h1 id="success"></h1>
 <div class="panel col-md-8 col-md-offset-2" style="border-top: outset; border-left: outset;
                                 border-bottom: inset; border-right: inset; margin-top: 50px">
     <div class="panel-heading">

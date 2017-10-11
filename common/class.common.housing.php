@@ -377,3 +377,51 @@ class HousingDiscipline
     }
 
 }
+
+class ApplicationTemplate
+{
+    private $_id;
+    private $_subject;
+    private $_receiver;
+    private $_body;
+
+    public function setId($id)
+    {
+        $this->_id = $id;
+    }
+
+    public function getId()
+    {
+        return $this->_id;
+    }
+
+    public function setSubject($subject)
+    {
+        $this->_subject = $subject;
+    }
+
+    public function getSubject()
+    {
+        return $this->_subject;
+    }
+
+    public function setReceiver($receiver)
+    {
+        $this->_receiver = $receiver;
+    }
+
+    public function getReceiver()
+    {
+        return $this->_receiver;
+    }
+
+    public function setBody($body)
+    {
+        $this->_body = $body;
+    }
+
+    public function getBody()
+    {
+        return $this->_body;
+    }
+}
