@@ -53,9 +53,10 @@ include_once $template_link.'menu.php';
         <script src="resources/js/bootstrap.min.js"></script>
         <script src="resources/js/myscript.js"></script>
         <script src="resources/js/question_js_2.js" rel="script"></script>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     </head>
 
-<body>
+<body style="font-family: 'Open Sans';">
 
 <div class="container-fluid" >
         <div id="menu" style="background-color:LightSteelBlue">
