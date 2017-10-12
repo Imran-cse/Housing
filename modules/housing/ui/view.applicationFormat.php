@@ -8,24 +8,23 @@ include_once COMMON.'class.common.housing.php';
 
 <div class="panel col-md-8 col-md-offset-2" style="border-top: outset; border-left: outset;
                                 border-bottom: inset; border-right: inset; margin-top: 50px;">
-    <div class="panel-heading">
-        Application Format
+    <div class="panel-heading" align="center">
+        <h4><u>Application Format</u></h4>
     </div>
     <div class="panel-body">
-        <div id="form">
             <form class="form-horizontal" method="post">
+                <ul>
                 <!--Thumbnail View-->
                 <?php
 
 
-                    $Result = $_ApplicationFormatBAO->getAllApplicationTemplate();
+                /*    $Result = $_ApplicationFormatBAO->getAllApplicationTemplate();
 
                     //if DAO access is successful to load all Type then show them one by one
                     if($Result->getIsSuccess()){
 
                         $ApplicationTemplateList = $Result->getResultObject();
-                    
-                        
+                     
                         for($i = 0; $i < sizeof($ApplicationTemplateList); $i++) {
                             $ApplicationTemplate = $ApplicationTemplateList[$i];
                             ?>
@@ -48,11 +47,23 @@ include_once COMMON.'class.common.housing.php';
                     else{
 
                         echo $Result->getResultObject(); //giving failure message
+                    }*/
+
+                    $Result = $_ApplicationFormatBAO->getAllApplicationTemplate();
+                    if ($Result->getIsSuccess()) {
+                        $ApplicationTemplateList = $Result->getResultObject();
+                        for ($i=0; $i < sizeof($ApplicationTemplateList); $i++) { 
+                            $ApplicationTemplate = $ApplicationTemplateList[$i];
+
+                            ?>
+
+                            <li><a href="housing_application.php?view=<?php echo $ApplicationTemplate->getId(); ?>"><?php echo $ApplicationTemplate->getSubject(); ?></a></li>
+                            <?php
+                        }
                     }
 
                     ?>
-            
+                </ul>
             </form>
-        </div>
     </div>
 </div>

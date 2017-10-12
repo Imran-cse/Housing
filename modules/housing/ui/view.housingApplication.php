@@ -36,16 +36,16 @@ $_SESSION["aid"] = $_GET['view'];
                 <br>
                 <span><?php echo $ApplicationTemplate->getReceiver(); ?>,</span>
                 <br>
-                <br>
               <!--  <div class="form-group"> --> 
                     <input type="text" style="width:500px; height: 40px;font-size: 16px" class="form-control"
-                           name="txtSend"
+                           name="txtReceiverDepartment"
                            placeholder="Name of Department" required/>
                <!-- </div> -->
                 
                 <span>Khulna University,Khulna</span>
                 <br>
-                <span>Subject: <?php echo $ApplicationTemplate->getSubject(); ?>.</span>
+                <br>
+                <span><b>Subject: <?php echo $ApplicationTemplate->getSubject(); ?>.</b></span>
                 <br>
                 <br>
                <!-- <div class="form-group"> -->
@@ -60,7 +60,7 @@ $_SESSION["aid"] = $_GET['view'];
                 <br>
                 <span>Name: <?php echo $globalUser->getFullName(); ?></span>
                 <br>
-                <span>Roll No:<?php echo $globalUser->getUniversityID(); ?></span>
+                <span>Student Id: <?php echo $globalUser->getUniversityID(); ?></span>
                 <br>
                 <span>Khulna University,Khulna</span>
                 <br>

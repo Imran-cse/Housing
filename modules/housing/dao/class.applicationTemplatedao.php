@@ -28,4 +28,88 @@ class ApplicationTemplateDAO
 
 		return $Result;
 	}
+
+	public function getAllApplicationTemplate(){
+
+		$ApplicationTemplateList = array();
+
+		$this->_DB->doQuery("SELECT * FROM hms_application_template");
+
+		$rows = $this->_DB->getAllRows();
+
+		for($i = 0; $i < sizeof($rows); $i++) {
+			$row = $rows[$i];
+			$this->_ApplicationTemplate = new ApplicationTemplate();
+
+		    $this->_ApplicationTemplate->setId ( $row['id']);
+		    $this->_ApplicationTemplate->setReceiver( $row['receiver'] );
+		    $this->_ApplicationTemplate->setSubject( $row['subject'] );
+		    $this->_ApplicationTemplate->setBody( $row['body'] );
+
+
+		    $ApplicationTemplateList[]=$this->_ApplicationTemplate;
+
+		}
+        
+		$Result = new Result();
+		$Result->setIsSuccess(1);
+		$Result->setResultObject($ApplicationTemplateList);
+
+		return $Result;
+	}
+
+	public function readApplicationTemplate($ApplicationTemplate){
+
+
+		$SQL = "SELECT * from hms_application_template WHERE id='".$ApplicationTemplate->getId()."'";
+		$this->_DB->doQuery($SQL);
+
+		$row = $this->_DB->getTopRow();
+
+		$this->_ApplicationTemplate= new ApplicationTemplate();
+
+	    $this->_ApplicationTemplate->setId ( $row['id']);
+	    $this->_ApplicationTemplate->setReceiver( $row['receiver'] );
+	    $this->_ApplicationTemplate->setSubject( $row['subject'] );
+	    $this->_ApplicationTemplate->setBody( $row['body'] );
+
+
+
+	 	$Result = new Result();
+		$Result->setIsSuccess(1);
+		$Result->setResultObject($this->_ApplicationTemplate);
+
+		return $Result;
+	}
+
+	public function updateApplicationTemplate($ApplicationTemplate){
+
+		$SQL = "UPDATE hms_application_template SET receiver='".$ApplicationTemplate->getReceiver()."',subject='".$ApplicationTemplate->getSubject()."',body='".$ApplicationTemplate->getBody()."'
+				WHERE id='".$ApplicationTemplate->getId()."'";
+
+
+		$SQL = $this->_DB->doQuery($SQL);
+
+	 	$Result = new Result();
+		$Result->setIsSuccess(1);
+		$Result->setResultObject($SQL);
+
+		return $Result;
+
+	}
+
+	public function deleteApplicationTemplate($ApplicationTemplate){
+
+
+		$SQL = "DELETE from hms_application_template where id ='".$ApplicationTemplate->getId()."'";
+
+		$SQL = $this->_DB->doQuery($SQL);
+
+	 	$Result = new Result();
+		$Result->setIsSuccess(1);
+		$Result->setResultObject($SQL);
+
+		return $Result;
+
+	}
 }

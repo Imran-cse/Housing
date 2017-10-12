@@ -17,3 +17,34 @@ if(isset($_POST['create'])){
 
 	$_ApplicationTemplateBAO->createApplicationTemplate($ApplicationTemplate);
 }
+
+if(isset($_GET['edit']))
+{
+	$ApplicationTemplate = new ApplicationTemplate();
+	$ApplicationTemplate->setId($_GET['edit']);
+	$getROW = $_ApplicationTemplateBAO->readApplicationTemplate($ApplicationTemplate)->getResultObject(); 
+}
+
+if(isset($_POST['update']))
+{
+	$ApplicationTemplate = new ApplicationTemplate();
+
+    $ApplicationTemplate->setId ($_GET['edit']);
+    $ApplicationTemplate->setReceiver( $_POST['receiver'] );
+    $ApplicationTemplate->setSubject( $_POST['subject'] );
+    $ApplicationTemplate->setBody( $_POST['body'] );
+
+	$_ApplicationTemplateBAO->updateApplicationTemplate($ApplicationTemplate);
+
+	header("Location:".PageUtil::$APPLICATION_TEMPLATE);
+}
+
+if(isset($_GET['del']))
+{
+
+	$ApplicationTemplate = new ApplicationTemplate();
+	$ApplicationTemplate->setId($_GET['del']);
+	$_ApplicationTemplateBAO->deleteApplicationTemplate($ApplicationTemplate); 
+
+	header("Location:".PageUtil::$APPLICATION_TEMPLATE);
+}
