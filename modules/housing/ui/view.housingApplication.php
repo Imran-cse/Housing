@@ -10,10 +10,10 @@ $_SESSION["aid"] = $_GET['view'];
 ?>
 
 
-<div class="panel col-md-8 col-md-offset-2" style="border-top: outset; border-left: outset;
+<div class="panel col-md-10 col-md-offset-1" style="font-size: 16px; border-top: outset; border-left: outset;
                                 border-bottom: inset; border-right: inset; margin-top: 50px">
-    <div class="panel-heading">
-        Application
+    <div class="panel-heading" align="center">
+        <h3><u>Application</u></h3>
     </div>
     <div id='message'></div>
     <div class="panel-body">
@@ -37,21 +37,25 @@ $_SESSION["aid"] = $_GET['view'];
                 <span><?php echo $ApplicationTemplate->getReceiver(); ?>,</span>
                 <br>
                 <br>
-                <div class="form-group">  
-                    <input type="text" style="width:500px; height: 40px;" class="form-control"  name="txtSend" placeholder="Name of Department" required/>
-                </div>
+              <!--  <div class="form-group"> --> 
+                    <input type="text" style="width:500px; height: 40px;font-size: 16px" class="form-control"
+                           name="txtSend"
+                           placeholder="Name of Department" required/>
+               <!-- </div> -->
                 
                 <span>Khulna University,Khulna</span>
                 <br>
                 <span>Subject: <?php echo $ApplicationTemplate->getSubject(); ?>.</span>
                 <br>
                 <br>
-                <div class="form-group">
+               <!-- <div class="form-group"> -->
                     
-                        <textarea class="form-control" name="body" style="width:100%; height: 200px;" required><?php echo $ApplicationTemplate->getBody(); ?></textarea>
+                        <textarea class="form-control" name="body" style="width:100%; height: 200px; font-size: 16px"
+                                  required><?php
+                            echo $ApplicationTemplate->getBody(); ?></textarea>
                    
-                </div>
-                
+               <!-- </div> -->
+                <br>
                 <span>Yours Sincerely,</span>
                 <br>
                 <span>Name: <?php echo $globalUser->getFullName(); ?></span>
@@ -59,6 +63,7 @@ $_SESSION["aid"] = $_GET['view'];
                 <span>Roll No:<?php echo $globalUser->getUniversityID(); ?></span>
                 <br>
                 <span>Khulna University,Khulna</span>
+                <br>
                 <br>
                 <span>Date: <?php echo date("d/m/Y"); ?></span>
 

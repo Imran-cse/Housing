@@ -7,7 +7,7 @@ include_once COMMON.'class.common.housing.php';
 ?>
 
 <div class="panel col-md-8 col-md-offset-2" style="border-top: outset; border-left: outset;
-                                border-bottom: inset; border-right: inset; margin-top: 50px">
+                                border-bottom: inset; border-right: inset; margin-top: 50px;">
     <div class="panel-heading">
         Application Format
     </div>
