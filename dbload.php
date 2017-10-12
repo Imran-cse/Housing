@@ -8,7 +8,8 @@ $db = new QueryToTable();
 
 
 
-//Table structure for table `hms_type`
+
+
 
 $sql = "CREATE TABLE hms_type (
   id varchar(128) NOT NULL,
@@ -32,13 +33,6 @@ $sql = "CREATE TABLE hms_housing (
 ) ENGINE=InnoDB";
 
 $db->saveTableInDB($sql);
-
-provost varchar(40),
-  ass_provost varchar(128),
-  officer varchar(128),
-  description varchar(250),
-  no_of_workers int(11),
-
 
 // Table structure for table `hms_room`
 

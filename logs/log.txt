@@ -1703,3 +1703,6 @@
 - [Wed, 11 Oct 17 16:44:44 +0000]	debug:	exit blade.login.php	@file:"C:\wamp64\www\housing\util\class.util.php", object:"LogUtil", line:374
 - [Wed, 11 Oct 17 16:44:44 +0000]	debug:	exit blade.login.php	@file:"C:\wamp64\www\housing\util\class.util.php", object:"LogUtil", line:374
 - [Wed, 11 Oct 17 16:44:54 +0000]	debug:	exit blade.login.php	@file:"C:\wamp64\www\housing\util\class.util.php", object:"LogUtil", line:374
+- [Thu, 12 Oct 17 22:42:35 +0000]	debug:	exit blade.login.php	@file:"C:\wamp64\www\Housing\util\class.util.php", object:"LogUtil", line:374
+- [Thu, 12 Oct 17 22:44:46 +0000]	debug:	exit blade.login.php	@file:"C:\wamp64\www\Housing\util\class.util.php", object:"LogUtil", line:374
+- [Thu, 12 Oct 17 22:44:48 +0000]	debug:	exit blade.login.php	@file:"C:\wamp64\www\Housing\util\class.util.php", object:"LogUtil", line:374
