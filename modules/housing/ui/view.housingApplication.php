@@ -32,6 +32,9 @@ $_SESSION["aid"] = $_GET['view'];
                     
 
                 ?>
+                <span>Date: <?php echo date("d/m/Y"); ?></span>
+                <br>
+                <br>
                 <span>To,</span>
                 <br>
                 <span><?php echo $ApplicationTemplate->getReceiver(); ?>,</span>
@@ -60,12 +63,12 @@ $_SESSION["aid"] = $_GET['view'];
                 <br>
                 <span>Name: <?php echo $globalUser->getFullName(); ?></span>
                 <br>
-                <span>Student Id: <?php echo $globalUser->getUniversityID(); ?></span>
+                <span>University Id: <?php echo $globalUser->getUniversityID(); ?></span>
                 <br>
                 <span>Khulna University,Khulna</span>
                 <br>
-                <br>
-                <span>Date: <?php echo date("d/m/Y"); ?></span>
+                
+                
 
                <?php }?> 
                <br>

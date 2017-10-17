@@ -381,16 +381,7 @@
 				</Permissions>
 			</Menu>
 
-			<Menu>
-				<ParentMenu>Application Related</ParentMenu>
-				<Title>Application</Title>
-				<Link>housing_application.php</Link>
-				<Permissions>
-					<Permission>HOUSING_APPLICATION_C</Permission>
-					<Permission>HOUSING_APPLICATION_U</Permission>
-					<Permission>HOUSING_APPLICATION_D</Permission>
-				</Permissions>
-			</Menu>
+			
 
 			<Menu>
 				<ParentMenu>Application Related</ParentMenu>
