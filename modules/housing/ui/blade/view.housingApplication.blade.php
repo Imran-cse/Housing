@@ -10,19 +10,14 @@ $globalUser = $_SESSION["globalUser"];
 $Result = new Result();
 
 //saving a new application
-if(isset($_POST['save'])){
+if(isset($_POST['apply'])){
 	$HousingApplication = new HousingApplication();
 	$HousingApplication->setId(Util::getGUID());
-	if(isset($_POST['discipline'])){ 
-	
-		$HousingApplication->setDiscipline($_POST['discipline']);
-	}
 	$HousingApplication->setUserId($globalUser->getID());
-	$HousingApplication->setReceiver($_DB->secureinput($_POST['receiver']));
-	$HousingApplication->setSubject($_DB->secureinput($_POST['subject']));
-	$HousingApplication->setDescription($_DB->secureinput($_POST['description']));
-	$HousingApplication->setStatus(0);
-	$HousingApplication->setDate(date("Y/m/d"));
+	$HousingApplication->setReceiverDepartment($_DB->secureinput($_POST['txtReceiverDepartment']));
+	$HousingApplication->setTemplateId($_SESSION["aid"]);
+	$HousingApplication->setBody($_DB->secureinput($_POST['body']));
+	$HousingApplication->setDate($_DB->secureinput(date("Y/m/d")));
 
 	$_HousingApplicationBAO->createApplication($HousingApplication);
 }

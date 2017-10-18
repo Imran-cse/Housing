@@ -240,12 +240,10 @@ class HousingRoomAssign
 class HousingApplication
 {
     private $_id;
-    private $_subject;
+    private $_template_id;
+    private $_receiver_department;
+    private $_body;
     private $_user_id;
-    private $_receiver;
-    private $_discipline;
-    private $_description;
-    private $_status;
     private $_date;
 
     public function setId($id)
@@ -258,14 +256,14 @@ class HousingApplication
         return $this->_id;
     }
 
-    public function setSubject($subject)
+    public function setTemplateId($template_id)
     {
-        $this->_subject = $subject;
+        $this->_template_id = $template_id;
     }
 
-    public function getSubject()
+    public function getTemplateId()
     {
-        return $this->_subject;
+        return $this->_template_id;
     }
 
     public function setUserId($user_id)
@@ -278,44 +276,24 @@ class HousingApplication
         return $this->_user_id;
     }
 
-    public function setReceiver($receiver)
+    public function setReceiverDepartment($receiver_department)
     {
-        $this->_receiver = $receiver;
+        $this->_receiver_department = $receiver_department;
     }
 
-    public function getReceiver()
+    public function getReceiverDepartment()
     {
-        return $this->_receiver;
+        return $this->_receiver_department;
     }
 
-    public function setDiscipline($discipline)
+    public function setBody($body)
     {
-        $this->_discipline = $discipline;
+        $this->_body = $body;
     }
 
-    public function getDiscipline()
+    public function getBody()
     {
-        return $this->_discipline;
-    }
-
-    public function setDescription($description)
-    {
-        $this->_description = $description;
-    }
-
-    public function getDescription()
-    {
-        return $this->_description;
-    }
-
-    public function setStatus($status)
-    {
-        $this->_status = $status;
-    }
-
-    public function getStatus()
-    {
-        return $this->_status;
+        return $this->_body;
     }
 
     public function setDate($date)
