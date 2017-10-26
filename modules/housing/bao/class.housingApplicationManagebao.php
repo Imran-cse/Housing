@@ -11,34 +11,37 @@ class HousingApplicationManageBAO
 		$this->_HousingApplicationManageDAO = new HousingApplicationManageDAO();
 	}
 
-	public function getAllDisciplines(){
+	
+	public function getAllApplication(){
 
 		$Result = new Result();
-		$Result = $this->_HousingApplicationManageDAO->getAllDisciplines();
+		$Result = $this->_HousingApplicationManageDAO->getAllApplication();
 
 		if(!$Result->getIsSuccess())
-			$Result->setResultObject("Database failure in HousingApplicationDAO.getAllDisciplines()");
+			$Result->setResultObject("Database failure in HousingApplicationDAO.getAllApplication()");
 
 		return $Result;
 	}
 
-	public function getApplicationTemplate($aid){
+	public function getUserName($User){
+        $Result=$this->_HousingApplicationManageDAO->getUserName($User);
 
-		$Result = new Result();
-		$Result = $this->_HousingApplicationManageDAO->getApplicationTemplate($aid);
+        if (!$Result->getIsSuccess()){
+            $Result->setResultObject("Failed");
+        }
 
-		if(!$Result->getIsSuccess())
-			$Result->setResultObject("Database failure in HousingApplicationDAO.getApplicationTemplate()");
+        return $Result;
+    }
+    public function getTempaleSubjectById($ApplicationTemplate)
+    {
+    	$Result=$this->_HousingApplicationManageDAO->getTempaleSubjectById($ApplicationTemplate);
 
-		return $Result;
-	}
+        if (!$Result->getIsSuccess()){
+            $Result->setResultObject("Failed");
+        }
 
-	public function createApplication($HousingApplication){
-		$Result = new Result();
-		$Result = $this->_HousingApplicationManageDAO->createApplication($HousingApplication);
+        return $Result;
+    }
 
-		if(!$Result->getIsSuccess())
-			$Result->setResultObject("Database failure in HousingDAO.createHousing()");		
-		return $Result;
-	}
+	
 }

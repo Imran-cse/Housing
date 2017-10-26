@@ -67,11 +67,11 @@ class HousingApplicationDAO
 		$Id = $HousingApplication->getId();
 		$TemplateId = $HousingApplication->getTemplateId();
 		$UserId = $HousingApplication->getUserId();
-		$ReceiverDepartment = $HousingApplication->getReceiverDepartment();
+		//$ReceiverDepartment = $HousingApplication->getReceiverDepartment();
 		$Body = $HousingApplication->getBody();
 		$App_Date = $HousingApplication->getDate();
 
-		$SQL = $this->_DB->doQuery("INSERT INTO hms_application(id, template_id, receiver_department, body, user_id, app_date) VALUES('$Id', '$TemplateId', '$ReceiverDepartment','$Body','$UserId', '$App_Date')");
+		$SQL = $this->_DB->doQuery("INSERT INTO hms_application(id, template_id, body, user_id, app_date) VALUES('$Id', '$TemplateId','$Body','$UserId', '$App_Date')");
 
 		$Result = new Result();
 		$Result->setIsSuccess(1);

@@ -57,7 +57,7 @@ include_once COMMON.'class.common.housing.php';
 
                             ?>
 
-                            <li><a href="housing_application_manage.php?view=<?php echo $ApplicationTemplate->getId(); ?>"><?php echo $ApplicationTemplate->getSubject(); ?></a></li>
+                            <li><a href="housing_application.php?view=<?php echo $ApplicationTemplate->getId(); ?>"><?php echo $ApplicationTemplate->getSubject(); ?></a></li>
                             <?php
                         }
                     }

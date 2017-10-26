@@ -14,10 +14,13 @@ if(isset($_POST['apply'])){
 	$HousingApplication = new HousingApplication();
 	$HousingApplication->setId(Util::getGUID());
 	$HousingApplication->setUserId($globalUser->getID());
-	$HousingApplication->setReceiverDepartment($_DB->secureinput($_POST['txtReceiverDepartment']));
+	//$HousingApplication->setReceiverDepartment($_DB->secureinput($_POST['txtReceiverDepartment']));
 	$HousingApplication->setTemplateId($_SESSION["aid"]);
 	$HousingApplication->setBody($_DB->secureinput($_POST['body']));
 	$HousingApplication->setDate($_DB->secureinput(date("Y/m/d")));
 
-	$_HousingApplicationBAO->createApplication($HousingApplication);
+	$Result = $_HousingApplicationBAO->createApplication($HousingApplication);
+
+ 	
+
 }

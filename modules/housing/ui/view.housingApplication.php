@@ -10,6 +10,13 @@ $_SESSION["aid"] = $_GET['view'];
 ?>
 
 
+<script type="text/javascript">
+function Confirm(form){
+alert("Application submit successfully!"); 
+form.submit();
+}
+</script>
+
 <div class="panel col-md-10 col-md-offset-1" style="font-size: 16px; border-top: outset; border-left: outset;
                                 border-bottom: inset; border-right: inset; margin-top: 50px">
     <div class="panel-heading" align="center">
@@ -18,7 +25,7 @@ $_SESSION["aid"] = $_GET['view'];
     <div id='message'></div>
     <div class="panel-body">
         
-            <form class="form-horizontal" method="post" name="applicationform">
+            <form class="form-horizontal" method="post" name="form">
             <?php
                 $globalUser = '';
                 $globalUser = $_SESSION["globalUser"];
@@ -30,43 +37,29 @@ $_SESSION["aid"] = $_GET['view'];
 
                     $ApplicationTemplate = $Result->getResultObject();
                     
+                    $search = "[*FullName*]";
+                    $replace = $globalUser->getFullName();
+                    $bodyText = $ApplicationTemplate->getBody();
+                    $newtext = str_replace($search,$replace,$bodyText);
 
+                    $uId = "[*UniversityId*]";
+                    $replace = $globalUser->getUniversityID();
+                    $newtext = str_replace($uId,$replace,$newtext);
                 ?>
-                <span>Date: <?php echo date("d/m/Y"); ?></span>
-                <br>
-                <br>
-                <span>To,</span>
-                <br>
-                <span><?php echo $ApplicationTemplate->getReceiver(); ?>,</span>
-                <br>
-              <!--  <div class="form-group"> --> 
-                    <input type="text" style="width:500px; height: 40px;font-size: 16px" class="form-control"
-                           name="txtReceiverDepartment"
-                           placeholder="Name of Department" required/>
-               <!-- </div> -->
                 
-                <span>Khulna University,Khulna</span>
-                <br>
-                <br>
-                <span><b>Subject: <?php echo $ApplicationTemplate->getSubject(); ?>.</b></span>
-                <br>
-                <br>
-               <!-- <div class="form-group"> -->
+              
                     
-                        <textarea class="form-control" name="body" style="width:100%; height: 200px; font-size: 16px"
-                                  required><?php
-                            echo $ApplicationTemplate->getBody(); ?></textarea>
+                        <textarea class="form-control" name="body" style="width:80%; height: 500px; font-size: 16px"
+                                  required>Date: <?php echo date("d/m/Y"); ?>
+
+<?php echo $ApplicationTemplate->getReceiver(); ?>,
+Subject: <?php echo $ApplicationTemplate->getSubject(); ?>.
+
+<?php echo $newtext; ?>
+</textarea>
                    
                <!-- </div> -->
-                <br>
-                <span>Yours Sincerely,</span>
-                <br>
-                <span>Name: <?php echo $globalUser->getFullName(); ?></span>
-                <br>
-                <span>University Id: <?php echo $globalUser->getUniversityID(); ?></span>
-                <br>
-                <span>Khulna University,Khulna</span>
-                <br>
+                
                 
                 
 
@@ -76,7 +69,7 @@ $_SESSION["aid"] = $_GET['view'];
                              
                <div id="form" class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                        <button type="submit" name="apply" class="btn btn-primary">Apply</button>
+                        <button type="submit" name="apply" onclick="Confirm(this.form)" class="btn btn-primary">Apply</button>
                     </div>
                 </div>
                 

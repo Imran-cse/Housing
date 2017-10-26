@@ -241,7 +241,7 @@ class HousingApplication
 {
     private $_id;
     private $_template_id;
-    private $_receiver_department;
+    
     private $_body;
     private $_user_id;
     private $_date;
@@ -276,15 +276,6 @@ class HousingApplication
         return $this->_user_id;
     }
 
-    public function setReceiverDepartment($receiver_department)
-    {
-        $this->_receiver_department = $receiver_department;
-    }
-
-    public function getReceiverDepartment()
-    {
-        return $this->_receiver_department;
-    }
 
     public function setBody($body)
     {
