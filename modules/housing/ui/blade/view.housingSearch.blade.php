@@ -27,13 +27,4 @@ if(isset($_POST['search']))
 }
 
 
-
-
-
-
-
-
-
-echo '<br> log:: exit view.housingSearchbao.blade.php';
-
 ?>

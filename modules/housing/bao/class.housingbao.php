@@ -107,6 +107,4 @@ Class HousingBAO{
 
 }
 
-echo '<br> log:: exit the class.housingbao.php';
-
 ?>

@@ -71,6 +71,4 @@ Class HousingSearchDAO{
 	}
 }
 
-echo '<br> log:: exit the class.housingSearchdao.php';
-
 ?>

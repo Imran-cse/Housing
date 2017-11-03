@@ -40,6 +40,4 @@ Class HousingSearchBAO{
 	}
 }
 
-echo '<br> log:: exit the class.housingSearchbao.php';
-
 ?>

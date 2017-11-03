@@ -283,6 +283,4 @@ Class HousingRoomAssignDAO{
 
 }
 
-echo '<br> log:: exit the class.housingRoomAssigndao.php';
-
 ?>

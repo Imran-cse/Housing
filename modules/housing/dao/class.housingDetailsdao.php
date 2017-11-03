@@ -247,6 +247,4 @@ Class HousingDetailsDAO{
 
 }
 
-echo '<br> log:: exit the class.housingDetailsdao.php';
-
 ?>

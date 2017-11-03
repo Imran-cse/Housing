@@ -178,6 +178,4 @@ Class HousingRoomAssignBAO{
 
 }
 
-echo '<br> log:: exit the class.housingRoomAssignbao.php';
-
 ?>

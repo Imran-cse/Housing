@@ -77,13 +77,4 @@ if(isset($_GET['employeeDel']) && isset($_GET['view']))
 }
 
 
-
-
-
-
-
-
-
-echo '<br> log:: exit view.HousingDetails.blade.php';
-
 ?>

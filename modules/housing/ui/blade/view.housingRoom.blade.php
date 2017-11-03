@@ -46,8 +46,3 @@ if(isset($_GET['view']))
 
 }
 
-
-
-
-
-echo '<br> log:: exit view.housingRoom.blade.php';
