@@ -103,7 +103,6 @@ function getAllPermissions($User){
 	return $AllPermissions;
 }
 
-echo '<br> log:: exit blade.login.php';
 $_Log->log(LogUtil::$DEBUG,"exit blade.login.php");
 
 ?>

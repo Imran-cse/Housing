@@ -51,7 +51,4 @@ if(isset($_POST['update']))
 }
 
 
-
-echo '<br> log:: exit blade.Role.php';
-
 ?>

@@ -209,6 +209,4 @@ Class UserBAO{
 
 }
 
-echo '<br> log:: exit the class.userbao.php';
-
 ?>

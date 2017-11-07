@@ -127,6 +127,4 @@ Class RoleBAO{
 
 }
 
-echo '<br> log:: exit the class.rolebao.php';
-
 ?>

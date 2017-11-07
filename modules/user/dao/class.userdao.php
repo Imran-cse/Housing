@@ -711,6 +711,4 @@ Class UserDAO{
 
 }
 
-echo '<br> log:: exit the class.userdao.php';
-
 ?>

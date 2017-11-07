@@ -243,6 +243,4 @@ Class RoleDAO{
 
 }
 
-echo '<br> log:: exit the class.roledao.php';
-
 ?>
