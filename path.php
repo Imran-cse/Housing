@@ -20,4 +20,8 @@ define('MODULES_HOUSING_BAO',MODULES.'/housing/bao/');
 define('MODULES_HOUSING_DAO',MODULES.'/housing/dao/');
 define('MODULES_HOUSING_BLADE',MODULES.'/housing/ui/blade/');
 
+define('MODULES_APPLICATION_BAO',MODULES.'/application/bao/');
+define('MODULES_APPLICATION_DAO',MODULES.'/application/dao/');
+define('MODULES_APPLICATION_BLADE',MODULES.'/application/ui/blade/');
+
 ?>

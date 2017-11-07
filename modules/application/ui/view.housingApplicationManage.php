@@ -1,6 +1,6 @@
 <?php
 
-include_once MODULES_HOUSING_BLADE.'view.housingApplicationManage.blade.php';
+include_once MODULES_APPLICATION_BLADE.'view.housingApplicationManage.blade.php';
 include_once COMMON.'class.common.php';
 include_once COMMON.'class.common.housing.php';
 
@@ -20,6 +20,7 @@ include_once COMMON.'class.common.housing.php';
                     <th>Name</th>
                     <th>Subject</th>
                     <th>Submission Date</th>
+                    <th>Application</th>
                 </tr>
                
                     <?php
@@ -33,9 +34,10 @@ include_once COMMON.'class.common.housing.php';
 
                             ?>
                             <tr>
-                            <td><?php echo $_HousingApplicationManageBAO->getUserName($Application->getUserId())->getResultObject()->getFullName(); ?></td>
+                            <td><a href="user_details.php?id=<?php echo $Application->getUserId();?>" onclick="return ; " ><?php echo $_HousingApplicationManageBAO->getUserName($Application->getUserId())->getResultObject()->getFullName(); ?></a></td>
                             <td><?php echo $_HousingApplicationManageBAO->getTempaleSubjectById($Application->getTemplateId())->getResultObject()->getSubject(); ?></td>
                             <td><?php echo $Application->getDate();?></td>
+                            <td><a href="application_show.php?view=<?php echo $Application->getId();?>" onclick="return ; ">Application</a></td>
 
                             </tr>
                             <?php

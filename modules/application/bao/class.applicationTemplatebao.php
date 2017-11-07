@@ -1,7 +1,7 @@
 <?php
 
 include_once UTILITY.'class.util.php';
-include_once MODULES_HOUSING_DAO.'class.applicationTemplatedao.php';
+include_once MODULES_APPLICATION_DAO.'class.applicationTemplatedao.php';
 
 class ApplicationTemplateBAO
 {

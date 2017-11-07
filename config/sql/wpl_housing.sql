@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 11, 2017 at 07:47 PM
+-- Generation Time: Nov 07, 2017 at 06:47 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -29,11 +29,21 @@ SET time_zone = "+00:00";
 CREATE TABLE `hms_application` (
   `id` varchar(50) NOT NULL,
   `template_id` varchar(50) NOT NULL,
-  `receiver_department` varchar(255) NOT NULL,
   `body` text NOT NULL,
   `user_id` varchar(50) NOT NULL,
-  `date` date NOT NULL
+  `app_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `hms_application`
+--
+
+INSERT INTO `hms_application` (`id`, `template_id`, `body`, `user_id`, `app_date`) VALUES
+('{45769900-C347-417B-A118-4452247AFB66}', '{10349FA5-BF19-42FA-B9D0-0F5736E0830A}', 'Date: 07/11/2017\r\nProvost,\r\nSubject: Application for id card.\r\n\r\nDear sir,\r\nIt is to state that I am I AM ADMIN and I have applied in Masters Program in your prestigious institution. Luckily, I have got admission here upon merit.  I am attached to your hall\r\n\r\nSir, I want to request you that Kindly, issue me a id card. I will pay the charges and you will never find me misbehaving. I am hardworking student and I will prove it. Bit assistance of yours is required. Hoping that you will consider my request. I shall be your beholder.\r\n\r\nYours Sincerely,\r\nName: I AM ADMIN\r\nUniversity Id: 020201\r\nKhulna University,Khulna', 'test@test.com', '2017-11-07'),
+('{91F6D8C8-7FA8-46FA-A0EA-BF108106E8FB}', '{29B5018D-2C2A-48B7-87C4-306AB15A41A4}', 'Date: 26/10/2017\r\nProvost,\r\nSubject: Application for seat.\r\n\r\nDear sir,\r\nIt is to state that I am I AM ADMIN and I have applied in Masters Program in your prestigious institution. Luckily, I have got admission here upon merit. But I want to mention that I am from Sweden. For my studies I have to come to California and the issue is neither I have any relative here nor I know the entire place. I will be totally new for here.\r\n\r\nSir, I want to request you that Kindly, allot me room in University Hostel. I will pay the charges and you will never find me misbehaving. I am hardworking student and I will prove it. Bit assistance of yours is required. Hoping that you will consider my request. I shall be your beholder.\r\n\r\nYours Sincerely,\r\nName: I AM ADMIN\r\nUniversity Id: 020201\r\nKhulna University,Khulna', 'test@test.com', '2017-10-26'),
+('{BF461494-8BF7-4E74-975E-FA273595841A}', '{29B5018D-2C2A-48B7-87C4-306AB15A41A4}', 'Date: 18/10/2017\r\nProvost,\r\nSubject: Application for seat.\r\n\r\nDear sir,\r\nIt is to state that I am I AM ADMIN and I have applied in Masters Program in your prestigious institution. Luckily, I have got admission here upon merit. But I want to mention that I am from Sweden. For my studies I have to come to California and the issue is neither I have any relative here nor I know the entire place. I will be totally new for here.\r\n\r\nSir, I want to request you that Kindly, allot me room in University Hostel. I will pay the charges and you will never find me misbehaving. I am hardworking student and I will prove it. Bit assistance of yours is required. Hoping that you will consider my request. I shall be your beholder.\r\n\r\nYours Sincerely,\r\nName: I AM ADMIN\r\nUniversity Id: 020201\r\nKhulna University,Khulna', 'test@test.com', '2017-10-18'),
+('{E0868BEE-FAE0-401D-97AB-A54B44B64EF3}', '{10349FA5-BF19-42FA-B9D0-0F5736E0830A}', 'Date: 26/10/2017\r\nProvost,\r\nSubject: Application for id card.\r\n\r\nDear sir,\r\nIt is to state that I am I AM ADMIN and I have applied in Masters Program in your prestigious institution. Luckily, I have got admission here upon merit.  I am attached to your hall\r\n\r\nSir, I want to request you that Kindly, issue me a id card. I will pay the charges and you will never find me misbehaving. I am hardworking student and I will prove it. Bit assistance of yours is required. Hoping that you will consider my request. I shall be your beholder.\r\n\r\nYours Sincerely,\r\nName: I AM ADMIN\r\nUniversity Id: 020201\r\nKhulna University,Khulna', 'test@test.com', '2017-10-26'),
+('{F9A809BA-8CA2-450C-AF0F-9198771A2F2F}', '{29B5018D-2C2A-48B7-87C4-306AB15A41A4}', 'Date: 18/10/2017\nProvost,\nSubject: Application for seat.\n\nDear sir,\nIt is to state that I am Al Amin  and I have applied in Masters Program in your prestigious institution. Luckily, I have got admission here upon merit. But I want to mention that I am from Sweden. For my studies I have to come to California and the issue is neither I have any relative here nor I know the entire place. I will be totally new for here.\n\nSir, I want to request you that Kindly, allot me room in University Hostel. I will pay the charges and you will never find me misbehaving. I am hardworking student and I will prove it. Bit assistance of yours is required. Hoping that you will consider my request. I shall be your beholder.\n\nYours Sincerely,\nName: Al Amin \nUniversity Id: 150212\nKhulna University,Khulna', 'alamin@cse.com', '2017-10-18');
 
 -- --------------------------------------------------------
 
@@ -53,7 +63,19 @@ CREATE TABLE `hms_application_template` (
 --
 
 INSERT INTO `hms_application_template` (`id`, `receiver`, `subject`, `body`) VALUES
-('{29B5018D-2C2A-48B7-87C4-306AB15A41A4}', 'Provost', 'Application for seat', 'Dear sir,\r\nIt is to state that I am Emma John and I have applied in Masters Program in your prestigious institution. Luckily, I have got admission here upon merit. But I want to mention that I am from Sweden. For my studies I have to come to California and the issue is neither I have any relative here nor I know the entire place. I will be totally new for here.\r\n\r\nSir, I want to request you that Kindly, allot me room in University Hostel. I will pay the charges and you will never find me misbehaving. I am hardworking student and I will prove it. Bit assistance of yours is required. Hoping that you will consider my request. I shall be your beholder.');
+('{10349FA5-BF19-42FA-B9D0-0F5736E0830A}', 'Provost', 'Application for id card', 'Dear sir,\r\nIt is to state that I am [*FullName*] and I have applied in Masters Program in your prestigious institution. Luckily, I have got admission here upon merit.  I am attached to your hall\r\n\r\nSir, I want to request you that Kindly, issue me a id card. I will pay the charges and you will never find me misbehaving. I am hardworking student and I will prove it. Bit assistance of yours is required. Hoping that you will consider my request. I shall be your beholder.\r\n\r\nYours Sincerely,\r\nName: [*FullName*]\r\nUniversity Id: [*UniversityId*]\r\nKhulna University,Khulna'),
+('{29B5018D-2C2A-48B7-87C4-306AB15A41A4}', 'Provost', 'Application for seat', 'Dear sir,\r\nIt is to state that I am [*FullName*] and I have applied in Masters Program in your prestigious institution. Luckily, I have got admission here upon merit. But I want to mention that I am from Rajshahi. For my studies I have to come to Khulna and the issue is neither I have any relative here nor I know the entire place. I will be totally new for here.\r\n\r\nSir, I want to request you that Kindly, allot me room in University Hostel. I will pay the charges and you will never find me misbehaving. I am hardworking student and I will prove it. Bit assistance of yours is required. Hoping that you will consider my request. I shall be your beholder.\r\n\r\nYours Sincerely,\r\nName: [*FullName*]\r\nUniversity Id: [*UniversityId*]\r\nKhulna University,Khulna');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hms_apply`
+--
+
+CREATE TABLE `hms_apply` (
+  `id` varchar(40) NOT NULL,
+  `application` varchar(5000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -327,9 +349,11 @@ CREATE TABLE `tbl_discussion_comment` (
 
 INSERT INTO `tbl_discussion_comment` (`CommentID`, `DiscussionID`, `Comment`, `CreatorID`, `CommentTime`, `CommentIDTop`) VALUES
 ('{00AADED4-6799-4F2C-BECB-ED50F7B03DDE}', '{C9FB74F8-8341-4706-BE40-93BFDC3444D0}', 'new comment', 'mkazi078@uottawa.ca', '2017-06-26 19:18:08', NULL),
+('{05FE9DD2-4A13-4E57-B068-2077A86D4AF9}', '{DA408BD0-9C9E-46F6-8CF2-00A631B06A26}', 'bgfb', 'test@test.com', '2017-10-13 06:28:05', NULL),
 ('{1634B01B-5F82-43EF-96F8-E6149F488424}', '{C9FB74F8-8341-4706-BE40-93BFDC3444D0}', 'it is PIE', 'mkazi078@uottawa.ca', '0000-00-00 00:00:00', NULL),
 ('{19918AD2-47E4-4BCA-8933-C4A970BBE22E}', '{C9FB74F8-8341-4706-BE40-93BFDC3444D0}', 'gg', 'test@test.com', '2017-08-18 14:27:56', NULL),
 ('{550A15FC-06B8-43DF-83EE-097E35920170}', '{C9FB74F8-8341-4706-BE40-93BFDC3444D0}', 'little difficult', 'mohidul@gmail.com', '0000-00-00 00:00:00', NULL),
+('{77825AF6-606A-4DAD-82ED-CCBABD5485D9}', '{DA408BD0-9C9E-46F6-8CF2-00A631B06A26}', 'gfh', 'test@test.com', '2017-10-13 06:28:15', NULL),
 ('{A15517C2-883F-4E5E-B0AC-9A1DB556741F}', '{C9FB74F8-8341-4706-BE40-93BFDC3444D0}', 'Polymorphism, inheritence, encapsulation', 'mkazi078@uottawa.ca', '0000-00-00 00:00:00', NULL);
 
 -- --------------------------------------------------------
@@ -504,10 +528,6 @@ CREATE TABLE `tbl_role_permission` (
 --
 
 INSERT INTO `tbl_role_permission` (`Row`, `RoleID`, `PermissionID`) VALUES
-(2178, 'student', 'HOUSING_APPLICATION_C'),
-(2179, 'student', 'HOUSING_APPLICATION_D'),
-(2180, 'student', 'HOUSING_APPLICATION_R'),
-(2181, 'student', 'HOUSING_APPLICATION_U'),
 (2258, 'administrator', 'APPLICATION_FORMAT_C'),
 (2259, 'administrator', 'APPLICATION_FORMAT_D'),
 (2260, 'administrator', 'APPLICATION_FORMAT_R'),
@@ -587,7 +607,15 @@ INSERT INTO `tbl_role_permission` (`Row`, `RoleID`, `PermissionID`) VALUES
 (2334, 'administrator', 'YEAR_C'),
 (2335, 'administrator', 'YEAR_D'),
 (2336, 'administrator', 'YEAR_R'),
-(2337, 'administrator', 'YEAR_U');
+(2337, 'administrator', 'YEAR_U'),
+(2362, 'student', 'APPLICATION_FORMAT_C'),
+(2363, 'student', 'APPLICATION_FORMAT_D'),
+(2364, 'student', 'APPLICATION_FORMAT_R'),
+(2365, 'student', 'APPLICATION_FORMAT_U'),
+(2366, 'student', 'HOUSING_APPLICATION_C'),
+(2367, 'student', 'HOUSING_APPLICATION_D'),
+(2368, 'student', 'HOUSING_APPLICATION_R'),
+(2369, 'student', 'HOUSING_APPLICATION_U');
 
 -- --------------------------------------------------------
 
@@ -659,6 +687,7 @@ INSERT INTO `tbl_user` (`ID`, `UniversityID`, `Email`, `Password`, `FirstName`, 
 ('alamin@cse.com', '150212', 'alamin@cse.com', '123', 'Al', 'Amin ', 'approved', NULL, NULL, NULL),
 ('alice@cse.com', '150224', 'alice@cse.com', '123', 'Rafia', 'Alice', 'approved', NULL, NULL, NULL),
 ('bani@cse.com', '150230', 'bani@cse.com', '123', 'Suraiya', 'Bani', 'approved', NULL, NULL, NULL),
+('dip@cse.com', '140205', 'dip@cse.com', '123', 'Dip', 'Datta', 'pending', NULL, NULL, NULL),
 ('imran@imran.com', '150203', 'imran@imran.com', '123', 'Imran', 'Hossain', 'approved', NULL, NULL, NULL),
 ('pp@cse.com', '150215', 'pp@cse.com', '123', 'Pranta', 'Protik', 'approved', NULL, NULL, NULL),
 ('ratul@cse.com', '150226', 'ratul@cse.com', '123', 'Siamul', 'Ratul', 'approved', NULL, NULL, NULL),
@@ -692,6 +721,7 @@ INSERT INTO `tbl_user_details` (`ID`, `FatherName`, `MotherName`, `PermanentAddr
 ('alamin@cse.com', NULL, NULL, NULL, NULL, NULL, NULL),
 ('alice@cse.com', NULL, NULL, NULL, NULL, NULL, NULL),
 ('bani@cse.com', NULL, NULL, NULL, NULL, NULL, NULL),
+('dip@cse.com', NULL, NULL, NULL, NULL, NULL, NULL),
 ('imran@imran.com', NULL, NULL, NULL, NULL, NULL, NULL),
 ('pp@cse.com', NULL, NULL, NULL, NULL, NULL, NULL),
 ('ratul@cse.com', NULL, NULL, NULL, NULL, NULL, NULL),
@@ -767,7 +797,8 @@ INSERT INTO `tbl_user_role` (`ID`, `UserID`, `RoleID`) VALUES
 (107, 'ratul@cse.com', 'student'),
 (108, 'shuvo@cse.com', 'student'),
 (109, 'alamin@cse.com', 'student'),
-(110, 'shoron@babui.com', 'student');
+(110, 'shoron@babui.com', 'student'),
+(111, 'dip@cse.com', 'student');
 
 -- --------------------------------------------------------
 
@@ -812,6 +843,12 @@ ALTER TABLE `hms_application`
 -- Indexes for table `hms_application_template`
 --
 ALTER TABLE `hms_application_template`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `hms_apply`
+--
+ALTER TABLE `hms_apply`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -961,7 +998,7 @@ ALTER TABLE `tbl_year`
 -- AUTO_INCREMENT for table `tbl_role_permission`
 --
 ALTER TABLE `tbl_role_permission`
-  MODIFY `Row` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2338;
+  MODIFY `Row` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2370;
 --
 -- AUTO_INCREMENT for table `tbl_user_position`
 --
@@ -971,7 +1008,7 @@ ALTER TABLE `tbl_user_position`
 -- AUTO_INCREMENT for table `tbl_user_role`
 --
 ALTER TABLE `tbl_user_role`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 --
 -- Constraints for dumped tables
 --

@@ -1,6 +1,6 @@
 <?php
 
-include_once MODULES_HOUSING_BLADE.'view.housingApplication.blade.php';
+include_once MODULES_APPLICATION_BLADE.'view.housingApplication.blade.php';
 include_once COMMON.'class.common.php';
 include_once COMMON.'class.common.housing.php';
 
