@@ -74,7 +74,4 @@ if(isset($_POST['update']))
 }
 
 
-
-echo '<br> log:: exit blade.housing.blade.php';
-
 ?>

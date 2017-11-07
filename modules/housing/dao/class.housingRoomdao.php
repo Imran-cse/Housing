@@ -150,6 +150,4 @@ Class HousingRoomDAO{
 
 }
 
-echo '<br> log:: exit the class.housingRoomdao.php';
-
 ?>

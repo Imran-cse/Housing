@@ -51,8 +51,3 @@ if(isset($_GET['view']))
 
 }
 
-
-
-
-
-echo '<br> log:: exit view.housingRoomAssign.blade.php';

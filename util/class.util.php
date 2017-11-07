@@ -484,6 +484,4 @@ DBUtil::getInstance();
 LogUtil::getInstance();
 LangUtil::getInstance();
 
-echo '<br> log:: exit the util';
-
 ?>
