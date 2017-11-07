@@ -1,7 +1,7 @@
 <?php
 
 include_once UTILITY.'class.util.php';
-include_once MODULES_HOUSING_DAO.'class.housingApplicationdao.php';
+include_once MODULES_APPLICATION_DAO.'class.housingApplicationdao.php';
 
 class HousingApplicationBAO
 {
@@ -29,6 +29,16 @@ class HousingApplicationBAO
 
 		if(!$Result->getIsSuccess())
 			$Result->setResultObject("Database failure in HousingApplicationDAO.getApplicationTemplate()");
+
+		return $Result;
+	}
+	public function getApplicationBody($id){
+
+		$Result = new Result();
+		$Result = $this->_HousingApplicationDAO->getApplicationBody($id);
+
+		if(!$Result->getIsSuccess())
+			$Result->setResultObject("Database failure in HousingApplicationDAO.getApplicationBody()");
 
 		return $Result;
 	}

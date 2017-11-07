@@ -207,6 +207,11 @@ class PermissionUtil{
     public static $APPLICATION_FORMAT_R = 'APPLICATION_FORMAT_R';
     public static $APPLICATION_FORMAT_U = 'APPLICATION_FORMAT_U';
     public static $APPLICATION_FORMAT_D = 'APPLICATION_FORMAT_D';
+
+    public static $APPLICATION_SHOW_C = 'APPLICATION_SHOW_C';
+    public static $APPLICATION_SHOW_R = 'APPLICATION_SHOW_R';
+    public static $APPLICATION_SHOW_U = 'APPLICATION_SHOW_U';
+    public static $APPLICATION_SHOW_D = 'APPLICATION_SHOW_D';
 }
 
 class PageUtil{
@@ -244,6 +249,7 @@ class PageUtil{
     public static $HOUSING_APPLICATION_MANAGE = 'housing_application_manage.php';
     public static $APPLICATION_TEMPLATE = 'application_template.php';
     public static $APPLICATION_FORMAT = 'application_format.php';
+    public static $APPLICATION_SHOW = 'application_show.php';
 
     public static $USER='user.php';
     public static $USER_NEW='user_new.php';
@@ -298,10 +304,12 @@ class RouteUtil{
          self::$s_Routes[PageUtil::$HOUSING_DETAIL] = "/modules/housing/ui/view.housingDetails.php";
          self::$s_Routes[PageUtil::$HOUSING_ROOM_ASSIGN] = "/modules/housing/ui/view.housingRoomAssign.php";
          self::$s_Routes[PageUtil::$HOUSING_SEARCH] = "/modules/housing/ui/view.housingSearch.php";
-         self::$s_Routes[PageUtil::$HOUSING_APPLICATION] = "/modules/housing/ui/view.housingApplication.php";
-         self::$s_Routes[PageUtil::$HOUSING_APPLICATION_MANAGE] = "/modules/housing/ui/view.housingApplicationManage.php";
-         self::$s_Routes[PageUtil::$APPLICATION_TEMPLATE] = "/modules/housing/ui/view.applicationTemplate.php";
-         self::$s_Routes[PageUtil::$APPLICATION_FORMAT] = "/modules/housing/ui/view.applicationFormat.php";
+         
+         self::$s_Routes[PageUtil::$HOUSING_APPLICATION] = "/modules/application/ui/view.housingApplication.php";
+         self::$s_Routes[PageUtil::$HOUSING_APPLICATION_MANAGE] = "/modules/application/ui/view.housingApplicationManage.php";
+         self::$s_Routes[PageUtil::$APPLICATION_TEMPLATE] = "/modules/application/ui/view.applicationTemplate.php";
+         self::$s_Routes[PageUtil::$APPLICATION_FORMAT] = "/modules/application/ui/view.applicationFormat.php";
+         self::$s_Routes[PageUtil::$APPLICATION_SHOW] = "/modules/application/ui/view.applicationShow.php";
  
 
         //the page not found will redirect to error page
@@ -363,6 +371,7 @@ class MiddlewareUtil{
          self::$s_Routes[PageUtil::$HOUSING_APPLICATION_MANAGE]   =  PageUtil::$LOGIN ;
          self::$s_Routes[PageUtil::$APPLICATION_TEMPLATE]   =  PageUtil::$LOGIN ;
          self::$s_Routes[PageUtil::$APPLICATION_FORMAT]   =  PageUtil::$LOGIN ;
+         self::$s_Routes[PageUtil::$APPLICATION_SHOW]   =  PageUtil::$LOGIN ;
          
 
          self::$s_Routes[PageUtil::$ROLE]   =  PageUtil::$LOGIN ;

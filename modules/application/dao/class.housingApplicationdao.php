@@ -62,6 +62,24 @@ class HousingApplicationDAO
 
 		return $Result;
 	}
+	public function getApplicationBody($id){
+		$SQL = "SELECT * FROM hms_application WHERE id='".$id."'";
+		$SQL = $this->_DB->doQuery($SQL);
+
+		$row = $this->_DB->getTopRow();
+
+		$this->_HousingApplication = new HousingApplication();
+
+		$this->_HousingApplication->setId ( $row['id']);
+		$this->_HousingApplication->setBody( $row['body'] );
+		
+		
+	 	$Result = new Result();
+		$Result->setIsSuccess(1);
+		$Result->setResultObject($this->_HousingApplication);
+
+		return $Result;
+	}
 
 	public function createApplication($HousingApplication){
 		$Id = $HousingApplication->getId();

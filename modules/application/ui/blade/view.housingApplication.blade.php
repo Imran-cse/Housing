@@ -1,7 +1,7 @@
 <?php
 include_once UTILITY.'class.util.php';
 include_once COMMON.'class.common.php';
-include_once MODULES_HOUSING_BAO.'class.housingApplicationbao.php';
+include_once MODULES_APPLICATION_BAO.'class.housingApplicationbao.php';
 
 $_HousingApplicationBAO = new HousingApplicationBAO();
 $_DB = DBUtil::getInstance();
