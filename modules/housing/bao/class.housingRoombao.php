@@ -110,6 +110,6 @@ Class HousingRoomBAO{
 
 }
 
-echo '<br> log:: exit the class.housingRoombao.php';
+
 
 ?>

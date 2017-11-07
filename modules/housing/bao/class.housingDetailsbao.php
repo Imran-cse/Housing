@@ -151,6 +151,6 @@ Class HousingDetailsBAO{
 
 }
 
-echo '<br> log:: exit the class.housingDetailsbao.php';
+
 
 ?>
